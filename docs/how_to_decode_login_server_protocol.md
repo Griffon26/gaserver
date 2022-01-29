@@ -31,7 +31,7 @@ save, otherwise you'll only have part of the data.
 Now run parse.py on the saved file to convert it to something readable:
 
     scripts\parse.py capture.carrays
-    
+
 The output file in the example scenario above will be named `capture.carrays_parsed.txt` and 
 will look similar to this:
 
