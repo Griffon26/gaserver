@@ -363,7 +363,7 @@ class Parser:
         """
         length = read_long(self.infile)
         password = bytearray2hex(read_bytearray(self.infile, length))
-        self.outfile.write(f'{password} {self.get_description(enumid, None)}\n')
+        self.outfile.write(f'{length:04x} {password} {self.get_description(enumid, None)}\n')
 
     def parse_seq_ack(self) -> None:
         """
