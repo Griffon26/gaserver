@@ -1,6 +1,6 @@
 ## How to decode the login server protocol
 
-This document describes how to capture traffic between the login server and a Tribes Ascend
+This document describes how to capture traffic between the login server and a Global Agenda
 client and how to turn it into a readable format that you can use to discover the meaning
 of the protocol. 
 
@@ -10,7 +10,7 @@ that here. Take a look at the code of the parse.py script if you want to know mo
 ### Capture with wireshark
 
 First capture the traffic between your client and the login server with 
-[Wireshark](https://www.wireshark.org/). They communicate over TCP on port 9000.
+[Wireshark](https://www.wireshark.org/). They communicate over TCP on port 9000 (most data) or 9001 (chat).
 
 ![Wireshark start capture](/docs/images/wireshark_start_capture.png?raw=true)
 
