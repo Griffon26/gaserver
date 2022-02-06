@@ -211,7 +211,6 @@ class Parser:
 
         self.infile: BinaryIO = None
         self.outfile: TextIO = None
-        self.last_seen_seqnr = None
 
     def get_description(self, enumid: int, value: Optional[Union[str, int]]) -> str:
         """
@@ -279,7 +278,6 @@ class Parser:
 
                     for i in range(additional_items):
                         self.parse_enumfield(0, index2prefix(i + 1))
-                    #self.parse_seq_ack()
 
                 except ParseError as e:
                     self.outfile.write(str(e))
@@ -364,19 +362,6 @@ class Parser:
         length = read_long(self.infile)
         password = bytearray2hex(read_bytearray(self.infile, length))
         self.outfile.write(f'{length:04x} {password} {self.get_description(enumid, None)}\n')
-
-    def parse_seq_ack(self) -> None:
-        """
-        Parses a seq/ack from the stream
-        """
-        offset = self.infile.tell()
-        seq = read_long(self.infile)
-        if self.last_seen_seqnr and seq != self.last_seen_seqnr + 1:
-            self.dump_error(offset)
-            raise ParseError('Invalid sequence number %d (0x%08X) at offset 0x%08X (expected %d (0x%08X))'
-                             % (seq, seq, offset, self.last_seen_seqnr, self.last_seen_seqnr))
-        ack = read_long(self.infile)
-        self.outfile.write(offset2string(offset) + 'seq %08X ack %08X\n' % (seq, ack))
 
     def parse_enumblockarray(self, enumid: int, nesting_level: int, newline: bool, prefix='') -> List:
         """
