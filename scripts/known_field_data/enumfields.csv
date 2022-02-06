@@ -5,7 +5,7 @@
 0x0023,SizedContent,DailyMessage
 0x0024,SizedContent,AgencyName
 0x0029,FourBytes,
-0x002C,TwoBytes,
+0x002C,SizedContent,AllianceName
 0x0034,EnumBlockArray,
 0x0036,EnumBlockArray,
 0x0039,EnumBlockArray,
@@ -63,9 +63,9 @@
 0x0262,FourBytes,
 0x0264,FourBytes,
 0x0270,FourBytes,
-0x0276,FourBytes,gender?
-0x0282,FourBytes,
-0x0287,FourBytes,
+0x0276,FourBytes,gender
+0x0282,FourBytes,playersuit?
+0x0287,FourBytes,gender related?
 0x02a9,FourBytes,
 0x02b1,SizedContent,
 0x02b2,EightBytes,
@@ -132,6 +132,7 @@
 0x04e7,FourBytes,
 0x04ff,SizedContent,
 0x0515,FourBytes,
+0x051b,EnumBlockArray,
 0x052d,SizedContent,
 0x0531,SizedContent,
 0x0536,FourBytes,
