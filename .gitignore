@@ -1,2 +1,4 @@
 .idea
 private/*
+__pycache__/
+gaserverdump.carrays
