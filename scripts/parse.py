@@ -361,7 +361,7 @@ class Parser:
         """
         length = read_long(self.infile)
         password = bytearray2hex(read_bytearray(self.infile, length))
-        self.outfile.write(f'{length:04x} {password} {self.get_description(enumid, None)}\n')
+        self.outfile.write(f'{length:08x} {password} {self.get_description(enumid, None)}\n')
 
     def parse_enumblockarray(self, enumid: int, nesting_level: int, newline: bool, prefix='') -> List:
         """

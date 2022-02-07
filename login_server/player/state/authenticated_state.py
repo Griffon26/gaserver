@@ -30,18 +30,26 @@ class AuthenticatedState(PlayerState):
 
     def on_enter(self):
         self.logger.info("%s is entering state %s" % (self.player, type(self).__name__))
-        self.player.friends.notify_online()
 
     def on_exit(self):
         self.logger.info("%s is exiting state %s" % (self.player, type(self).__name__))
 
-    #@handles(packet=a00d5)
-    #def handle_a00d5(self, request):
-    #    if request.findbytype(m0228).value == 1:
-    #        self.player.send(originalfragment(0x1EEB3, 0x20A10))  # 00d5 (map list)
-    #    else:
-    #        self.player.send(a00d5().setservers(self.player.login_server
-    #                                            .all_game_servers()
-    #                                            .values(),
-    #                                            self.player.address_pair))  # 00d5 (server list)
-
+    @handles(packet=a0034)
+    def handle_a0034(self, request):
+        self.player.send(a0034().set([
+            m03c5().set(self.player.display_name),
+            m010c().set([
+                [
+                    m00b5().set(0x2ac950),
+                    m03df().set(0x237),
+                    m0287().set(0x645),
+                    m0282().set(0x85d),
+                    m0276().set(0x355),
+                    m0326().set("Dome City"),
+                    m0563().set(0x1f4),
+                    m0480().set(0xb),
+                ],
+            ]),
+            m0180(),
+            m0136()
+        ]))

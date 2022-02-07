@@ -96,6 +96,11 @@ class twobytes():
         self.ident = ident
         self.value = value
 
+    def set(self, value):
+        assert 0 <= value <= 0xFFFF
+        self.value = value
+        return self
+
     def write(self, stream):
         stream.write(struct.pack('<HH', self.ident, self.value))
 
@@ -879,10 +884,10 @@ class m046f(fourbytes):
         super().__init__(0x046f)
 #
 
-class m046f(fourbytes):
+class m0473(nbytes):
     def __init__(self):
-        super().__init__(0x046f)
-#
+        super().__init__(0x0473, hexparse('00 00 00 00 00 00 00 00 '
+                                          '00 00 00 00 00 00 00 00'))
 
 class m0480(fourbytes):
     def __init__(self):
@@ -1161,24 +1166,14 @@ class m00e9(arrayofenumblockarrays):
         return self
 
 
-
-# ------------------------------------------------------------
-# enumblockarrays
-# ------------------------------------------------------------
-
-class a003b(enumblockarray):
-    def __init__(self):
-        super().__init__(0x003b)
-
-
 # ------------------------------------------------------------
 # special fields
 # ------------------------------------------------------------
 
 # Player password
-class m0056(variablelengthbytes):
+class m0071(variablelengthbytes):
     def __init__(self):
-        super().__init__(0x0056, b'0' * 90)
+        super().__init__(0x0071, b'0' * 90)
 
     def read(self, stream):
         super().read(stream)
@@ -1187,6 +1182,7 @@ class m0056(variablelengthbytes):
         return self
 
 
+'''
 # Server password
 class m032e(passwordlike):
     def __init__(self):
@@ -1196,6 +1192,7 @@ class m032e(passwordlike):
 class m0620(passwordlike):
     def __init__(self):
         super().__init__(0x0620, b'0')
+'''
 
 
 class originalfragment():
