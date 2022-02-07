@@ -282,6 +282,776 @@ class passwordlike(variablelengthbytes):
         return self
 
 
+
+
+class m0016(nbytes):
+    def __init__(self):
+        super().__init__(0x0016, hexparse('00 00 00'))
+#
+
+class m001c(fourbytes):
+    def __init__(self):
+        super().__init__(0x001c)
+#
+
+class m001f(fourbytes):
+    def __init__(self):
+        super().__init__(0x001f)
+#
+
+class m0020(stringenum):
+    def __init__(self):
+        super().__init__(0x0020, '')
+#AgencyDescription
+
+class m0023(stringenum):
+    def __init__(self):
+        super().__init__(0x0023, '')
+#DailyMessage
+
+class m0024(stringenum):
+    def __init__(self):
+        super().__init__(0x0024, '')
+#AgencyName
+
+class m0029(fourbytes):
+    def __init__(self):
+        super().__init__(0x0029)
+#
+
+class m002C(stringenum):
+    def __init__(self):
+        super().__init__(0x002C, '')
+#AllianceName
+
+class a0034(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0034)
+#
+
+class a0036(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0036)
+#
+
+class a0039(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0039)
+#
+
+class a003b(enumblockarray):
+    def __init__(self):
+        super().__init__(0x003b)
+#
+
+class a003e(enumblockarray):
+    def __init__(self):
+        super().__init__(0x003e)
+#
+
+class a0042(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0042)
+#
+
+class m005d(stringenum):
+    def __init__(self):
+        super().__init__(0x005d, '')
+#
+
+class m0064(nbytes):
+    def __init__(self):
+        super().__init__(0x0064, hexparse('00 00 00 00 00 00 00 00'))
+#
+
+class a0071(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0071)
+#
+
+class a0071(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0071)
+#
+
+class a0072(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0072)
+#
+
+class a0073(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0073)
+#
+
+class a0082(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0082)
+#
+
+class a0088(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0088)
+#
+
+class a008d(enumblockarray):
+    def __init__(self):
+        super().__init__(0x008d)
+#
+
+class m008d(onebyte):
+    def __init__(self):
+        super().__init__(0x008d)
+#
+
+class a008e(enumblockarray):
+    def __init__(self):
+        super().__init__(0x008e)
+#
+
+class m009b(fourbytes):
+    def __init__(self):
+        super().__init__(0x009b)
+#
+
+class m00b5(fourbytes):
+    def __init__(self):
+        super().__init__(0x00b5)
+#Character ID or class
+
+class m00bd(fourbytes):
+    def __init__(self):
+        super().__init__(0x00bd)
+#
+
+class m00be(fourbytes):
+    def __init__(self):
+        super().__init__(0x00be)
+#
+
+class m00bf(nbytes):
+    def __init__(self):
+        super().__init__(0x00bf, hexparse('00 00 00 00 00 00 00 00'))
+#
+
+class a00c2(enumblockarray):
+    def __init__(self):
+        super().__init__(0x00c2)
+#
+
+class m00c2(stringenum):
+    def __init__(self):
+        super().__init__(0x00c2, '')
+#
+
+class a00da(enumblockarray):
+    def __init__(self):
+        super().__init__(0x00da)
+#
+
+class m00db(fourbytes):
+    def __init__(self):
+        super().__init__(0x00db)
+#
+
+class m00e4(fourbytes):
+    def __init__(self):
+        super().__init__(0x00e4)
+#
+
+class m00f4(fourbytes):
+    def __init__(self):
+        super().__init__(0x00f4)
+#
+
+class m00f6(fourbytes):
+    def __init__(self):
+        super().__init__(0x00f6)
+#
+
+class m0104(twobytes):
+    def __init__(self):
+        super().__init__(0x0104)
+#
+
+class m010c(arrayofenumblockarrays):
+    def __init__(self):
+        super().__init__(0x010c)
+#
+
+class m0110(fourbytes):
+    def __init__(self):
+        super().__init__(0x0110)
+#
+
+class a0126(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0126)
+#
+
+class m0136(arrayofenumblockarrays):
+    def __init__(self):
+        super().__init__(0x0136)
+#
+
+class a0144(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0144)
+#
+
+class m0152(arrayofenumblockarrays):
+    def __init__(self):
+        super().__init__(0x0152)
+#
+
+class m0170(arrayofenumblockarrays):
+    def __init__(self):
+        super().__init__(0x0170)
+#
+
+class m0180(arrayofenumblockarrays):
+    def __init__(self):
+        super().__init__(0x0180)
+#
+
+class a0184(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0184)
+#
+
+class a0188(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0188)
+#
+
+class a01ae(enumblockarray):
+    def __init__(self):
+        super().__init__(0x01ae)
+#
+
+class a01bc(enumblockarray):
+    def __init__(self):
+        super().__init__(0x01bc)
+#
+
+class a01e8(enumblockarray):
+    def __init__(self):
+        super().__init__(0x01e8)
+#
+
+class m01f9(fourbytes):
+    def __init__(self):
+        super().__init__(0x01f9)
+#
+
+class m01ff(fourbytes):
+    def __init__(self):
+        super().__init__(0x01ff)
+#
+
+class a0200(enumblockarray):
+    def __init__(self):
+        super().__init__(0x0200)
+#
+
+class m0213(nbytes):
+    def __init__(self):
+        super().__init__(0x0213, hexparse('00 00 00'))
+#
+
+class m021c(fourbytes):
+    def __init__(self):
+        super().__init__(0x021c)
+#
+
+class m021c(fourbytes):
+    def __init__(self):
+        super().__init__(0x021c)
+#
+
+class m0231(fourbytes):
+    def __init__(self):
+        super().__init__(0x0231)
+#
+
+class m0235(fourbytes):
+    def __init__(self):
+        super().__init__(0x0235)
+#
+
+class m023f(fourbytes):
+    def __init__(self):
+        super().__init__(0x023f)
+#item class
+
+class m0241(fourbytes):
+    def __init__(self):
+        super().__init__(0x0241)
+#
+
+class m025d(fourbytes):
+    def __init__(self):
+        super().__init__(0x025d)
+#
+
+class m0262(fourbytes):
+    def __init__(self):
+        super().__init__(0x0262)
+#
+
+class m0264(fourbytes):
+    def __init__(self):
+        super().__init__(0x0264)
+#
+
+class m0270(fourbytes):
+    def __init__(self):
+        super().__init__(0x0270)
+#
+
+class m0276(fourbytes):
+    def __init__(self):
+        super().__init__(0x0276)
+#gender
+
+class m0282(fourbytes):
+    def __init__(self):
+        super().__init__(0x0282)
+#PlayerHead?
+
+class m0287(fourbytes):
+    def __init__(self):
+        super().__init__(0x0287)
+#gender related?
+
+class m02a9(fourbytes):
+    def __init__(self):
+        super().__init__(0x02a9)
+#
+
+class m02b1(stringenum):
+    def __init__(self):
+        super().__init__(0x02b1, '')
+#
+
+class m02b2(nbytes):
+    def __init__(self):
+        super().__init__(0x02b2, hexparse('00 00 00 00 00 00 00 00'))
+#
+
+class m02bf(fourbytes):
+    def __init__(self):
+        super().__init__(0x02bf)
+#
+
+class m02c1(stringenum):
+    def __init__(self):
+        super().__init__(0x02c1, '')
+#
+
+class m02c8(fourbytes):
+    def __init__(self):
+        super().__init__(0x02c8)
+#
+
+class m02c9(fourbytes):
+    def __init__(self):
+        super().__init__(0x02c9)
+#
+
+class m02ca(fourbytes):
+    def __init__(self):
+        super().__init__(0x02ca)
+#
+
+class m02cb(fourbytes):
+    def __init__(self):
+        super().__init__(0x02cb)
+#
+
+class m02da(fourbytes):
+    def __init__(self):
+        super().__init__(0x02da)
+#item instance
+
+class m02e0(fourbytes):
+    def __init__(self):
+        super().__init__(0x02e0)
+#
+
+class m02ff(nbytes):
+    def __init__(self):
+        super().__init__(0x02ff, hexparse('00 00 00 00 00 00 00 00'))
+#
+
+class m0303(fourbytes):
+    def __init__(self):
+        super().__init__(0x0303)
+#
+
+class m0315(fourbytes):
+    def __init__(self):
+        super().__init__(0x0315)
+#
+
+class m0319(fourbytes):
+    def __init__(self):
+        super().__init__(0x0319)
+#
+
+class m0321(stringenum):
+    def __init__(self):
+        super().__init__(0x0321, '')
+#
+
+class m0322(fourbytes):
+    def __init__(self):
+        super().__init__(0x0322)
+#
+
+class m0325(fourbytes):
+    def __init__(self):
+        super().__init__(0x0325)
+#
+
+class m0326(stringenum):
+    def __init__(self):
+        super().__init__(0x0326, '')
+#Location
+
+class m0327(fourbytes):
+    def __init__(self):
+        super().__init__(0x0327)
+#
+
+class m0330(fourbytes):
+    def __init__(self):
+        super().__init__(0x0330)
+#
+
+class m0347(fourbytes):
+    def __init__(self):
+        super().__init__(0x0347)
+#
+
+class m0355(stringenum):
+    def __init__(self):
+        super().__init__(0x0355, '')
+#message
+
+class m0360(stringenum):
+    def __init__(self):
+        super().__init__(0x0360, '')
+#
+
+class m0365(fourbytes):
+    def __init__(self):
+        super().__init__(0x0365)
+#PlayerHead?
+
+class m0366(fourbytes):
+    def __init__(self):
+        super().__init__(0x0366)
+#
+
+class m036e(fourbytes):
+    def __init__(self):
+        super().__init__(0x036e)
+#
+
+class m0370(stringenum):
+    def __init__(self):
+        super().__init__(0x0370, '')
+#sender
+
+class m0371(fourbytes):
+    def __init__(self):
+        super().__init__(0x0371)
+#
+
+class m0375(twobytes):
+    def __init__(self):
+        super().__init__(0x0375)
+#
+
+class m0376(fourbytes):
+    def __init__(self):
+        super().__init__(0x0376)
+#
+
+class m0379(onebyte):
+    def __init__(self):
+        super().__init__(0x0379)
+#
+
+class m037a(stringenum):
+    def __init__(self):
+        super().__init__(0x037a, '')
+#
+
+class m0388(onebyte):
+    def __init__(self):
+        super().__init__(0x0388)
+#
+
+class m0395(fourbytes):
+    def __init__(self):
+        super().__init__(0x0395)
+#
+
+class m039f(twobytes):
+    def __init__(self):
+        super().__init__(0x039f)
+#
+
+class m03a5(fourbytes):
+    def __init__(self):
+        super().__init__(0x03a5)
+#
+
+class m03a8(twobytes):
+    def __init__(self):
+        super().__init__(0x03a8)
+#
+
+class m03c0(fourbytes):
+    def __init__(self):
+        super().__init__(0x03c0)
+#
+
+class m03c1(fourbytes):
+    def __init__(self):
+        super().__init__(0x03c1)
+#
+
+class m03c2(fourbytes):
+    def __init__(self):
+        super().__init__(0x03c2)
+#
+
+class m03c3(fourbytes):
+    def __init__(self):
+        super().__init__(0x03c3)
+#
+
+class m03c5(stringenum):
+    def __init__(self):
+        super().__init__(0x03c5, '')
+#PlayerName/receiver
+
+class m03d6(fourbytes):
+    def __init__(self):
+        super().__init__(0x03d6)
+#
+
+class m03df(fourbytes):
+    def __init__(self):
+        super().__init__(0x03df)
+#CharClass
+
+class m03fd(fourbytes):
+    def __init__(self):
+        super().__init__(0x03fd)
+#
+
+class m03fe(fourbytes):
+    def __init__(self):
+        super().__init__(0x03fe)
+#
+
+class m041e(fourbytes):
+    def __init__(self):
+        super().__init__(0x041e)
+#
+
+class m041f(stringenum):
+    def __init__(self):
+        super().__init__(0x041f, '')
+#RecruitmentMessage
+
+class m044c(fourbytes):
+    def __init__(self):
+        super().__init__(0x044c)
+#
+
+class m046f(fourbytes):
+    def __init__(self):
+        super().__init__(0x046f)
+#
+
+class m046f(fourbytes):
+    def __init__(self):
+        super().__init__(0x046f)
+#
+
+class m0480(fourbytes):
+    def __init__(self):
+        super().__init__(0x0480)
+#
+
+class m0485(fourbytes):
+    def __init__(self):
+        super().__init__(0x0485)
+#
+
+class m0489(fourbytes):
+    def __init__(self):
+        super().__init__(0x0489)
+#
+
+class m048e(fourbytes):
+    def __init__(self):
+        super().__init__(0x048e)
+#
+
+class m049e(fourbytes):
+    def __init__(self):
+        super().__init__(0x049e)
+#
+
+class m04bf(fourbytes):
+    def __init__(self):
+        super().__init__(0x04bf)
+#
+
+class m04c0(fourbytes):
+    def __init__(self):
+        super().__init__(0x04c0)
+#
+
+class m04c5(nbytes):
+    def __init__(self):
+        super().__init__(0x04c5, hexparse('00 00 00 00 00 00 00 00'))
+#
+
+class m04d4(onebyte):
+    def __init__(self):
+        super().__init__(0x04d4)
+#
+
+class m04da(fourbytes):
+    def __init__(self):
+        super().__init__(0x04da)
+#
+
+class m04e4(fourbytes):
+    def __init__(self):
+        super().__init__(0x04e4)
+#
+
+class m04e7(fourbytes):
+    def __init__(self):
+        super().__init__(0x04e7)
+#
+
+class m04ff(stringenum):
+    def __init__(self):
+        super().__init__(0x04ff, '')
+#
+
+class m0515(fourbytes):
+    def __init__(self):
+        super().__init__(0x0515)
+#
+
+class m052d(stringenum):
+    def __init__(self):
+        super().__init__(0x052d, '')
+#
+
+class m0531(stringenum):
+    def __init__(self):
+        super().__init__(0x0531, '')
+#
+
+class m0536(fourbytes):
+    def __init__(self):
+        super().__init__(0x0536)
+#
+
+class m053d(fourbytes):
+    def __init__(self):
+        super().__init__(0x053d)
+#
+
+class m053e(fourbytes):
+    def __init__(self):
+        super().__init__(0x053e)
+#
+
+class m0541(fourbytes):
+    def __init__(self):
+        super().__init__(0x0541)
+#
+
+class m0542(fourbytes):
+    def __init__(self):
+        super().__init__(0x0542)
+#
+
+class m0552(fourbytes):
+    def __init__(self):
+        super().__init__(0x0552)
+#
+
+class m0563(fourbytes):
+    def __init__(self):
+        super().__init__(0x0563)
+#Level (xp) false? changes every login
+
+class m0572(fourbytes):
+    def __init__(self):
+        super().__init__(0x0572)
+#
+
+class m0598(onebyte):
+    def __init__(self):
+        super().__init__(0x0598)
+#
+
+class m05c3(fourbytes):
+    def __init__(self):
+        super().__init__(0x05c3)
+#
+
+class m05d1(onebyte):
+    def __init__(self):
+        super().__init__(0x05d1)
+#
+
+class m05f4(arrayofenumblockarrays):
+    def __init__(self):
+        super().__init__(0x05f4)
+#
+
+class m05f5(fourbytes):
+    def __init__(self):
+        super().__init__(0x05f5)
+#
+
+class m05f6(fourbytes):
+    def __init__(self):
+        super().__init__(0x05f6)
+#
+
+class m05f7(fourbytes):
+    def __init__(self):
+        super().__init__(0x05f7)
+#
+
+class m0609(fourbytes):
+    def __init__(self):
+        super().__init__(0x0609)
+#
+
+class m060a(fourbytes):
+    def __init__(self):
+        super().__init__(0x060a)
+#
+
+
+
+
 # ------------------------------------------------------------
 # onebyte
 # ------------------------------------------------------------

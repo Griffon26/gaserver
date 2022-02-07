@@ -5,7 +5,7 @@
 0x0023,SizedContent,DailyMessage
 0x0024,SizedContent,AgencyName
 0x0029,FourBytes,
-0x002C,TwoBytes,
+0x002C,SizedContent,AllianceName
 0x0034,EnumBlockArray,
 0x0036,EnumBlockArray,
 0x0039,EnumBlockArray,
@@ -63,9 +63,9 @@
 0x0262,FourBytes,
 0x0264,FourBytes,
 0x0270,FourBytes,
-0x0276,FourBytes,gender?
-0x0282,FourBytes,
-0x0287,FourBytes,
+0x0276,FourBytes,gender
+0x0282,FourBytes,PlayerHead?
+0x0287,FourBytes,gender related?
 0x02a9,FourBytes,
 0x02b1,SizedContent,
 0x02b2,EightBytes,
@@ -90,7 +90,7 @@
 0x0347,FourBytes,
 0x0355,SizedContent,message
 0x0360,SizedContent,
-0x0365,FourBytes,
+0x0365,FourBytes,PlayerHead?
 0x0366,FourBytes,
 0x036e,FourBytes,
 0x0370,SizedContent,sender
@@ -125,7 +125,7 @@
 0x049e,FourBytes,
 0x04bf,FourBytes,
 0x04c0,FourBytes,
-0x04c5,TwoBytes,
+0x04c5,EightBytes,
 0x04d4,OneByte,
 0x04da,FourBytes,
 0x04e4,FourBytes,
@@ -140,7 +140,7 @@
 0x0541,FourBytes,
 0x0542,FourBytes,
 0x0552,FourBytes,
-0x0563,FourBytes,Level (xp)
+0x0563,FourBytes,Level (xp) false? changes every login
 0x0572,FourBytes,
 0x0598,OneByte,
 0x05c3,FourBytes,
