@@ -33,6 +33,7 @@
 0x00da,EnumBlockArray,
 0x00db,FourBytes,
 0x00e4,FourBytes,
+0x00e9,EightBytes,
 0x00f4,FourBytes,
 0x00f6,FourBytes,
 0x0104,TwoBytes,
@@ -100,6 +101,7 @@
 0x0379,OneByte,
 0x037a,SizedContent,
 0x0388,OneByte,
+0x0390,FourBytes,
 0x0395,FourBytes,
 0x039f,TwoBytes,
 0x03a5,FourBytes,
@@ -108,10 +110,11 @@
 0x03c1,FourBytes,
 0x03c2,FourBytes,
 0x03c3,FourBytes,
-0x03c5,SizedContent,PlayerName/receiver
+0x03c5,SizedContent,PLAYER_NAME
 0x03d6,FourBytes,
 0x03df,FourBytes,CharClass
 0x03fd,FourBytes,
+0x03f5,SizedContent,
 0x03fe,FourBytes,
 0x041e,FourBytes,
 0x041f,SizedContent,RecruitmentMessage
