@@ -35,7 +35,7 @@ if __name__ == '__main__':
                 elif "TYPE_UINT64" in line:
                     res_str = re.sub(r"\ +([0-9]+).+Name\:\ ([0-9a-zA-Z_]*).+(TYPE_UINT64)", r"\1,EightBytes,\2", line)
                 
-                #decstr = re.compile('[0-9]+').match(res_str)
+                decstr = re.compile('[0-9]+').match(res_str)
                 #doesn't matter #res_str = re.sub(decstr.group(), str(hex(int(decstr.group()))), res_str)
-                #res_str = re.sub(decstr.group(), "{0:#0{1}x}".format((int(decstr.group())),6), res_str)
+                res_str = re.sub(decstr.group(), "{0:#0{1}x}".format((int(decstr.group())),6), res_str)
                 outfile.write(res_str)
