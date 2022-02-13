@@ -23,111 +23,9 @@ from itertools import zip_longest
 import struct
 
 known_int_values = {
-    203001: 'CONST_STAT_ACO_KS_FIVE',
-    203002: 'CONST_STAT_ACO_KS_TEN',
-    203003: 'CONST_STAT_ACO_KS_FIFTEEN',
-    203004: 'CONST_STAT_ACO_KS_TWENTY',
-    203005: 'CONST_STAT_ACO_KS_TWENTYFIVE',
-    203006: 'CONST_STAT_ACO_KS_FIVE_SNIPING',
-    203007: 'CONST_STAT_ACO_KS_TEN_SNIPING',
-    203008: 'CONST_STAT_ACO_KS_FIFTEEN_SNIPING',
-    203009: 'CONST_STAT_ACO_KS_FIVE_EXPLOSIVE',
-    203010: 'CONST_STAT_ACO_KS_TEN_EXPLOSIVE',
-    203011: 'CONST_STAT_ACO_KS_FIFTEEN_EXPLOSIVE',
-    203012: 'CONST_STAT_ACO_KS_FIVE_SPINFUSOR',
-    203013: 'CONST_STAT_ACO_KS_TEN_SPINFUSOR',
-    203014: 'CONST_STAT_ACO_KS_FIFTEEN_SPINFUSOR',
-    203015: 'CONST_STAT_ACO_MK_DOUBLE',
-    203016: 'CONST_STAT_ACO_MK_TRIPLE',
-    203017: 'CONST_STAT_ACO_MK_QUATRA',
-    203018: 'CONST_STAT_ACO_MK_ULTRA',
-    203019: 'CONST_STAT_ACO_MK_TEAM',
-    203020: 'CONST_STAT_ACO_NOJOY',
-    203021: 'CONST_STAT_ACO_REVENGE',
-    203022: 'CONST_STAT_ACO_AFTERMATH',
-    203023: 'CONST_STAT_ACO_FIRSTBLOOD',
-    203024: 'CONST_STAT_ACO_BLUEPLATESPECIAL',
-    203025: 'CONST_STAT_ACO_STICKYKILL',
-    203026: 'CONST_STAT_ACO_HEADSHOT',
-    203027: 'CONST_STAT_ACO_ARTILLERYSTRIKE',
-    203028: 'CONST_STAT_ACO_MELEE',
-    203029: 'CONST_STAT_ACO_ROADKILL',
-    203030: 'CONST_STAT_ACO_FLAG_CAPTURE',
-    203031: 'CONST_STAT_ACO_FLAG_GRAB',
-    203032: 'CONST_STAT_ACO_BK_GEN',
-    203033: 'CONST_STAT_ACO_RABBITKILL',
-    203034: 'CONST_STAT_ACO_KILLASRABBIT',
-    203035: 'CONST_STAT_ACO_FINALBLOW',
-    203036: 'CONST_STAT_ACO_REPAIR',
-    203037: 'CONST_STAT_ACO_BK_TURRET',
-    203039: 'CONST_STAT_ACO_ASSIST',
-    203040: 'CONST_STAT_ACO_FLAG_RETURN',
-    203041: 'CONST_STAT_ACO_BK_RADAR',
-    203042: 'CONST_STAT_ACO_FLAG_ASSIST',
-    203043: 'CONST_STAT_ACO_AIRMAIL',
-    203044: 'CONST_STAT_ACO_GAME_COMPLETE',
-    203045: 'CONST_STAT_ACO_GAME_WINNER',
-    203046: 'CONST_STAT_ACO_FLAG_GRABDM',
-    203047: 'CONST_STAT_ACO_FLAG_HOLDER',
-    203048: 'CONST_STAT_ACO_FLAG_KILLER',
-    203049: 'CONST_STAT_ACO_FLAG_GRABFAST',
-    203050: 'CONST_STAT_ACO_DEFENSE_GEN',
-    203051: 'CONST_STAT_ACO_DEFENSE_FLAG',
-    203052: 'CONST_STAT_ACO_VD_BIKE',
-    203053: 'CONST_STAT_ACO_VD_TANK',
-    203054: 'CONST_STAT_ACO_VD_SHRIKE',
-    203055: 'CONST_STAT_ACO_FLAG_GRABE',
-    203056: 'CONST_STAT_ACO_FLAG_GRABLLAMA',
-    203057: 'CONST_STAT_ACO_ASSIST_VEHICLE',
-    203058: 'CONST_STAT_ACO_FLAG_GRABULTRA',
-    203059: 'CONST_STAT_ACO_BENCHEM',
-    203060: 'CONST_STAT_ACO_DOUBLEDOWN',
-    203061: 'CONST_STAT_ACO_LASTMANSTANDING',
-    203062: 'CONST_STAT_ACO_MIRACLE',
-    203063: 'CONST_STAT_ACO_NOTAMONGEQUALS',
-    203064: 'CONST_STAT_ACO_ONEMANARMY',
-    203065: 'CONST_STAT_ACO_TRIBALHONOR',
-    203066: 'CONST_STAT_ACO_UNITEDWESTAND',
-    203067: 'CONST_STAT_ACO_HOLDTHELINE',
-    203068: 'CONST_STAT_ACO_CAPTUREANDHOLD',
-    203069: 'CONST_STAT_ACO_BASEASSIST',
-    203070: 'CONST_STAT_ACO_TURRETASSIST',
-    203071: 'CONST_STAT_ACO_HOTAIR',
-    204001: 'CONST_STAT_AWD_CREDITS_EARNED',
-    204002: 'CONST_STAT_AWD_CREDITS_SPENT',
-    204003: 'CONST_STAT_AWD_DESTRUCTION_DEPLOYABLE',
-    204004: 'CONST_STAT_AWD_DESTRUCTION_VEHICLE',
-    204005: 'CONST_STAT_AWD_DISTANCE_HEADSHOT',
-    204006: 'CONST_STAT_AWD_DISTANCE_KILL',
-    204007: 'CONST_STAT_AWD_DISTANCE_SKIED',
-    204008: 'CONST_STAT_AWD_KILLS',
-    204009: 'CONST_STAT_AWD_KILLS_DEPLOYABLE',
-    204010: 'CONST_STAT_AWD_KILLS_MIDAIR',
-    204011: 'CONST_STAT_AWD_KILLS_VEHICLE',
-    204012: 'CONST_STAT_AWD_REPAIRS',
-    204013: 'CONST_STAT_AWD_SPEED_FLAGCAP',
-    204014: 'CONST_STAT_AWD_SPEED_FLAGGRAB',
-    204015: 'CONST_STAT_AWD_SPEED_SKIED',
-    204016: 'CONST_STAT_AWD_FLAG_RETURNS',
-    204017: 'CONST_STAT_AWD_DEATHS',
 }
 
 known_fields = {
-    0x0033: 'assists',
-    0x00d2: 'score',
-    0x0184: 'deaths',
-    0x028e: 'kills',
-    0x02b2: 'map id',
-    0x02c2: 'map duration',
-    0x02c4: 'match id',
-    0x0348: 'player unique id',
-    0x04c0: 'bonus xp',
-    0x04cb: 'starting xp',
-    0x0505: 'total xp',
-    0x0596: 'blood eagle score',
-    0x0597: 'diamond sword score',
-    0x0605: 'base xp',
-    0x0606: 'vip xp',
 }
 
 
@@ -145,788 +43,39 @@ class ParserState():
         # - it appears to be 6 for TrGameReplicationInfo_0
         # - it appears to be 7 for TrPlayerPawn_0
 
-        TrInventoryManagerProps = {
-            '01111': {'name': 'Instigator',
-                       'type': bitarray,
-                       'size': 10},
-            '11111': {'name': 'Owner',
-                       'type': bitarray,
-                       'size': 10},
-            '10101': {'name': 'InventoryChain',
-                       'type': bitarray,
-                       'size': 11},
+        FirstServerObjectProps = {
+            '00000000': {'name': 'somestring',
+                         'type': str}
         }
 
-        TrPlayerPawnProps = {
-            '1010000': {'name': 'bNetOwner',
-                        'type': bool},
-            '1101000': {'name': 'RemoteRole',
-                        'type': bitarray,
-                        'size': 2},
-            '1111000': {'name': 'Owner',
-                        'type': bitarray,
-                        'size': 11},
-            '1100100': {'name': 'Rotation',
-                        'type': bitarray,
-                        'size': 24},
-            '1001100': {'name': 'InvManager',
-                        'type': bitarray,
-                        'size': 11},
-            '0111100': {'name': 'PlayerReplicationInfo',
-                        'type': bitarray,
-                        'size': 11},
-            '1111100': {'name': 'HealthMax',
-                        'type': int},
-            '0000010': {'name': 'Health',
-                        'type': int},
-            '1000010': {'name': 'AirControl',
-                        'type': int},
-            '0110010': {'name': 'GroundSpeed',
-                        'type': int},
-            '1101010': {'name': 'bCanSwatTurn',
-                        'type': bool},
-            '0011010': {'name': 'bSimulateGravity',
-                        'type': bool},
-            '1111010': {'name': 'Controller',
-                        'type': bitarray,
-                        'size': 11},
-            # size varies:
-            # 10101000000
-            # 000
-            '1000110': {'name': 'CompressedBodyMatColor',
-                        'type': bitarray,
-                        'size': 3},
-            '0100110': {'name': 'ClientBodyMatDuration',
-                        'type': int},
-            '0101110': {'name': 'LastTakeHitInfo',
-                        'type': bitarray,
-                        'size': 139},
-            '0111110': {'name': 'unknown int field',
-                        'type': int},
-            '1001001': {'name': 'CurrentWeaponAttachmentClass',
-                        'type': int},
-            '1100101': {'name': 'r_fPowerPoolRechargeRate',
-                        'type': int},
-            '0010101': {'name': 'r_fMaxPowerPool',
-                        'type': int},
-            '1010101': {'name': 'r_fCurrentPowerPool',
-                        'type': int},
-            '1000011': {'name': 'r_bDetectedByEnemyScanner',
-                        'type': bool},
-            '1100011': {'name': 'r_bIsInvulnerable',
-                        'type': bool},
-            '1110011': {'name': 'r_bIsSkiing',
-                        'type': bool},
-            '0001011': {'name': 'r_bIsHealthRecharging',
-                        'type': bool},
-            '0111011': {'name': 'RPC ClientUpdateHUDHealth',
-                        'type': [
-                            {'name': 'NewHealth',
-                             'type': int},
-                            {'name': 'NewHealthMax',
-                             'type': int}
-                        ]},
-            '1111011': {'name': 'RPC PlayHardLandingEffect',
-                        'type': bitarray,
-                        'size': 53},
-            '1100111': {'name': 'r_nFlashReloadSecondaryWeapon',
-                        'type': bitarray,
-                        'size': 8}
-        }
-
-        TrDeviceProps = {
-            '100001' : { 'name' : 'r_AmmoCount',
-                         'type' : bitarray,
-                         'size' : 64 },
-            '010001' : { 'name' : 'r_bIsReloading',
-                         'type' : bool },
-            '110001' : { 'name' : 'r_bReadyToFire',
-                         'type' : bool },
-            '001001' : { 'name' : 'r_eEquipAt',
-                         'type' : bitarray,
-                         'size' : 4 },
-            '000101' : { 'name' : 'r_bTargetLocked',
-                         'type' : bool},
-            '111101' : { 'name' : 'Owner',
-                         'type' : bitarray,
-                         'size' : 10 },
-            '101011' : { 'name' : 'InvManager',
-                         'type' : bitarray,
-                         'size' : 10 },
-            '011011' : { 'name' : 'Inventory',
-                         'type' : bitarray,
-                         'size' : 10 },
-        }
-
-        TrRadarStationProps = {
-            '000111': {'name': 'r_bReset',
-                       'type': bitarray,
-                       'size': 7},
-            '010111': {'name': 'r_ShieldHealth',
-                       'type': bitarray,
-                       'size': 31}
-        }
-
-        TrInventoryStationProps = {
-            '000111': {'name': 'r_bReset',
-                       'type': bitarray,
-                       'size': 7},
-        }
-
-        TrRepairStationProps = {
-            '000111': {'name': 'r_bReset',
-                       'type': bitarray,
-                       'size': 7},
-        }
-
-        TrVehicleStationProps = {
-            '10100': {'name': 'r_nCanSpawnVehicle',
-                      'type': bitarray,
-                      'size': 33},
-            '11111': {'name': 'r_MaxHealth',
-                      'type': int},
-        }
-
-        # unsure
-        TrInventoryStationCollisionProps = {
-            # '101100' : { 'name' : 'RelativeLocation2',
-            #              'type' : bitarray,
-            #              'size' : 2 },
-            # '001001' : { 'name' : 'RelativeLocation',
-            #              'type' : bitarray,
-            #              'size' : 10 },
-            # '011111' : { 'name': 'Base',
-            #              'type': bitarray,
-            #              'size': 30},
-        }
-
-        TrPowerGeneratorProps = {
-            '00000': {'name': 'r_Health',
-                      'type': bitarray,
-                      'size': 33},
-            '10000': {'name': 'r_nDowntimeRemaining',
-                      'type': bitarray,
-                      'size': 33},
-            '11011': {'name': 'r_bInDestroyedState',
-                      'type': bool},
-            '00111': {'name': 'r_bIsPowered',
-                      'type': bool},
-            '00011': {'name': 'r_bReset',
-                      'type': bitarray,
-                      'size': 8},
-
-            # possible values:
-            # 1110 101001011111111110011001001
-            # 1110 101001011111111110101101001
-            # 1110 101001011111111110001011001
-            # 1110 101001011111111110100111001
-            # 1110 101001011111111110011000001
-            # 1110 101001011111111110101100001
-            # 1110 101001011111111110011010001
-            # 1110 011111011111111110111010001
-            # 1110 101001011111111110011110001
-            # 0001 110011001111111111101111000001
-            # 0101 100010011011111111111110111110000001
-            # 0101 001001101011111111111110011100000001
-            '01111': {'name': 'r_vReplicatedHitInfo',
-                      'type': 'fvector'},
-            '11111': {'name': 'r_MaxHealth',
-                      'type': int},
-        }
-
-        # TODO: It looks like RPC identifiers are only 6 bits when sent along with properties.
-        # When sent along with a counter, we need more bits to distinguish between them.
-        TrPlayerControllerProps = {
-            '01000000': {'name': 'bCollideWorld',
-                         'type': bitarray,
-                         'size': 2},
-            '11000000': {'name': 'RPC ClientMatchOver',
-                         'type': [
-                             {'name': 'unknown',
-                              'type': 'flag'},
-                             {'name': 'Winner',
-                              'type': int},
-                             {'name': 'WinnerName',
-                              'type': str}
-                         ]},
-            '00100000': {'name': '!!!!!!!!!INTERESTING Unknown INTERESTING!!!!!!!!!',
-                         'type': bitarray,
-                         'size': 10},
-            '00110000': {'name': 'RPC ClientSetLastDamagerInfo',
-                         'type': bitarray,
-                         'size': 35},
-            '10110000': {'name': 'RPC ClientShowOverheadNumber',
-                         'type': [
-                             {'name': 'unknown',
-                              'type': bitarray,
-                              'size': 120}
-                         ]},
-            '01001000': {'name': 'RPC ClientQueueAccolade',
-                         'type': [
-                             {'name': 'Accolade',
-                              'type': bitarray,
-                              'size': 33},
-                             {'name': 'CreditsAwarded',
-                              'type': int}
-                         ]},
-            # '10001000': {'name': 'RPC ClientPlayerResettingAndRespawning',
-            #            'type': bitarray,
-            #            'size': 1},
-            '10101000': {'name': 'PlayerReplicationInfo',
-                         'type': bitarray,
-                         'size': 11},
-            '01100000': {'name': 'RPC UpdateMatchCountdown',
-                         'type': [
-                             {'name': 'unknown',
-                              'type': 'flag'},
-                             {'name': 'Seconds',
-                              'type': int}
-                         ]},
-            '01101000': {'name': 'Pawn',
-                         'type': bitarray,
-                         'size': 11},
-            '00011000': {'name': 'RPC ClientSetRotation',
-                         'type': bitarray,
-                         'size': 2},
-            '01011000': {'name': 'RPC ClientSwitchToBestWeapon',
-                         'type': bitarray,
-                         'size': 1},
-            # # variable length, so currently it screws up what follows
-            '00100100': {'name': 'RPC ClientGotoState',
-                         'type': [
-                             {'name': 'NewState',
-                              'type': bitarray,
-                              'size': 11},
-                             {'name': 'NewLabel',
-                              'type': bitarray,
-                              'size': 11}
-                         ]},
-            '01100100': {'name': 'RPC GivePawn',
-                         'type': [
-                             {'name': 'NewPawn',
-                              'type': bitarray,
-                              'size': 11}
-                         ]},
-            # the size of this one varies... these appear to be valid:
-            # 1 01100110010011100000000000000000 1 11000000000000000000000000000000 1 11110000000 0 1 10101000000
-            # 1 01101100100010010100000000000000 1 10000000000000000000000000000000 0 1 11110000000 1 01000111110001010100000000000000
-            # 1 01111111000010110100000000000000 1 00000000100000000000000000000000 1 11110000000 0 0
-            # 1 01111111000010110100000000000000 1 10100000000000000000000000000000 0 0 0
-            # 1 00000000011111101100000000000000 1 11100000000000000000000000000000 0 0 0
-            '10010100': {'name': 'RPC ReceiveLocalizedMessage',
-                         'type': [
-                             {'name': 'Message',
-                              'type': int},
-                             {'name': 'Switch',
-                              'type': int},
-                             {'name': 'RelatedPRI_1',
-                              'type': bitarray,
-                              'size': 11},
-                             {'name': 'RelatedPRI_2',
-                              'type': int},
-                             {'name': 'OptionalObject',
-                              'type': bitarray,
-                              'size': 11},
-                         ]},
-            # '11010100': {'name': 'RPC ClientHearSound',
-            #            'type': bitarray,
-            #            'size': 48},
-            '11011100': {'name': 'RPC VeryShortClientAdjustPosition',
-                         'type': [
-                             {'name': 'TimeStamp',
-                              'type': float},
-                             {'name': 'NewLocX',
-                              'type': float},
-                             {'name': 'NewLocY',
-                              'type': float},
-                             {'name': 'NewLocZ',
-                              'type': float},
-                             {'name': 'newBase',
-                              'type': bitarray,
-                              'size': 32}
-                         ]},
-            '00111100': {'name': 'RPC ShortClientAdjustPosition',
-                         'type': [
-                             {'name': 'TimeStamp',
-                              'type': float},
-                             {'name': 'newState',
-                              'type': bitarray,
-                              'size': 11},
-                             {'name': 'newPhysics',
-                              'type': bitarray,
-                              'size': 4},
-                             {'name': 'NewLocX',
-                              'type': float},
-                             {'name': 'NewLocY',
-                              'type': float},
-                             {'name': 'NewLocZ',
-                              'type': float},
-                             {'name': 'newBase',
-                              'type': bitarray,
-                              'size': 32}
-                         ]},
-            '01111100': {'name': 'RPC ClientAckGoodMove',
-                         'type': [
-                             {'name': 'TimeStamp',
-                              'type': float}
-                         ]},
-            '11111100': {'name': 'RPC ClientAdjustPosition',
-                         'type': [
-                             {'name': 'TimeStamp',
-                              'type': float},
-                             {'name': 'newState',
-                              'type': bitarray,
-                              'size': 11},
-                             {'name': 'newPhysics',
-                              'type': bitarray,
-                              'size': 4},
-                             {'name': 'NewLocX',
-                              'type': float},
-                             {'name': 'NewLocY',
-                              'type': float},
-                             {'name': 'NewLocZ',
-                              'type': float},
-                             {'name': 'NewVelX',
-                              'type': float},
-                             {'name': 'NewVelY',
-                              'type': float},
-                             {'name': 'NewVelZ',
-                              'type': float},
-                             {'name': 'newBase',
-                              'type': bitarray,
-                              'size': 32}
-                         ]},
-
-            # reliable client function ClientGameEnded(optional Actor EndGameFocus, optional bool bIsWinner)
-            '00110010': {'name': 'RPC ClientGameEnded',
-                         'type': bitarray,
-                         'size': 2},
-#                         'type': [
-#                             {'name': 'param1',
-#                              'type': bool},
-#                             {'name': 'param2',
-#                              'type': bool}
-#                          ]},
-            # 110101110000 100000000000000000000000000000000100000000000000000000000000000000100
-            # 110100000000 100000000000000000000000000000000100000000000000000000000000000000100
-            # 100001010000 101011110000000000000 100000000000000000000000000000000100000000000000000000000000000000100
-            '10110010': {'name': 'RPC ClientSetViewTarget',
-                         # 'type': [
-                         #     {'name': 'PlayerReplicationInfo',
-                         #      'type': bitarray,
-                         #      'size': 11},
-                         #     {'name':
-                         'type': bitarray,
-                         'size': 81},
-            '11101010': {'name': 'RPC ClientPlayForceFeedbackWaveform',
-                         'type': [
-                             {'name': 'FFWaveform',
-                              'type': int},
-                             {'name': 'FFWaveformInstigator',
-                              'type': None}
-                         ]},
-            # '00111010': {'name': 'bNetOwner',
-            #            'type': bitarray,
-            #            'size': 2},
-            '10110110': {'name': 'RPC ClientWriteLeaderboardStats',
-                         'type': [
-                             {'name': 'OnlineStatsWriteClass',
-                              'type': None}
-                         ]},
-            '11101110': {'name': 'RPC ClientEndOnlineGame',
-                         'type': 'flag'},
-            # '01110001': {'name': 'Rotation',
-            #              'type': bitarray,
-            #              'size': 12},
-            '01001001': {'name': 'RPC PlayStartupMessage',
-                         'type': [
-                             {'name': 'StartupStage',
-                              'type': bitarray,
-                              'size': 8}
-                         ]},
-            # varies in size:
-            # 11110100000011001111001101000110101011111101100000110001010100000000000000
-            # 0101111110101011001010001010100000000000000
-            '11001001': {'name': 'RPC ClientPlayTakeHit',
-                         'type': bitarray,
-                         'size': 43},
-            # '00101001': {'name': 'RPC ClientSetBehindView',
-            #              'type': bitarray,
-            #              'size': 1},
-            # '11011001': {'name': 'RPC ClientPawnDied',
-            #              'type': 'flag'},
-            # '00011101': {'name': 'RemoteRole',
-            #              'type': bitarray,
-            #              'size': 3},
-            '01100011': {'name': 'RPC ClientMySaberLauncherTargetingUpdated',
-                         'type': [
-                             {'name': 'MissileLockValue',
-                              'type': bitarray,
-                              'size': 3}
-                         ]},
-            '00101011': {'name': 'RPC ClientEndTeamSelect',
-                         'type': [
-                             {'name': 'RequestedTeamNum',
-                              'type': int}
-                         ]},
-            '10111101': {'name': 'r_nCurrentCredits',
-                         'type': bitarray,
-                         'size': 32},
-            '01000011': {'name': 'r_bNeedLoadout',
-                         'type': bool},
-            '11000011': {'name': 'r_bNeedTeam',
-                         'type': bool},
-            '11100011': {'name': 'RPC ClientSeekingMissileTargetingSelfEvent',
-                         'type': [
-                             {'name': 'EventSwitch',
-                              'type': int}
-                         ]},
-        }
-
-        TrBaseTurretProps = {
-            '010001': {'name': 'r_TargetPawn',
-                       'type': bitarray,
-                       'size': 11},
-            '110001': {'name': 'r_FlashCount',
-                       'type': bitarray,
-                       'size': 8},
-            '000111': {'name': 'r_bReset',
-                       'type': bitarray,
-                       'size': 7},
-            '010111': {'name': 'r_ShieldHealth',
-                       'type': bitarray,
-                       'size': 31}
-        }
-
-        TrCTFBaseProps = {
-            '111011': {'name': 'myFlag',
-                       'type': bitarray,
-                       'size': 10}
-        }
-
-        TrProjProps = {
-            '00000': {'name': 'Velocity',
-                      'type': bitarray,
-                      'size': 43 },
-            '10000': {'name': 'bCollideActors',
-                      'type': bool },
-            '11100': {'name': 'bTearOff',
-                      'type': bool},
-            '10100': {'name': 'bNetOwner',
-                      'type': bool},
-            '10110': {'name': 'Base',
-                      'type': bitarray,
-                      'size': 31 },
-            '01110': {'name': 'Rotation',
-                      'type': bitarray,
-                      'size': 19 },
-            '10011': {'name': 'r_vSpawnLocation',
-                      'type': bitarray,
-                      'size': 52},
-            '11111': {'name': 'Owner',
-                      'type': bitarray,
-                      'size': 10}
-        }
-
-        TrDroppedPickupProps = {
-            '101101' : { 'name' : 'InventoryClass',
-                         'type' : bitarray,
-                         'size' : 31 },
-            '011101' : { 'name' : 'Base',
-                         'type' : bitarray,
-                         'size' : 30 },
-            '110011' : { 'name' : 'Rotation',
-                         'type' : bitarray,
-                         'size' : 10 },
-            '101011' : { 'name' : 'bFadeOut',
-                         'type' : 'flag' }
-        }
-
-        TrGameReplicationInfoProps = {
+        SomethingWithPlayerProps = {
             '000000': {'name': 'netflags',
                        'type': bitarray,
                        'size': 5},
-            '001000': {'name': 'GeneratorPower',
+            '011001': {'name': 'player',
+                       'type': str},
+            '111010': {'name': 'unknown 201 bits',
                        'type': bitarray,
-                       'size': 41},
-            '011000': {'name': 'm_Flags',
-                       'type': bitarray,
-                       'size': 20},
-            '101000': {'name': 'r_ServerConfig',
-                       'type': bitarray,
-                       'size': 12},
-            '111000': {'name': 'FlagReturnTime',
-                       'type': bitarray,
-                       'size': 41},
-            '011010': {'name': 'ServerName', 'type': str},
-            '111010': {'name': 'TimeLimit', 'type': int},
-            '000110': {'name': 'GoalScore', 'type': int},
-            '100110': {'name': 'RemainingMinute', 'type': int},
-            '010110': {'name': 'ElapsedTime', 'type': int},
-            '110110': {'name': 'RemainingTime', 'type': int},
-            '101110': {'name': 'bMatchIsOver', 'type': bool},
-            '111110': {'name': 'bStopCountDown', 'type': bool},
-            '000001': {'name': 'GameClass', 'type': int},
-            '100001': {'name': 'MessageOfTheDay', 'type': str},
-            '010001': {'name': 'RulesString', 'type': str},
-            '001001': {'name': 'FlagState',
-                       'type': bitarray,
-                       'size': 10,
-                       'values': {'0000000000': 'Enemy flag on stand',
-                                  '0000000001': 'Enemy flag taken',
-                                  '0000000011': 'Enemy flag dropped',
-                                  '1000000000': 'Own flag on stand',
-                                  '1000000001': 'Own flag taken',
-                                  '1000000011': 'Own flag dropped'}},
-            '111001': {'name': 'bAllowKeyboardAndMouse', 'type': bool},
-            '010101': {'name': 'bWarmupRound', 'type': bool},
-            '001101': {'name': 'MinNetPlayers', 'type': int},
-            '101111': {'name': 'r_nBlip',
-                       'type': bitarray,
-                       'size': 8},
-        }
-
-        TrFlagCTFProps = {
-            '10000' : { 'name' : 'bCollideActors', 'type' : bool},
-            '11000' : { 'name' : 'bHardAttach', 'type' : bool},
-            '00010' : { 'name' : 'Physics',
-                         'type' : bitarray,
-                         'size' : 4 },
-            '00001' : { 'name' : 'Location',
-                         'type' : bitarray,
-                         'size' : 52 },
-            '10001' : { 'name' : 'RelativeLocation',
-                         'type' : bitarray,
-                         'size' : 22 },
-            '11001' : { 'name' : 'Rotation',
-                         'type' : bitarray,
-                         'size' : 11 },
-            '00101' : { 'name' : 'Velocity',
-                         'type' : bitarray,
-                         'size' : 40 },
-            '10111' : { 'name' : 'Base',
-                         'type' : bitarray,
-                         'size' : 10 },
-            '01000' : { 'name' : 'bCollideWorld', 'type' : bool},
-            '01101' : { 'name' : 'bHome', 'type' : bool},
-            '01001' : { 'name' : 'RelativeRotation',
-                        'type' : bitarray,
-                        'size' : 27 },
-            '11101' : { 'name' : 'Team',
-                        'type' : bitarray,
-                        'size' : 11 },
-            '00011' : { 'name' : 'HolderPRI',
-                        'type' : bitarray,
-                        'size' : 11 }
-        }
-
-        TrPlayerReplicationInfoProps = {
-            '000000' : { 'name' : 'netflags',
-                         'type' : bitarray,
-                         'size' : 5 },
-            '000010' : { 'name' : 'Location',
-                         'type' : bitarray,
-                         'size' : 51 },
-            '110010' : { 'name' : 'Rotation',
-                         'type' : bitarray,
-                         'size' : 10 },
-            '101010' : { 'name' : 'UniqueId',
-                         'type' : bitarray,
-                         'size' : 64 },
-            '011010' : { 'name' : 'Unknown field',
-                         'type' : int },
-            '110110' : { 'name' : 'bWaitingPlayer', 'type' : bool },
-            '000110' : { 'name' : 'bBot', 'type' : bool },
-            '101110' : { 'name' : 'bIsSpectator', 'type' : bool },
-            '111110' : { 'name' : 'Team (11 bits)',
-                         'type' : bitarray,
-                         'size' : 11,
-                         'values' : { '10001000000' : 'DiamondSword',
-                                      '11110000000' : 'BloodEagle' } },
-            '000001' : { 'name' : 'PlayerID', 'type' : int },
-            '100001' : { 'name' : 'PlayerName', 'type' : str },
-            '010001' : { 'name' : '???', 'type' : bitarray, 'size': 8 },
-            '110001' : { 'name' : 'Deaths', 'type' : int },
-            '001001' : { 'name' : 'Score', 'type' : int },
-            '011001' : { 'name' : 'CharClassInfo', 'type' : int },
-            '010101' : { 'name' : 'bHasFlag', 'type': bool},
-            '101101' : { 'name' : 'r_bSkinId', 'type': int},
-            '111101' : { 'name' : 'r_EquipLevels',
-                         'type' : bitarray,
-                         'size' : 48},
-            '000011' : { 'name' : 'r_VoiceClass', 'type': int},
-            '100011' : { 'name' : 'm_LockedTarget', 'type': bitarray, 'size': 11},
-            '001011' : { 'name' : 'm_nPlayerClassId', 'type': int},
-            '101011' : { 'name' : 'm_nCreditsEarned', 'type': int},
-            '000111' : { 'name' : 'm_nPlayerIconIndex', 'type': int},
-            '001111' : { 'name' : 'm_PendingBaseClass', 'type': int},
-            '101111' : { 'name' : 'm_CurrentBaseClass', 'type': int},
-
-        }
-
-        TrServerSettingsInfoProps = {
-#            '000000': {'name': 'fFriendlyFireDamageMultiplier',
-#                       'type': bitarray,
-#                       'size': 31},
-#            ''
-        }
-
-        TrStationCollisionProps = {
-            '01110': {'name': 'Base',
-                      'type': bitarray,
-                      'size': 31},
-            # possible values:
-            # 00101111110101101111101111001011110000000000000
-            '01101': {'name': 'RelativeLocation',
-                      'type': 'fvector'},
-            '00000': {'name': 'RelativeRotation',
-                      'type': bitarray,
-                      'size': 25}
-        }
-
-        FirstClientObjectProps = {
-            '000100' : { 'name' : 'prop8',
-                         'type' : bitarray,
-                         'size' : 162 },
-        }
-
-        FirstServerObjectProps = {
-            '10000000': {'name': 'mysteryproperty3',
-                         'type': PropertyValueMystery3},
-            '11000000': {'name': 'mysteryproperty5',
-                         'type': (
-                             {'name': 'unknown',
-                              'type': int},
-                             {'name': 'unknown2',
-                              'type': str}
-                         )},
-            '00100000': {'name': 'mysteryproperty4',
-                         'type': (
-                             {'name': 'unknown',
-                              'type': bitarray,
-                              'size': 88},
-                             {'name': 'server url',
-                              'type': str}
-                         )},
-            '11100000': {'name': 'mysteryproperty1',
-                         'type': PropertyValueMystery1},
-            '11010000': {'name': 'mysteryproperty2',
-                         'type': PropertyValueMystery2},
-            '10111000': {'name': 'interestingproperty',
-                         'type': PropertyValueInteresting}
-        }
-
-        MatineeActorProps = {
-            '00000': {'name': 'netflags',
-                      'type': bitarray,
-                      'size': 6},
-            '11101': {'name': 'Position',
-                      'type': bitarray,
-                      'size': 32},
-            '00011': {'name': 'PlayRate',
-                      'type': int},
-            '11011': {'name': 'bIsPlaying',
-                      'type': bool},
-            '00111': {'name': 'InterpAction',
-                      'type': bitarray,
-                      'size': 32}
-        }
-
-        UTTeamInfoFlags = {
-            '00000': {'name': 'netflags',
-                      'type': bitarray,
-                      'size': 6},
-            '10101': {'name': 'TeamIndex',
-                      'type': int},
-            '00011': {'name': 'TeamFlag',
-                      'type': bitarray,
-                      'size': 11},
-            '10011': {'name': 'HomeBase',
-                      'type': int}
-        }
-
-        WorldInfoProps = {
-            '00011': {'name': 'TimeDilation',
-                      'type': float},
-            '01101': {'name': 'WorldGravityZ',
-                      'type': float}
+                       'size': 201},
+            '000011': {'name': 'agency',
+                       'type': str}
         }
 
         self.class_dict = {
             None:                               {'name': 'FirstServerObject', 'props': FirstServerObjectProps},
-            '00001000100000000111111011011000': {'name': 'FirstClientObject', 'props': FirstClientObjectProps},
-            '10001000000000000000000000000000': {'name': 'FirstServerObject', 'props': FirstServerObjectProps},
-            '00101100100100010000000000000000': {'name': 'MatineeActor', 'props': MatineeActorProps},
-            '00100111010010011000000000000000': {'name': 'UTTeamInfo', 'props': UTTeamInfoFlags},
-            '00011100001100100100000000000000': {'name': 'TrBaseTurret_BloodEagle', 'props': TrBaseTurretProps},
-            '00111100001100100100000000000000': {'name': 'TrBaseTurret_DiamondSword', 'props': TrBaseTurretProps},
-            '01111110111001011110000000000000': {'name': 'TrCTFBase_BloodEagle', 'props': TrCTFBaseProps},
-            '00111110111001011110000000000000': {'name': 'TrCTFBase_DiamondSword', 'props': TrCTFBaseProps},
-            '01010111000101011110000000000000': {'name': 'TrCTFBase_BloodEagle', 'props': TrCTFBaseProps},
-            '00110111000101011110000000000000': {'name': 'TrCTFBase_DiamondSword', 'props': TrCTFBaseProps},
-            '01111000100110010100000000000000': {'name': 'TrDevice_Blink', 'props': TrDeviceProps},
-            '01000011100110010100000000000000': {'name': 'TrDevice_ConcussionGrenade', 'props': TrDeviceProps},
-            '00110000010110010100000000000000': {'name': 'TrDevice_ElfFlak', 'props': TrDeviceProps},
-            '01101001110110010100000000000000': {'name': 'TrDevice_Grenade', 'props': TrDeviceProps},
-            '01100101110110010100000000000000': {'name': 'TrDevice_GrenadeLauncher_Light', 'props': TrDeviceProps},
-            '00100100001110010100000000000000': {'name': 'TrDevice_HeavyBoltLauncher', 'props': TrDeviceProps},
-            '00110100001110010100000000000000': {'name': 'TrDevice_HeavyShieldPack', 'props': TrDeviceProps},
-            '00111001001110010100000000000000': {'name': 'TrDevice_Twinfusor', 'props': TrDeviceProps},
-            '01001000101110010100000000000000': {'name': 'TrDevice_LaserTargeter', 'props': TrDeviceProps},
-            '01101100101110010100000000000000': {'name': 'TrDevice_LightAssaultRifle', 'props': TrDeviceProps},
-            '01111100101110010100000000000000': {'name': 'TrDevice_LightSpinfusor', 'props': TrDeviceProps},
-            '00100111101110010100000000000000': {'name': 'TrDevice_Melee_DS', 'props': TrDeviceProps},
-            '01101001000001010100000000000000': {'name': 'TrDevice_SpikeLauncher', 'props': TrDeviceProps},
-            '01011001000001010100000000000000': {'name': 'TrDevice_Spinfusor_100X', 'props': TrDeviceProps},
-            '01011000100001010100000000000000': {'name': 'TrDevice_UtilityPack_Soldier', 'props': TrDeviceProps},
-            '01110101110110010100000000000000': {'name': 'TrDevice_GrenadeXL', 'props': TrDeviceProps},
-            '01110111111110010100000000000000': {'name': 'TrDevice_SaberLauncher', 'props': TrDeviceProps},
-            '01001011001001010100000000000000': {'name': 'TrDroppedPickup', 'props': TrDroppedPickupProps},
-            '00100100101111010100000000000000': {'name': 'TrFlagCTF_BloodEagle', 'props': TrFlagCTFProps},
-            '00110100101111010100000000000000': {'name': 'TrFlagCTF_DiamondSword', 'props': TrFlagCTFProps},
-            '01110001101110110100000000000000': {'name': 'TrGameReplicationInfo', 'props': TrGameReplicationInfoProps},
-            '01101101010100001100000000000000': {'name': 'TrInventoryManager', 'props': TrInventoryManagerProps},
-            '01010000100101011110000000000000': {'name': 'TrInventoryStation_BloodEagle0101?', 'props': TrInventoryStationProps},
-            '01000000100101011110000000000000': {'name': 'TrInventoryStation_BloodEagle0100?', 'props': TrInventoryStationProps},
-            '01100000100101011110000000000000': {'name': 'TrInventoryStation_BloodEagle0110?', 'props': TrInventoryStationProps},
-            '00100000100101011110000000000000': {'name': 'TrInventoryStation_BloodEagle0010?', 'props': TrInventoryStationProps},
-            #'00010010100101011110000000000000': {'name': 'TrInventoryStation_BloodEagle0001?', 'props': TrInventoryStationProps},
-            '01001000100101011110000000000000': {'name': 'TrInventoryStation_DiamondSword', 'props': TrInventoryStationProps},
-            '01001011110100001100000000000000': {'name': 'TrInventoryStationCollision', 'props': TrInventoryStationCollisionProps},
-            '00110001010000010100000000000000': {'name': 'TrPlayerController', 'props': TrPlayerControllerProps},
-            '00111010100001100100000000000000': {'name': 'TrPlayerPawn', 'props': TrPlayerPawnProps},
-            '00000110101111001100000000000000': {'name': 'TrPlayerReplicationInfo', 'props': TrPlayerReplicationInfoProps},
-            '01111010010000101100000000000000': {'name': 'TrProj_BaseTurret', 'props': TrProjProps},
-            '00000001110000101100000000000000': {'name': 'TrProj_ElfFlak', 'props': TrProjProps},
-            '01011111110000101100000000000000': {'name': 'TrProj_HeavyBoltLauncher', 'props': TrProjProps},
-            '01100010111000101100000000000000': {'name': 'TrProj_SpikeLauncher', 'props': TrProjProps},
-            '01010010111000101100000000000000': {'name': 'TrProj_SpikeLauncherSecondary', 'props': TrProjProps},
-            '01110010111000101100000000000000': {'name': 'TrProj_SpikeLauncherThird', 'props': TrProjProps},
-            '00101010111000101100000000000000': {'name': 'TrProj_Spinfusor_100X', 'props': TrProjProps},
-            '01110010100010101100000000000000': {'name': 'TrRadarStation_BloodEagle', 'props': TrRadarStationProps},
-            '01001010100010101100000000000000': {'name': 'TrRadarStation_DiamondSword', 'props': TrRadarStationProps},
-            '00000000110010101100000000000000': {'name': 'TrRepairStationCollision', 'props': TrRepairStationProps},
-            '00010011100001101100000000000000': {'name': 'TrServerSettingsInfo', 'props': TrServerSettingsInfoProps},
-            '00000011110100001100000000000000': {'name': 'TrStationCollision', 'props': TrStationCollisionProps},
-            '00100010100101011110000000000000': {'name': 'TrRepairStation_BloodEagle0010?', 'props': TrRepairStationProps},
-            '01010010100101011110000000000000': {'name': 'TrRepairStation_BloodEagle0101?', 'props': TrRepairStationProps},
-            '00110010100101011110000000000000': {'name': 'TrRepairStation_BloodEagle0011?', 'props': TrRepairStationProps},
-            '01100010100101011110000000000000': {'name': 'TrRepairStation_BloodEagle0110?', 'props': TrRepairStationProps},
-            '01011010100101011110000000000000': {'name': 'TrRepairStation_DiamondSword', 'props': TrRepairStationProps},
-            '00000011111001011110000000000000': {'name': 'TrVehicleStation_DiamondSword', 'props': TrVehicleStationProps},
-            '00100110100101011110000000000000': {'name': 'TrVehicleStation_BloodEagle', 'props': TrVehicleStationProps},
-            '01111101111001011110000000000000': {'name': 'TrVehicleStation_BloodEagle', 'props': TrVehicleStationProps},
-            '01100110100101011110000000000000': {'name': 'TrVehicleStation_DiamondSword', 'props': TrVehicleStationProps},
-            '01010101111001011110000000000000': {'name': 'TrPowerGenerator_BloodEagle', 'props': TrPowerGeneratorProps},
-            '00111100100101011110000000000000': {'name': 'TrPowerGenerator_BloodEagle', 'props': TrPowerGeneratorProps},
-            '01111100100101011110000000000000': {'name': 'TrPowerGenerator_DiamondSword', 'props': TrPowerGeneratorProps},
-            '00110101111001011110000000000000': {'name': 'TrPowerGenerator_DiamondSword', 'props': TrPowerGeneratorProps},
-            '00101000000101011110000000000000': {'name': 'WorldInfo', 'props': WorldInfoProps},
-            '00000101100101011110000000000000': {'name': 'WorldInfo', 'props': WorldInfoProps},
+            '00101100110100001010000000000000': {'name': 'SomethingWithPlayer', 'props': SomethingWithPlayerProps},
         }
+
+        def reverse_keys(d):
+            return {key[::-1] if key is not None else None: value for key, value in d.items()}
+
+        #self.class_dict = reverse_keys(self.class_dict)
+        #for classdef in self.class_dict.values():
+        #    classdef['props'] = reverse_keys(classdef['props'])
 
         self.instance_count = {}
         self.channels = {}
+        self.bits_carried_over = bitarray(endian='little')
 
 
 def int2bitarray(n, nbits):
@@ -1698,7 +847,62 @@ class ObjectProperty():
             text += self.value.tostring(indent = indent + len(propertykey))
         return text
 
-class ObjectInstance():
+
+class FirstServerObjectInstance:
+    def __init__(self):
+        pass
+
+    @debugbits
+    def frombitarray(self, bits, class_, state, debug=False):
+        self.bitsfromprevious = state.bits_carried_over
+        self.bitsfornext = None
+        state.bits_carried_over = bitarray(endian='little')
+        self.originalbits = bits.copy()
+
+        bits = self.bitsfromprevious + bits
+
+        self.bunches = []
+        while bits:
+            bits_at_start_of_loop = bits.copy()
+            try:
+                field1, bits = getnbits(16, bits)
+                field2, bits = getnbits(16, bits)
+                field3, bits = getnbits(16, bits)
+                lengthbits, bits = getnbits(16, bits)
+                stringlength = toint(lengthbits)
+                stringbits, bits = getnbits(stringlength * 8, bits)
+                string = ''.join(chr(b) for b in stringbits.tobytes())
+                field4, bits = getnbits(32, bits)
+                self.bunches.append((field1, field2, field3, string, field4))
+            except ParseError:
+                self.bitsfornext = bits_at_start_of_loop
+                state.bits_carried_over = bits_at_start_of_loop
+                break
+
+        return bitarray(endian='little')
+
+    def tobitarray(self):
+        return self.originalbits
+
+    def tostring(self, indent = 0):
+        indent_prefix = ' ' * indent
+        text = ''
+        if self.bitsfromprevious:
+            text += f'{indent_prefix}({self.bitsfromprevious.length()} bits carried over from previous payload)\n'
+
+        for field1, field2, field3, string, field4 in self.bunches:
+            text += (f'{indent_prefix}{field1.to01()}\n'
+                     f'{indent_prefix}{field2.to01()}\n'
+                     f'{indent_prefix}{field3.to01()}\n'
+                     f'{indent_prefix}{int2bitarray(len(string), 16).to01()} "{string}"\n'
+                     f'{indent_prefix}{field4.to01()}\n')
+
+        if self.bitsfornext:
+            text += f'{indent_prefix}{self.bitsfornext.length()} bits remaining for next payload: {self.bitsfornext.to01()}\n'
+
+        return text
+
+class ObjectInstance:
     def __init__(self, is_rpc = False):
         self.class_ = None
         self.properties = []
@@ -1706,7 +910,7 @@ class ObjectInstance():
     
     @debugbits
     def frombitarray(self, bits, class_, state, debug = False):
-        
+
         while bits:
             property_ = ObjectProperty(id_size = class_['idsize'])
             self.properties.append(property_)
@@ -1801,10 +1005,14 @@ class PayloadData():
             else:
                 newinstance = False
                 class_ = state.channels[channel]['class']
+                classname = class_['name']
                 instancename = state.channels[channel]['instancename']
 
             self.instancename = instancename
-            self.instance = ObjectInstance(is_rpc = self.reliable and not newinstance)
+            if classname == 'FirstServerObject':
+                self.instance = FirstServerObjectInstance()
+            else:
+                self.instance = ObjectInstance(is_rpc = self.reliable and not newinstance)
             payloadbits = self.instance.frombitarray(payloadbits, class_, state, debug = debug)
             
             if payloadbits:
