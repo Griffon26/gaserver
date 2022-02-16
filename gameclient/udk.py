@@ -48,22 +48,60 @@ class ParserState():
                          'type': str}
         }
 
-        SomethingWithPlayerProps = {
+        PlayerReplicationInfoProps = {
             '000000': {'name': 'netflags',
                        'type': bitarray,
                        'size': 5},
-            '011001': {'name': 'player',
+            '000010': {'name': 'unknown1',
+                       'type': bool},
+            '011001': {'name': 'PlayerName',
                        'type': str},
-            '111010': {'name': 'unknown 201 bits',
-                       'type': bitarray,
-                       'size': 201},
+            '100101': {'name': 'unknown1',
+                       'type': bool},
+            '111100': {'name': 'unknown2',
+                       'type': bool},
+            '100010': {'name': 'unknown3',
+                       'type': bool},
+            '101100': {'name': 'unknown4',
+                       'type': bool},
+            '000010': {'name': 'unknown5',
+                       'type': bool},
+            '011000': {'name': 'unknown6',
+                       'type': bool},
+            '001100': {'name': 'unknown7',
+                       'type': bool},
+            '011100': {'name': 'unknown8',
+                       'type': bool},
+            '101000': {'name': 'unknown9',
+                       'type': bool},
+            '110010': {'name': 'unknown9',
+                       'type': bool},
             '000011': {'name': 'agency',
-                       'type': str}
+                       'type': str},
+            '111101': {'name': 'alliance',
+                       'type': str},
+            '111010': {'name': 'unknown',
+                       'type': int},
+            '001001': {'name': 'unknown',
+                       'type': int},
+            '111111': {'name': 'unknown',
+                       'type': int},
+            '011111': {'name': 'unknown',
+                       'type': int},
+            '010011': {'name': 'unknown',
+                       'type': int},
+            '101111': {'name': 'unknown',
+                       'type': int},
+            '110011': {'name': 'unknown',
+                       'type': int},
+            '001111': {'name': 'unknown',
+                       'type': int},
+            # '
         }
 
         self.class_dict = {
             None:                               {'name': 'FirstServerObject', 'props': FirstServerObjectProps},
-            '00101100110100001010000000000000': {'name': 'SomethingWithPlayer', 'props': SomethingWithPlayerProps},
+            '00101100110100001010000000000000': {'name': 'PlayerReplicationInfo', 'props': PlayerReplicationInfoProps},
         }
 
         def reverse_keys(d):
