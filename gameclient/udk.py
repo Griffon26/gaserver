@@ -76,7 +76,7 @@ class ParserState():
 
         self.class_dict = {
             None:                               {'name': 'FirstServerObject', 'props': FirstServerObjectProps},
-            '00101100110100001010000000000000': {'name': 'PlayerReplicationInfo', 'props': PlayerReplicationInfoProps},
+            '00101100110100001010000000000000': {'name': 'TgRepInfo_Player', 'props': PlayerReplicationInfoProps},
             '01111110110100010110000000000000': {'name': 'WorldInfo', 'props': {}},
             '00111100101000110010000000000000': {'name': 'TgEffectManager', 'props': {}},
             '00000101100010110010000000000000': {'name': 'TgInventoryManager', 'props': {}},
