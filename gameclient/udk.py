@@ -49,59 +49,46 @@ class ParserState():
         }
 
         PlayerReplicationInfoProps = {
-            '000000': {'name': 'netflags',
-                       'type': bitarray,
-                       'size': 5},
-            '000010': {'name': 'unknown1',
-                       'type': bool},
-            '011001': {'name': 'PlayerName',
-                       'type': str},
-            '100101': {'name': 'unknown1',
-                       'type': bool},
-            '111100': {'name': 'unknown2',
-                       'type': bool},
-            '100010': {'name': 'unknown3',
-                       'type': bool},
-            '101100': {'name': 'unknown4',
-                       'type': bool},
-            '000010': {'name': 'unknown5',
-                       'type': bool},
-            '011000': {'name': 'unknown6',
-                       'type': bool},
-            '001100': {'name': 'unknown7',
-                       'type': bool},
-            '011100': {'name': 'unknown8',
-                       'type': bool},
-            '101000': {'name': 'unknown9',
-                       'type': bool},
-            '110010': {'name': 'unknown9',
-                       'type': bool},
-            '000011': {'name': 'agency',
-                       'type': str},
-            '111101': {'name': 'alliance',
-                       'type': str},
-            '111010': {'name': 'unknown',
-                       'type': int},
-            '001001': {'name': 'unknown',
-                       'type': int},
-            '111111': {'name': 'unknown',
-                       'type': int},
-            '011111': {'name': 'unknown',
-                       'type': int},
-            '010011': {'name': 'unknown',
-                       'type': int},
-            '101111': {'name': 'unknown',
-                       'type': int},
-            '110011': {'name': 'unknown',
-                       'type': int},
-            '001111': {'name': 'unknown',
-                       'type': int},
-            # '
+            '000000': {'name': 'netflags', 'type': bitarray, 'size': 5},
+            '000010': {'name': 'unknown1', 'type': bool},
+            '000011': {'name': 'agency', 'type': str},
+            '001001': {'name': 'unknown', 'type': int},
+            '001100': {'name': 'unknown7', 'type': bool},
+            '001111': {'name': 'unknown', 'type': bitarray, 'size': 43},
+            '010011': {'name': 'class?', 'type': int},
+            '011000': {'name': 'unknown6', 'type': bool},
+            '011001': {'name': 'PlayerName', 'type': str},
+            '011100': {'name': 'unknown8', 'type': bool},
+            '011111': {'name': 'max health?', 'type': int},
+            '100010': {'name': 'unknown3', 'type': bool},
+            '100101': {'name': 'unknown1', 'type': bool},
+            '101000': {'name': 'unknown9', 'type': bool},
+            '101100': {'name': 'unknown4', 'type': bool},
+            '101101': {'name': 'team?', 'type': bitarray, 'size': 11},
+            '101111': {'name': 'health?', 'type': int},
+            '110010': {'name': 'unknown9', 'type': bool},
+            '110011': {'name': 'unknown', 'type': int},
+            '111010': {'name': 'unknown', 'type': int},
+            '111100': {'name': 'unknown2', 'type': bool},
+            '111101': {'name': 'alliance', 'type': str},
+            '111111': {'name': 'unknown', 'type': int},
         }
 
         self.class_dict = {
             None:                               {'name': 'FirstServerObject', 'props': FirstServerObjectProps},
-            '00101100110100001010000000000000': {'name': 'PlayerReplicationInfo', 'props': PlayerReplicationInfoProps},
+            '00101100110100001010000000000000': {'name': 'TgRepInfo_Player', 'props': PlayerReplicationInfoProps},
+            '01111110110100010110000000000000': {'name': 'WorldInfo', 'props': {}},
+            '00111100101000110010000000000000': {'name': 'TgEffectManager', 'props': {}},
+            '00000101100010110010000000000000': {'name': 'TgInventoryManager', 'props': {}},
+            '01010100111011010010000000000000': {'name': 'TgDevice_NewMelee', 'props': {}},
+            '00001110111011010010000000000000': {'name': 'TgDevice_NewRange', 'props': {}},
+            '01010101011011010010000000000000': {'name': 'TgDevice', 'props': {}},
+            '00110110111011010010000000000000': {'name': 'TgDevice_Morale', 'props': {}},
+            '01011101011011010010000000000000': {'name': 'TgDevice_Grenade', 'props': {}},
+            '00000110010100001010000000000000': {'name': 'TgRepInfo_Game', 'props': {}},
+            '01101011010000001010000000000000': {'name': 'TgPlayerController', 'props': {}},
+            '00100010110101110010000000000000': {'name': 'TgPawn_Character', 'props': {}},
+            '00010101000110100000000000000000': {'name': 'CrowdReplicationActor', 'props': {}},
         }
 
         def reverse_keys(d):
@@ -900,22 +887,29 @@ class FirstServerObjectInstance:
         bits = self.bitsfromprevious + bits
 
         self.bunches = []
-        while bits:
-            bits_at_start_of_loop = bits.copy()
-            try:
-                field1, bits = getnbits(16, bits)
-                field2, bits = getnbits(16, bits)
-                field3, bits = getnbits(16, bits)
-                lengthbits, bits = getnbits(16, bits)
-                stringlength = toint(lengthbits)
-                stringbits, bits = getnbits(stringlength * 8, bits)
-                string = ''.join(chr(b) for b in stringbits.tobytes())
-                field4, bits = getnbits(32, bits)
-                self.bunches.append((field1, field2, field3, string, field4))
-            except ParseError:
-                self.bitsfornext = bits_at_start_of_loop
-                state.bits_carried_over = bits_at_start_of_loop
-                break
+
+        if bits.length() == 4000:
+            pass
+        else:
+            while bits:
+                bits_at_start_of_loop = bits.copy()
+                try:
+                    field1, bits = getnbits(16, bits)
+                    field2, bits = getnbits(16, bits)
+                    field3, bits = getnbits(16, bits)
+                    lengthbits, bits = getnbits(16, bits)
+                    stringlength = toint(lengthbits)
+                    stringbits, bits = getnbits(stringlength * 8, bits)
+                    string = ''.join(chr(b) for b in stringbits.tobytes())
+                    if string.startswith('WELCOME'):
+                        field4 = None
+                    else:
+                        field4, bits = getnbits(32, bits)
+                    self.bunches.append((field1, field2, field3, string, field4))
+                except ParseError:
+                    self.bitsfornext = bits_at_start_of_loop
+                    state.bits_carried_over = bits_at_start_of_loop
+                    break
 
         return bitarray(endian='little')
 
@@ -928,12 +922,16 @@ class FirstServerObjectInstance:
         if self.bitsfromprevious:
             text += f'{indent_prefix}({self.bitsfromprevious.length()} bits carried over from previous payload)\n'
 
-        for field1, field2, field3, string, field4 in self.bunches:
-            text += (f'{indent_prefix}{field1.to01()}\n'
-                     f'{indent_prefix}{field2.to01()}\n'
-                     f'{indent_prefix}{field3.to01()}\n'
-                     f'{indent_prefix}{int2bitarray(len(string), 16).to01()} "{string}"\n'
-                     f'{indent_prefix}{field4.to01()}\n')
+        if self.originalbits.length() == 4000:
+            text += f'{indent_prefix}{self.originalbits.to01()}\n'
+        else:
+            for field1, field2, field3, string, field4 in self.bunches:
+                text += (f'{indent_prefix}{field1.to01()}\n'
+                         f'{indent_prefix}{field2.to01()}\n'
+                         f'{indent_prefix}{field3.to01()}\n'
+                         f'{indent_prefix}{int2bitarray(len(string), 16).to01()} "{string}"\n')
+                if field4 is not None:
+                    text += f'{indent_prefix}{field4.to01()}\n'
 
         if self.bitsfornext:
             text += f'{indent_prefix}{self.bitsfornext.length()} bits remaining for next payload: {self.bitsfornext.to01()}\n'
@@ -1258,6 +1256,7 @@ class Packet():
 
     @debugbits
     def frombitarray(self, bits, state, debug = False):
+        original_bits = bits.copy()
         original_nbits = len(bits)
         
         seqnr, bits = getnbits(14, bits)
@@ -1280,7 +1279,10 @@ class Packet():
         parsed_nbits = len(self.tobitarray())
 
         if len(bits) != original_nbits - parsed_nbits:
-            raise RuntimeError('Coding error: parsed bits + unparsed bits does not equal total bits: parsed so far: %s' % self.tostring(0))
+            raise RuntimeError(f'Coding error: parsed bits + unparsed bits does not equal total bits: '
+                               f'parsed so far: {self.tostring(0)}\n'
+                               f'Original bits: {original_bits.to01()}\n'
+                               f'Parsed bits  : {self.tobitarray().to01()}')
 
         nr_of_padding_bits = 8 - (parsed_nbits % 8)
         if len(bits) != nr_of_padding_bits:
