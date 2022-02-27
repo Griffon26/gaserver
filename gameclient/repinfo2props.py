@@ -12,21 +12,30 @@ def main():
     with open('FFieldNetCache_RepProperties.txt') as f:
         for line in f:
             if not line.startswith('  '):
-                currentclass = line.strip()
-                classes[currentclass] = {}
+                classname, classid = line.split()
+                bits = int2bitarray(int(classid), 32)
+                currentprops = {}
+                classes[bits.to01()] = {'name': classname,
+                                        'props': currentprops}
             else:
-                member, value = line.split()
-                classes[currentclass][value] = member
+                member, memberid = line.split()
+                bits = int2bitarray(int(memberid), 16)
+                currentprops[bits.to01()] = member
 
     #print(json.dumps(classes, indent=2))
 
-    for myclass, myid in classes.items():
-        print(myclass)
-        for myidvalue, myidkey in myid.items():
-            print(myidkey, myidvalue)
-        print('\n')
 
-        #int2bitarray(myid, myid.bit_length())
+    for classid, classdata in classes.items():
+        print(f'{classdata["name"]}Props = {{')
+        for memberid, member in classdata['props'].items():
+            print(f"    '{memberid}': {{'name': '{member}', 'type': bitarray, 'size': 1}},")
+        print(f'}}')
+        print()
+
+    print(f'self.class_dict = {{')
+    for classid, classdata in classes.items():
+        print(f"    '{classid}': {{'name': '{classdata['name']}', 'props': {classdata['name']}Props}},")
+    print(f'}}')
 
 
 if __name__ == '__main__':
