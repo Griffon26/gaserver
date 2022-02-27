@@ -1,0 +1,2 @@
+ 1138 Type: 5   Name: SERVICE_FLAG                                 flags: 0x03F6 TYPE_UINT8
+ 1139 Type: 9   Name: SESSION_GUID                                 flags: 0x03F7 TYPE_UUID_16_BYTES

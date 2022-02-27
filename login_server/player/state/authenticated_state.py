@@ -53,3 +53,50 @@ class AuthenticatedState(PlayerState):
             m0180(),
             m0136()
         ]))
+
+    @handles(packet=a0039)
+    def handle_a0039(self, request):
+        self.player.send(a0039().set([
+            m0241(),
+            m02a9().set(0x00000497),
+            m00b5().set(0x002ac950),
+            m03c5().set(self.player.display_name),
+            m0327(),
+            m03df().set(0x00000237),
+            m00c2().set("22976"),
+            m0303(),
+            m0485(),
+            m001f(),
+            m0029(),
+            m0388(),
+            m00bf().set(hexparse('02 00 23 29 6b 96 82 4d')),
+        ]))
+
+    @handles(packet=a01e8)
+    def handle_a01e8(self, request):
+        self.player.send(a01e8().set([
+            #m04da().set(0x2), #or m05d1().set(0x1) how to handle ambiguous..?
+            m04da().set(0x2),
+            m05d1().set(0x1),
+        ]))
+
+    @handles(packet=a0188)
+    def handle_a0188(self, request):
+        self.player.send(a0188().set([
+            m0376(),
+        ]))
+
+'''
+0000009E`  0  : enumfield 01E8 enumblockarray length 1 (field 0x01E8: DEFEND_ALLIANCE_ID?)
+000000A2`      0  : enumfield 04DA 00000002 (field 0x04DA: SYS_SITE_ID)
+
+000000A8`  0  : enumfield 01E8 enumblockarray length 1 (field 0x01E8: DEFEND_ALLIANCE_ID?)
+000000AC`      0  : enumfield 05D1 01 (field 0x05D1: SYS_AVA_TEAMS_OK)
+
+
+
+000000EA`  0  : enumfield 0188 enumblockarray length 0 (field 0x0188: DATA_SET_PRODUCTION_FLAIRS)
+
+0000390C`  0  : enumfield 0188 enumblockarray length 1 (field 0x0188: DATA_SET_PRODUCTION_FLAIRS)
+    00003910`      0  : enumfield 0376 00000000 (field 0x0376: NEW_MAIL_COUNT)
+'''

@@ -117,6 +117,6 @@ class UnauthenticatedState(PlayerState):
                             m0322().set(0x46b),
                             m0262().set(0xab95),
                         ],
-                    ])
+                    ]),
                 ])
                 self.player.set_state(AuthenticatedState)
