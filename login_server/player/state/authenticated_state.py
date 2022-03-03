@@ -69,7 +69,7 @@ class AuthenticatedState(PlayerState):
             m001f(),
             m0029(),
             m0388(),
-            m00bf().set(hexparse('02 00 23 29 6b 96 82 4d')),
+            m00bf().set(hexparse('02 00 23 29 7f 00 00 01')),
         ]))
 
     @handles(packet=a01e8)

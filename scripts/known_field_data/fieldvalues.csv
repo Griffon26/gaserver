@@ -1,3 +1,11 @@
+0x2,Chat-Agency
+0x3,Chat-Alliance
+0x4,Chat-Local
+0x5,Chat-Team
+0x7,Chat-Dome-City
+0xB,Chat-Annoucement-personal
+0xC,Chat-Trade
+0xD,Chat-Lfg
 0x02A8,Assault
 0x0237,Medic
 0x02A9,Recon
@@ -9,3 +17,5 @@
 0x85D,Head-Male5?
 0x7B6,Head-Male15?
 0x7B8,Head-Female1?
+0xF1,has come online
+0xF2,has gone offline
