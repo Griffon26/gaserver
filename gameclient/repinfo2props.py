@@ -32,14 +32,23 @@ def main():
     with open('parsed_classes.json') as f:
         classes_from_sdk = json.load(f)
 
-    with open('props.txt', 'w') as f:
-        for classid, classdata in classes.items():
+    with open('props.py', 'w') as f:
+        def reverse_string(s):
+            return s[::-1]
+
+        f.write('from bitarray import bitarray\n\n')
+
+        for classid in sorted(classes.keys(), key=reverse_string):
+            classdata = classes[classid]
             f.write(f'{classdata["name"]}Props = {{\n')
             max_field_id = max(classdata['props'].keys())
             bits_for_field = int(math.ceil(math.log(max_field_id, 2)))
 
-            for memberid, member_data in classdata['props'].items():
-                memberidbits = int2bitarray(memberid, bits_for_field)
+            classdata['props'] = {int2bitarray(memberid, bits_for_field).to01(): member_data for memberid, member_data in classdata['props'].items()}
+
+
+            for memberid in sorted(classdata['props'].keys(), key=reverse_string):
+                member_data = classdata['props'][memberid]
                 type_to_typestring = {
                     'bool':             "'type': bool",
                     'struct FString':   "'type': str",
@@ -51,11 +60,13 @@ def main():
                     typestring = type_to_typestring[cpp_type]
                 except KeyError:
                     typestring = "'type': None"
-                f.write(f"    '{memberidbits.to01()}': {{'name': '{member_data['name']}', {typestring}}},\n")
+                f.write(f"    '{memberid}': {{'name': '{member_data['name']}', {typestring}}},\n")
             f.write(f'}}\n\n')
 
-        f.write(f'self.class_dict = {{\n')
-        for classid, classdata in classes.items():
+        f.write(f'generated_class_dict = {{\n')
+
+        for classid in sorted(classes.keys(), key=reverse_string):
+            classdata = classes[classid]
             f.write(f"    '{classid}': {{'name': '{classdata['name']}', 'props': {classdata['name']}Props}},\n")
         f.write(f'}}\n\n')
 

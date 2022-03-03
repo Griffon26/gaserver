@@ -22,6 +22,8 @@ from bitarray import bitarray
 from itertools import zip_longest
 import struct
 
+from props import generated_class_dict
+
 known_int_values = {
 }
 
@@ -48,32 +50,10 @@ class ParserState():
                          'type': str}
         }
 
-        PlayerReplicationInfoProps = {
-            '000000': {'name': 'netflags', 'type': bitarray, 'size': 5},
-            '000010': {'name': 'unknown1', 'type': bool},
-            '000011': {'name': 'agency', 'type': str},
-            '001001': {'name': 'unknown', 'type': int},
-            '001100': {'name': 'unknown7', 'type': bool},
-            '001111': {'name': 'unknown', 'type': bitarray, 'size': 43},
-            '010011': {'name': 'class?', 'type': int},
-            '011000': {'name': 'unknown6', 'type': bool},
-            '011001': {'name': 'PlayerName', 'type': str},
-            '011100': {'name': 'unknown8', 'type': bool},
-            '011111': {'name': 'max health?', 'type': int},
-            '100010': {'name': 'unknown3', 'type': bool},
-            '100101': {'name': 'unknown1', 'type': bool},
-            '101000': {'name': 'unknown9', 'type': bool},
-            '101100': {'name': 'unknown4', 'type': bool},
-            '101101': {'name': 'team?', 'type': bitarray, 'size': 11},
-            '101111': {'name': 'health?', 'type': int},
-            '110010': {'name': 'unknown9', 'type': bool},
-            '110011': {'name': 'unknown', 'type': int},
-            '111010': {'name': 'unknown', 'type': int},
-            '111100': {'name': 'unknown2', 'type': bool},
-            '111101': {'name': 'alliance', 'type': str},
-            '111111': {'name': 'unknown', 'type': int},
-        }
+        self.class_dict = generated_class_dict
+        self.class_dict[None] = {'name': 'FirstServerObject', 'props': FirstServerObjectProps}
 
+        '''
         self.class_dict = {
             None:                               {'name': 'FirstServerObject', 'props': FirstServerObjectProps},
             '00101100110100001010000000000000': {'name': 'TgRepInfo_Player', 'props': PlayerReplicationInfoProps},
@@ -90,6 +70,7 @@ class ParserState():
             '00100010110101110010000000000000': {'name': 'TgPawn_Character', 'props': {}},
             '00010101000110100000000000000000': {'name': 'CrowdReplicationActor', 'props': {}},
         }
+        '''
 
         def reverse_keys(d):
             return {key[::-1] if key is not None else None: value for key, value in d.items()}
