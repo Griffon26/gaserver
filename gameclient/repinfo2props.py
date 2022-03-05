@@ -20,7 +20,9 @@ def main():
                 continue
 
             if '->' in line:
-                classname, classid = line.split('->')
+                classname, classid = line.split(' -> ')
+                if classname.startswith('Default__'):
+                    classname = classname.replace('Default__', '')
                 class_name_to_id[classname] = int2bitarray(int(classid) * 2, 32).to01()
                 print(f'{classname}: {class_name_to_id[classname]}')
 
@@ -71,15 +73,27 @@ def main():
                 type_to_typestring = {
                     'bool':             "'type': bool",
                     'struct FString':   "'type': str",
+                    'float':            "'type': float",
                     'int':              "'type': int",
                     'class ATgPawn*':   "'type': bitarray, 'size': 11",
+                    'class APlayerReplicationInfo*': "'type': bitarray, 'size': 11",
+                    'struct FRotator':  "'type': bitarray, 'size': 5",
                 }
                 try:
                     cpp_type = classes_from_sdk[member_data['class']][member_data['name']]
-                    typestring = type_to_typestring[cpp_type]
+                except KeyError:
+                    cpp_type = 'not_in_sdk'
+                try:
+                    if cpp_type.endswith('*'):
+                        typestring = "'type': bitarray, 'size': 11"
+                        comment = ''
+                    else:
+                        typestring = type_to_typestring[cpp_type]
+                        comment = ''
                 except KeyError:
                     typestring = "'type': None"
-                f.write(f"    '{memberid}': {{'name': '{member_data['name']}', {typestring}}},\n")
+                    comment = f'\t# original type was: {cpp_type}'
+                f.write(f"    '{memberid}': {{'name': '{member_data['name']}', {typestring}}},{comment}\n")
             f.write(f'}}\n\n')
 
         f.write(f'generated_class_dict = {{\n')
