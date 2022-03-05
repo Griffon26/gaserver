@@ -12,17 +12,36 @@ def int2bitarray(n, nbits):
 
 def main():
     classes = {}
+
+    class_name_to_id = {}
     with open('gadlloutput.txt') as f:
         for line in f:
             if not line.strip():
                 continue
 
-            if not line.startswith('  '):
-                classname, classid = line.split()
-                bits = int2bitarray(int(classid), 32)
+            if '->' in line:
+                classname, classid = line.split('->')
+                class_name_to_id[classname] = int2bitarray(int(classid) * 2, 32).to01()
+                print(f'{classname}: {class_name_to_id[classname]}')
+
+    with open('gadlloutput.txt') as f:
+        nr_of_unknown_classes = 0
+        for line in f:
+            if not line.strip():
+                continue
+
+            if '->' in line:
+                pass
+            elif not line.startswith('  '):
+                classname, _ = line.split()
+                if classname in class_name_to_id:
+                    classid = class_name_to_id[classname]
+                else:
+                    nr_of_unknown_classes += 1
+                    classid = int2bitarray(0xFFFF0000 + nr_of_unknown_classes, 32).to01()
                 currentprops = {}
-                classes[bits.to01()] = {'name': classname,
-                                        'props': currentprops}
+                classes[classid] = {'name': classname,
+                                    'props': currentprops}
             else:
                 # TODO: also parse the class for each field
                 member, memberid, originatingclass = line.split()
