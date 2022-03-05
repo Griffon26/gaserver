@@ -76,6 +76,7 @@ def main():
                     'unsigned char':    "'type': bitarray, 'size': 8",
                     'struct FString':   "'type': str",
                     'struct FRotator':  "'type': bitarray, 'size': 5",
+                    'struct FVector':   "'type': 'fvector'",
                 }
                 try:
                     cpp_type = classes_from_sdk[member_data['class']][member_data['name']]
