@@ -24,7 +24,6 @@ def main():
                 if classname.startswith('Default__'):
                     classname = classname.replace('Default__', '')
                 class_name_to_id[classname] = int2bitarray(int(classid) * 2, 32).to01()
-                print(f'{classname}: {class_name_to_id[classname]}')
 
     with open('gadlloutput.txt') as f:
         nr_of_unknown_classes = 0
@@ -72,16 +71,16 @@ def main():
                 member_data = classdata['props'][memberid]
                 type_to_typestring = {
                     'bool':             "'type': bool",
-                    'struct FString':   "'type': str",
                     'float':            "'type': float",
                     'int':              "'type': int",
-                    'class ATgPawn*':   "'type': bitarray, 'size': 11",
-                    'class APlayerReplicationInfo*': "'type': bitarray, 'size': 11",
+                    'unsigned char':    "'type': bitarray, 'size': 8",
+                    'struct FString':   "'type': str",
                     'struct FRotator':  "'type': bitarray, 'size': 5",
                 }
                 try:
                     cpp_type = classes_from_sdk[member_data['class']][member_data['name']]
                 except KeyError:
+                    print(f'Member not found in SDK: {member_data}')
                     cpp_type = 'not_in_sdk'
                 try:
                     if cpp_type.endswith('*'):
