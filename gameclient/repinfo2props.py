@@ -13,33 +13,14 @@ def int2bitarray(n, nbits):
 def main():
     classes = {}
 
-    class_name_to_id = {}
     with open('gadlloutput.txt') as f:
         for line in f:
             if not line.strip():
                 continue
 
-            if '->' in line:
-                classname, classid = line.split(' -> ')
-                if classname.startswith('Default__'):
-                    classname = classname.replace('Default__', '')
-                class_name_to_id[classname] = int2bitarray(int(classid) * 2, 32).to01()
-
-    with open('gadlloutput.txt') as f:
-        nr_of_unknown_classes = 0
-        for line in f:
-            if not line.strip():
-                continue
-
-            if '->' in line:
-                pass
-            elif not line.startswith('  '):
-                classname, _ = line.split()
-                if classname in class_name_to_id:
-                    classid = class_name_to_id[classname]
-                else:
-                    nr_of_unknown_classes += 1
-                    classid = int2bitarray(0xFFFF0000 + nr_of_unknown_classes, 32).to01()
+            if not line.startswith('  '):
+                classname, decimalclassid = line.split()
+                classid = int2bitarray(int(decimalclassid) * 2, 32).to01()
                 currentprops = {}
                 classes[classid] = {'name': classname,
                                     'props': currentprops}
@@ -48,6 +29,8 @@ def main():
                 member, memberid, originatingclass = line.split()
                 currentprops[int(memberid)] = {'name': member,
                                                'class': originatingclass }
+
+    classes = {classid: classdata for classid, classdata in classes.items() if len(classdata['props']) > 0}
 
     with open('parsed_classes.json') as f:
         classes_from_sdk = json.load(f)
@@ -75,7 +58,7 @@ def main():
                     'int':              "'type': int",
                     'unsigned char':    "'type': bitarray, 'size': 8",
                     'struct FString':   "'type': str",
-                    'struct FRotator':  "'type': bitarray, 'size': 5",
+                    'struct FRotator':  "'type': bitarray, 'size': 3 * 8",
                     'struct FVector':   "'type': 'fvector'",
                 }
                 try:
