@@ -1,23 +1,54 @@
+import copy
 import json
 from pathlib import Path
 import re
 
 
 def main():
-    classes = {}
+    types = {'classes': {},
+             'structs': {}}
     sdkpath = Path('C:/git/gamods/Global Agenda/SDK_HEADERS')
+
+    structname = None
+    for file in sdkpath.glob('*_structs.h'):
+        with open(file, 'rt') as infile:
+            for line in infile:
+                if not structname:
+                    match = re.match(r'^struct ([^ ]+)( : ([^ ]+))?\n$', line)
+                    if match:
+                        structname = match.group(1)
+                        parent = match.group(3)
+                        if parent:
+                            types['structs'][structname] = copy.copy(types['structs'][parent])
+                        else:
+                            types['structs'][structname] = []
+                        print(f'struct {structname}')
+
+                else:
+                    if line == '};\n':
+                        structname = None
+                    else:
+                        match = re.match(r'^\t([^:]*)  ([^ :;]+)( : 1)?(\[[^;]*\])?;.*$', line)
+                        if match:
+                            _type = match.group(1)
+                            _array = match.group(3)
+                            _bit = match.group(4)
+                            types['structs'][structname].append({
+                                'name': match.group(2),
+                                'type': f'{_type.strip()}{_array.strip() if _array else ""}{_bit.strip() if _bit else ""}'
+                            })
 
     for file in sdkpath.glob('*_classes.h'):
         with open(file, 'rt') as infile:
             for line in infile:
-                match = re.match(r'^class\ (.+)\ \:\ .*', line)
+                match = re.match(r'^class (.+) : .*', line)
                 if match:
                     classname = match.group(1)
                     if classname.startswith('A'):
                         classname = classname[1:]
                     currentclass = {'fields': {},
                                     'methods': {}}
-                    classes[classname] = currentclass
+                    types['classes'][classname] = currentclass
 
                 else:
                     match = re.match(r'^\t([^:]*)  ([^ :;]+)( : 1)?(\[[^;]*\])?;.*CPF_Net.*$', line)
@@ -56,26 +87,7 @@ def main():
 
 
         with open('parsed_classes.json', 'w') as f:
-            json.dump(classes, f, indent=2)
+            json.dump(types, f, indent=2)
 
 
 main()
-
-'''
-For code like this:
-    class ATgRepInfo_Player : public APlayerReplicationInfo
-    {
-    public:
-        int                                                r_nCharacterId;                                   		// 0x0270 (0x0004) [0x0000000000000020]              ( CPF_Net )
-        float                                              c_fLastUpdateTime;                                		// 0x0274 (0x0004) [0x0000000000000000]              
-        int                                                r_nHealthCurrent;                                 		// 0x0278 (0x0004) [0x0000000000000020]              ( CPF_Net )
-        int                                                r_nHealthMaximum;                                 		// 0x027C (0x0004) [0x0000000000000020]              ( CPF_Net )
-
-Output this:
-    { 'ATgRepInfo_Player': { 'r_nCharacterId': 'int',
-                             'r_nHealthCurrent': 'int',
-                             'r_nHealthMaximum': 'int' },
-      ...
-    }
-
-'''

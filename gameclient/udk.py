@@ -473,6 +473,41 @@ class PropertyValueMystery3():
         text = ''.join(items)
         return text
 
+
+class PropertyValueUdkArray():
+    def __init__(self, subtype, size):
+        self._index = None
+        self.subtype = subtype
+        self.size = size
+        self.value = None
+
+    @debugbits
+    def frombitarray(self, bits, debug=False):
+        self.index, bits = getnbits(8, bits)
+
+        if isinstance(self.subtype, tuple):
+            self.value = PropertyValueStruct(self.subtype)
+            bits = self.value.frombitarray(bits, debug=debug)
+        else:
+            try:
+                self.value, bits = parse_basic_property('element', self.subtype, bits, self.size, debug=debug)
+            except:
+                self.value = PropertyValueBitarray()
+                raise
+        return bits
+
+    def tobitarray(self):
+        bits = self.index.copy()
+        bits.extend(self.value.tobitarray())
+        return bits
+
+    def tostring(self, indent=0):
+        indent_prefix = ' ' * indent
+        text = '%s%s (array index)\n' % (indent_prefix, self.index.to01())
+        text += self.value.tostring(indent + 4)
+        return text
+
+
 class PropertyValueArray:
     def __init__(self):
         self.length = None
@@ -684,7 +719,7 @@ def parse_basic_property(propertyname, propertytype, bits, size=None, debug=Fals
         value = PropertyValueInteresting()
         bits = value.frombitarray(bits, debug=debug)
     else:
-        raise RuntimeError('Coding error: propertytype of property %s has invalid value: %s' % (propertyname, propertytype))
+        raise ParseError('Coding error: propertytype of property %s has invalid value: %s' % (propertyname, propertytype), bits)
 
     return value, bits
 
@@ -715,7 +750,7 @@ class PropertyValueStruct():
     def tostring(self, indent = 0):
         items = []
         for member, value in zip(self.member_list, self.values):
-            items.append(value.tostring(indent)[:-1] + '(%s)\n' % member['name'])
+            items.append(value.tostring(indent)[:-1] + ' (%s)\n' % member['name'])
         text = ''.join(items)
         return text
 
@@ -788,6 +823,7 @@ class ObjectProperty():
 
         propertyname = property_.get('name', None)
         propertytype = property_.get('type', None)
+        propertysubtype = property_.get('subtype', None)
         propertysize = property_.get('size', None)
         propertyvalues = property_.get('values', None)
         if propertyvalues:
@@ -800,6 +836,9 @@ class ObjectProperty():
                 bits = self.value.frombitarray(bits, debug=debug)
             elif isinstance(propertytype, tuple):
                 self.value = PropertyValueStruct(propertytype)
+                bits = self.value.frombitarray(bits, debug=debug)
+            elif propertytype == 'array':
+                self.value = PropertyValueUdkArray(propertysubtype, propertysize)
                 bits = self.value.frombitarray(bits, debug=debug)
             else:
                 try:
@@ -1255,10 +1294,10 @@ class Packet():
         parsed_nbits = len(self.tobitarray())
 
         if len(bits) != original_nbits - parsed_nbits:
-            raise RuntimeError(f'Coding error: parsed bits + unparsed bits does not equal total bits: '
+            raise ParseError(f'Coding error: parsed bits + unparsed bits does not equal total bits: '
                                f'parsed so far: {self.tostring(0)}\n'
                                f'Original bits: {original_bits.to01()}\n'
-                               f'Parsed bits  : {self.tobitarray().to01()}')
+                               f'Parsed bits  : {self.tobitarray().to01()}', bitarray())
 
         nr_of_padding_bits = 8 - (parsed_nbits % 8)
         if len(bits) != nr_of_padding_bits:

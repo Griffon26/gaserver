@@ -73,6 +73,7 @@ def main():
                 def get_typestring(cpp_type):
                     type_to_typestring = {
                         'bool':             "'type': bool",
+                        'unsigned long: 1': "'type': bool",
                         'unsigned long':    "'type': bool",
                         'float':            "'type': float",
                         'int':              "'type': int",
@@ -80,6 +81,7 @@ def main():
                         'struct FString':   "'type': str",
                         'struct FRotator':  "'type': bitarray, 'size': 3 * 8",
                         'struct FVector':   "'type': 'fvector'",
+                        'struct FName':     "'type': str",
                     }
                     try:
                         if cpp_type == 'class UClass*':
@@ -88,22 +90,39 @@ def main():
                         elif cpp_type.endswith('*'):
                             typestring = "'type': bitarray, 'size': 11"
                             comment = ''
+                        elif cpp_type.endswith('[]'):
+                            typestring, comment = get_typestring(cpp_type[:-2])
+                            typestring = typestring.replace("'type'", "'type': 'array', 'subtype'", 1)
                         else:
-                            typestring = type_to_typestring[cpp_type]
-                            comment = ''
+                            if cpp_type in type_to_typestring:
+                                typestring = type_to_typestring[cpp_type]
+                                comment = ''
+                            elif cpp_type.startswith('struct') and cpp_type.split()[1] in classes_from_sdk['structs']:
+                                _, struct_name = cpp_type.split()
+                                struct_data = classes_from_sdk['structs'][struct_name]
+                                typestring = f"'type': (\n"
+                                for structmemberdata in struct_data:
+                                    typestring += f"{{'name': '{structmemberdata['name']}',"
+                                    membertypestring, membercomment = get_typestring(structmemberdata['type'])
+                                    typestring += f" {membertypestring}}},{membercomment}\n"
+                                typestring += ')\n'
+                                comment = ''
+                            else:
+                                typestring = "'type': None"
+                                comment = f'\t# original type was: "{cpp_type}"'
                     except KeyError:
                         typestring = "'type': None"
-                        comment = f'\t# original type was: {cpp_type}'
+                        comment = f'\t# original type was: "{cpp_type}"'
 
                     return typestring, comment
 
-                if member_data['name'] in classes_from_sdk[member_data['class']]['fields']:
-                    cpp_type = classes_from_sdk[member_data['class']]['fields'][member_data['name']]
+                if member_data['name'] in classes_from_sdk['classes'][member_data['class']]['fields']:
+                    cpp_type = classes_from_sdk['classes'][member_data['class']]['fields'][member_data['name']]
                     typestring, comment = get_typestring(cpp_type)
                     f.write(f"    '{memberid}': {{'name': '{member_data['name']}', {typestring}}},{comment}\n")
 
-                elif member_data['name'] in classes_from_sdk[member_data['class']]['methods']:
-                    rpc_data = classes_from_sdk[member_data['class']]['methods'][member_data['name']]
+                elif member_data['name'] in classes_from_sdk['classes'][member_data['class']]['methods']:
+                    rpc_data = classes_from_sdk['classes'][member_data['class']]['methods'][member_data['name']]
                     f.write(f"    '{memberid}': {{'name': 'RPC {member_data['name']}', 'type': [\n")
                     for param in rpc_data['params']:
                         f.write(f"        {{'name': '{param['name']}',\n")
