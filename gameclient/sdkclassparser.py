@@ -15,7 +15,8 @@ def main():
                     classname = match.group(1)
                     if classname.startswith('A'):
                         classname = classname[1:]
-                    currentclass = {}
+                    currentclass = {'fields': {},
+                                    'methods': {}}
                     classes[classname] = currentclass
 
                 else:
@@ -28,7 +29,31 @@ def main():
                         if match.group(4) is not None:
                             fieldtype += '[]'
 
-                        currentclass[fieldname] = fieldtype
+                        currentclass['fields'][fieldname] = fieldtype
+                    else:
+                        match = re.match(r'^([^\(]*)\(([^\)]*)\);$', line)
+                        if match:
+                            def to_type_and_name(space_separated_string):
+                                parts = space_separated_string.split()
+                                mytype = ' '.join(parts[:-1])
+                                myname = parts[-1]
+                                return mytype, myname
+
+                            func = match.group(1)
+                            functype, funcname = to_type_and_name(func)
+
+                            paramtext = match.group(2).strip()
+                            if paramtext:
+                                param_types_and_names = [to_type_and_name(param) for param in paramtext.split(',')]
+                                params = [{'name': myname, 'type': mytype} for mytype, myname in param_types_and_names]
+                            else:
+                                params = []
+
+                            currentclass['methods'][funcname] = {
+                                'rettype': functype,
+                                'params': params
+                            }
+
 
         with open('parsed_classes.json', 'w') as f:
             json.dump(classes, f, indent=2)

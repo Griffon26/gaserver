@@ -30,160 +30,6 @@ known_int_values = {
 known_fields = {
 }
 
-TgRepInfo_GameProps_6bit = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
-    '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
-    '010000': {'name': 'Velocity', 'type': 'fvector'},
-    '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},
-    '001000': {'name': 'bNetOwner', 'type': bool},
-    '101000': {'name': 'bProjTarget', 'type': bool},
-    '011000': {'name': 'bBlockActors', 'type': bool},
-    '111000': {'name': 'bCollideWorld', 'type': bool},
-    '000100': {'name': 'bCollideActors', 'type': bool},
-    '100100': {'name': 'bHardAttach', 'type': bool},
-    '010100': {'name': 'bTearOff', 'type': bool},
-    '110100': {'name': 'bHidden', 'type': bool},
-    '001100': {'name': 'Base', 'type': bitarray, 'size': 11},
-    '101100': {'name': 'Owner', 'type': bitarray, 'size': 11},
-    '011100': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},
-    '111100': {'name': 'Role', 'type': bitarray, 'size': 8},
-    '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
-    '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
-    '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
-    '001010': {'name': 'Location', 'type': 'fvector'},
-    '101010': {'name': 'MatchID', 'type': int},
-    '011010': {'name': 'Winner', 'type': bitarray, 'size': 11},
-    '111010': {'name': 'MessageOfTheDay', 'type': str},
-    '000110': {'name': 'ServerRegion', 'type': int},
-    '100110': {'name': 'AdminEmail', 'type': str},
-    '010110': {'name': 'AdminName', 'type': str},
-    '110110': {'name': 'ShortName', 'type': str},
-    '001110': {'name': 'ServerName', 'type': str},
-    '101110': {'name': 'MaxLives', 'type': int},
-    '011110': {'name': 'TimeLimit', 'type': int},
-    '111110': {'name': 'GoalScore', 'type': int},
-    '000001': {'name': 'RemainingMinute', 'type': int},
-    '100001': {'name': 'ElapsedTime', 'type': int},
-    '010001': {'name': 'RemainingTime', 'type': int},
-    '110001': {'name': 'bTrackStats', 'type': bool},
-    '001001': {'name': 'bIsArbitrated', 'type': bool},
-    '101001': {'name': 'bMatchIsOver', 'type': bool},
-    '011001': {'name': 'bMatchHasBegun', 'type': bool},
-    '111001': {'name': 'bStopCountDown', 'type': bool},
-    '000101': {'name': 'GameClass', 'type': bitarray, 'size': 32},
-    '100101': {'name': 'r_MapLogoResIds', 'type': None},	# original type was: struct FMapLogoResIdInfo
-    '010101': {'name': 'r_MiniMapInfo', 'type': None},	# original type was: struct FMiniMapInfo
-    '110101': {'name': 'r_Objectives', 'type': bitarray, 'size': 40},	# original type was: class ATgMissionObjective*[]
-    '001101': {'name': 'r_nAutoKickTimeout', 'type': int},
-    '101101': {'name': 'r_fServerTimeLastUpdate', 'type': float},
-    '011101': {'name': 'r_nMaxRoundNumber', 'type': int},
-    '111101': {'name': 'r_nRoundNumber', 'type': int},
-    '000011': {'name': 'r_nMissionTimerStateChange', 'type': int},
-    '100011': {'name': 'r_fMissionRemainingTime', 'type': float},
-    '010011': {'name': 'r_nRaidAttackerRespawnBonus', 'type': int},
-    '110011': {'name': 'r_nRaidDefenderRespawnBonus', 'type': int},
-    '001011': {'name': 'r_nVictoryBonusLives', 'type': int},
-    '101011': {'name': 'r_nPointsToWin', 'type': int},
-    '011011': {'name': 'r_fGameSpeedModifier', 'type': float},
-    '111011': {'name': 'r_nReleaseDelay', 'type': int},
-    '000111': {'name': 'r_nSecsToAutoReleaseDefenders', 'type': int},
-    '100111': {'name': 'r_nSecsToAutoReleaseAttackers', 'type': int},
-    '010111': {'name': 'r_bInOverTime', 'type': bool},
-    '110111': {'name': 'r_bDefenseAlarm', 'type': bool},
-    '001111': {'name': 'r_bAllowPlayerRelease', 'type': bool},
-    '101111': {'name': 'r_bActiveCombat', 'type': bool},
-    '011111': {'name': 'r_bAllowBuildMorale', 'type': bool},
-    '111111': {'name': 'r_bIsTerritoryMap', 'type': bool},
-    #'0000001': {'name': 'r_bIsMatch', 'type': bool},
-    #'1000001': {'name': 'r_bIsArena', 'type': bool},
-    #'0100001': {'name': 'r_bIsTutorialMap', 'type': bool},
-    #'1100001': {'name': 'r_bIsTraining', 'type': bool},
-    #'0010001': {'name': 'r_bIsPVP', 'type': bool},
-    #'1010001': {'name': 'r_bIsMission', 'type': bool},
-    #'0110001': {'name': 'r_bIsRaid', 'type': bool},
-    #'1110001': {'name': 'r_nMissionTimerState', 'type': bitarray, 'size': 8},
-    #'0001001': {'name': 'r_GameType', 'type': bitarray, 'size': 8},
-}
-
-TgRepInfo_GameOpenWorldProps_6bit = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
-    '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
-    '010000': {'name': 'Velocity', 'type': 'fvector'},
-    '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},
-    '001000': {'name': 'bNetOwner', 'type': bool},
-    '101000': {'name': 'bProjTarget', 'type': bool},
-    '011000': {'name': 'bBlockActors', 'type': bool},
-    '111000': {'name': 'bCollideWorld', 'type': bool},
-    '000100': {'name': 'bCollideActors', 'type': bool},
-    '100100': {'name': 'bHardAttach', 'type': bool},
-    '010100': {'name': 'bTearOff', 'type': bool},
-    '110100': {'name': 'bHidden', 'type': bool},
-    '001100': {'name': 'Base', 'type': bitarray, 'size': 11},
-    '101100': {'name': 'Owner', 'type': bitarray, 'size': 11},
-    '011100': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},
-    '111100': {'name': 'Role', 'type': bitarray, 'size': 8},
-    '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
-    '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
-    '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
-    '001010': {'name': 'Location', 'type': 'fvector'},
-    '101010': {'name': 'MatchID', 'type': int},
-    '011010': {'name': 'Winner', 'type': bitarray, 'size': 11},
-    '111010': {'name': 'MessageOfTheDay', 'type': str},
-    '000110': {'name': 'ServerRegion', 'type': int},
-    '100110': {'name': 'AdminEmail', 'type': str},
-    '010110': {'name': 'AdminName', 'type': str},
-    '110110': {'name': 'ShortName', 'type': str},
-    '001110': {'name': 'ServerName', 'type': str},
-    '101110': {'name': 'MaxLives', 'type': int},
-    '011110': {'name': 'TimeLimit', 'type': int},
-    '111110': {'name': 'GoalScore', 'type': int},
-    '000001': {'name': 'RemainingMinute', 'type': int},
-    '100001': {'name': 'ElapsedTime', 'type': int},
-    '010001': {'name': 'RemainingTime', 'type': int},
-    '110001': {'name': 'bTrackStats', 'type': bool},
-    '001001': {'name': 'bIsArbitrated', 'type': bool},
-    '101001': {'name': 'bMatchIsOver', 'type': bool},
-    '011001': {'name': 'bMatchHasBegun', 'type': bool},
-    '111001': {'name': 'bStopCountDown', 'type': bool},
-    '000101': {'name': 'GameClass', 'type': bitarray, 'size': 11},
-    '100101': {'name': 'r_MapLogoResIds', 'type': None},	# original type was: struct FMapLogoResIdInfo
-    '010101': {'name': 'r_MiniMapInfo', 'type': None},	# original type was: struct FMiniMapInfo
-    '110101': {'name': 'r_Objectives', 'type': None},	# original type was: class ATgMissionObjective*[]
-    '001101': {'name': 'r_nAutoKickTimeout', 'type': int},
-    '101101': {'name': 'r_fServerTimeLastUpdate', 'type': float},
-    '011101': {'name': 'r_nMaxRoundNumber', 'type': int},
-    '111101': {'name': 'r_nRoundNumber', 'type': int},
-    '000011': {'name': 'r_nMissionTimerStateChange', 'type': int},
-    '100011': {'name': 'r_fMissionRemainingTime', 'type': float},
-    '010011': {'name': 'r_nRaidAttackerRespawnBonus', 'type': int},
-    '110011': {'name': 'r_nRaidDefenderRespawnBonus', 'type': int},
-    '001011': {'name': 'r_nVictoryBonusLives', 'type': int},
-    '101011': {'name': 'r_nPointsToWin', 'type': int},
-    '011011': {'name': 'r_fGameSpeedModifier', 'type': float},
-    '111011': {'name': 'r_nReleaseDelay', 'type': int},
-    '000111': {'name': 'r_nSecsToAutoReleaseDefenders', 'type': int},
-    '100111': {'name': 'r_nSecsToAutoReleaseAttackers', 'type': int},
-    '010111': {'name': 'r_bInOverTime', 'type': bool},
-    '110111': {'name': 'r_bDefenseAlarm', 'type': bool},
-    '001111': {'name': 'r_bAllowPlayerRelease', 'type': bool},
-    '101111': {'name': 'r_bActiveCombat', 'type': bool},
-    '011111': {'name': 'r_bAllowBuildMorale', 'type': bool},
-    '111111': {'name': 'r_bIsTerritoryMap', 'type': bool},
-    #'0000001': {'name': 'r_bIsMatch', 'type': bool},
-    #'1000001': {'name': 'r_bIsArena', 'type': bool},
-    #'0100001': {'name': 'r_bIsTutorialMap', 'type': bool},
-    #'1100001': {'name': 'r_bIsTraining', 'type': bool},
-    #'0010001': {'name': 'r_bIsPVP', 'type': bool},
-    #'1010001': {'name': 'r_bIsMission', 'type': bool},
-    #'0110001': {'name': 'r_bIsRaid', 'type': bool},
-    #'1110001': {'name': 'r_nMissionTimerState', 'type': bitarray, 'size': 8},
-    #'0001001': {'name': 'r_GameType', 'type': bitarray, 'size': 8},
-    #'1001001': {'name': 'r_GameTickets', 'type': None},	# original type was: int[]
-}
-
-
 
 class ParseError(Exception):
     def __init__(self, message, bitsleft):
@@ -206,27 +52,6 @@ class ParserState():
 
         self.class_dict = generated_class_dict
         self.class_dict[None] = {'name': 'FirstServerObject', 'props': FirstServerObjectProps}
-        self.class_dict['00000110010100001010000000000000']['props'] = TgRepInfo_GameProps_6bit
-        self.class_dict['01101110010100001010000000000000']['props'] = TgRepInfo_GameOpenWorldProps_6bit
-
-        '''
-        self.class_dict = {
-            None:                               {'name': 'FirstServerObject', 'props': FirstServerObjectProps},
-            '00101100110100001010000000000000': {'name': 'TgRepInfo_Player', 'props': PlayerReplicationInfoProps},
-            '01111110110100010110000000000000': {'name': 'WorldInfo', 'props': {}},
-            '00111100101000110010000000000000': {'name': 'TgEffectManager', 'props': {}},
-            '00000101100010110010000000000000': {'name': 'TgInventoryManager', 'props': {}},
-            '01010100111011010010000000000000': {'name': 'TgDevice_NewMelee', 'props': {}},
-            '00001110111011010010000000000000': {'name': 'TgDevice_NewRange', 'props': {}},
-            '01010101011011010010000000000000': {'name': 'TgDevice', 'props': {}},
-            '00110110111011010010000000000000': {'name': 'TgDevice_Morale', 'props': {}},
-            '01011101011011010010000000000000': {'name': 'TgDevice_Grenade', 'props': {}},
-            '00000110010100001010000000000000': {'name': 'TgRepInfo_Game', 'props': {}},
-            '01101011010000001010000000000000': {'name': 'TgPlayerController', 'props': {}},
-            '00100010110101110010000000000000': {'name': 'TgPawn_Character', 'props': {}},
-            '00010101000110100000000000000000': {'name': 'CrowdReplicationActor', 'props': {}},
-        }
-        '''
 
         def reverse_keys(d):
             return {key[::-1] if key is not None else None: value for key, value in d.items()}
@@ -1169,6 +994,11 @@ class PayloadData():
                 payloadbits = self.object_class.frombitarray(payloadbits, state, debug = debug)
                 if len(payloadbits) > 11:
                     self.flags, payloadbits = getnbits(11, payloadbits)
+                    #if self.flags != bitarray('00000010101', endian='little'):
+                    #    print('blabla')
+                    #    payloadbits = self.flags + payloadbits
+                    #    self.flags = None
+
 
                 class_ = state.class_dict[self.object_class.getclasskey() if channel != 0 else None]
                 classname = class_['name']
