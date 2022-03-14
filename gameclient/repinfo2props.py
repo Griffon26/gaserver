@@ -101,11 +101,12 @@ def main():
                                 _, struct_name = cpp_type.split()
                                 struct_data = classes_from_sdk['structs'][struct_name]
                                 typestring = f"'type': (\n"
+                                indentation = 24 * ' '
                                 for structmemberdata in struct_data:
-                                    typestring += f"{{'name': '{structmemberdata['name']}',"
+                                    typestring += indentation + f"{{'name': '{structmemberdata['name']}',"
                                     membertypestring, membercomment = get_typestring(structmemberdata['type'])
                                     typestring += f" {membertypestring}}},{membercomment}\n"
-                                typestring += ')\n'
+                                typestring += indentation + ')'
                                 comment = ''
                             else:
                                 typestring = "'type': None"
@@ -116,13 +117,15 @@ def main():
 
                     return typestring, comment
 
-                if member_data['name'] in classes_from_sdk['classes'][member_data['class']]['fields']:
-                    cpp_type = classes_from_sdk['classes'][member_data['class']]['fields'][member_data['name']]
+                sdkfields = classes_from_sdk['classes'][member_data['class']]['fields']
+                sdkmethods = {meth[5:] if meth.startswith('event') else meth: data for meth, data in classes_from_sdk['classes'][member_data['class']]['methods'].items()}
+                if member_data['name'] in sdkfields:
+                    cpp_type = sdkfields[member_data['name']]
                     typestring, comment = get_typestring(cpp_type)
                     f.write(f"    '{memberid}': {{'name': '{member_data['name']}', {typestring}}},{comment}\n")
 
-                elif member_data['name'] in classes_from_sdk['classes'][member_data['class']]['methods']:
-                    rpc_data = classes_from_sdk['classes'][member_data['class']]['methods'][member_data['name']]
+                elif member_data['name'] in sdkmethods:
+                    rpc_data = sdkmethods[member_data['name']]
                     f.write(f"    '{memberid}': {{'name': 'RPC {member_data['name']}', 'type': [\n")
                     for param in rpc_data['params']:
                         f.write(f"        {{'name': '{param['name']}',\n")
