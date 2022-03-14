@@ -272,15 +272,16 @@ class PropertyValueInt():
 class PropertyValueFloat():
     def __init__(self):
         self.value = None
+        self.valuebits = None
 
     @debugbits
     def frombitarray(self, bits, debug=False):
-        valuebits, bits = getnbits(32, bits)
-        self.value = tofloat(valuebits)
+        self.valuebits, bits = getnbits(32, bits)
+        self.value = tofloat(self.valuebits)
         return bits
 
     def tobitarray(self):
-        return float2bitarray(self.value) if self.value is not None else bitarray()
+        return self.valuebits if self.value is not None else bitarray()
 
     def tostring(self, indent=0):
         indent_prefix = ' ' * indent
@@ -354,27 +355,32 @@ class PropertyValueBitarray():
 
 class PropertyValueFVector():
     def __init__(self):
+        self.lengthbits = None
         self.vectorbits = None
 
     @debugbits
     def frombitarray(self, bits, debug = False):
-        assert len(bits) > 4
-        lengthbits, bits = getnbits(4, bits)
-        length = toint(lengthbits) * 3 + 6
+        self.lengthbits, bits = getnbits(4, bits)
+        length = toint(self.lengthbits) * 3 + 6
         self.vectorbits, bits = getnbits(length, bits)
         return bits
 
     def tobitarray(self):
-        length = int((len(self.vectorbits) - 6) / 3)
-        lengthbits = int2bitarray(length, 4)
-        return lengthbits + self.vectorbits
+        bits = bitarray()
+        if self.lengthbits:
+            bits += self.lengthbits
+        if self.vectorbits:
+            length = int((len(self.vectorbits) - 6) / 3)
+            lengthbits = int2bitarray(length, 4)
+            assert lengthbits == self.lengthbits
+            bits += self.vectorbits
+        return bits
 
     def tostring(self, indent = 0):
         indent_prefix = ' ' * indent
-        if self.vectorbits is not None:
-            length = int((len(self.vectorbits) - 6) / 3)
-            lengthbits = int2bitarray(length, 4)
-            text = '%s%s %s (FVector)\n' % (indent_prefix, lengthbits.to01(), self.vectorbits.to01())
+        vectorbits = self.vectorbits.to01() if self.vectorbits else 'empty'
+        if self.lengthbits is not None:
+            text = '%s%s %s (FVector)\n' % (indent_prefix, self.lengthbits.to01(), vectorbits)
         else:
             text = '%sempty\n' % indent_prefix
         return text
@@ -488,28 +494,35 @@ class PropertyValueUdkArray():
 
     @debugbits
     def frombitarray(self, bits, debug=False):
-        self.index, bits = getnbits(8, bits)
+        self._index, bits = getnbits(8, bits)
 
         if isinstance(self.subtype, tuple):
             self.value = PropertyValueStruct(self.subtype)
             bits = self.value.frombitarray(bits, debug=debug)
         else:
-            try:
-                self.value, bits = parse_basic_property('element', self.subtype, bits, self.size, debug=debug)
-            except:
-                self.value = PropertyValueBitarray()
-                raise
+            def valuesetter(v):
+                self.value = v
+            bits = parse_basic_property(valuesetter, 'element', self.subtype, bits, self.size, debug=debug)
         return bits
 
     def tobitarray(self):
-        bits = self.index.copy()
-        bits.extend(self.value.tobitarray())
+        bits = bitarray()
+        if self._index is not None:
+            bits.extend(self._index)
+            if self.value is not None:
+                bits.extend(self.value.tobitarray())
         return bits
 
     def tostring(self, indent=0):
         indent_prefix = ' ' * indent
-        text = '%s%s (array index)\n' % (indent_prefix, self.index.to01())
-        text += self.value.tostring(indent + 4)
+        if self._index:
+            text = '%s%s (array index)\n' % (indent_prefix, self._index.to01())
+            if self.value:
+                text += self.value.tostring(indent + 4)
+            else:
+                text += '%sempty\n' % indent_prefix
+        else:
+            text = '%sempty\n' % indent_prefix
         return text
 
 
@@ -687,46 +700,57 @@ class PropertyValueInteresting:
         return text
 
 
-def parse_basic_property(propertyname, propertytype, bits, size=None, debug=False):
+def parse_basic_property(valuesetter, propertyname, propertytype, bits, size=None, debug=False):
     if propertytype is str:
         value = PropertyValueString()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype is int:
         value = PropertyValueInt()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype is float:
         value = PropertyValueFloat()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype is bool:
         value = PropertyValueBool()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype is 'flag':
         value = PropertyValueFlag()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype is bitarray:
         value = PropertyValueBitarray()
+        valuesetter(value)
         #if size is None:
         #    raise RuntimeError("Coding error: size can't be None for bitarray")
         bits = value.frombitarray(bits, size, debug=debug)
     elif propertytype == 'fvector':
         value = PropertyValueFVector()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype == PropertyValueMystery1:
         value = PropertyValueMystery1()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype == PropertyValueMystery2:
         value = PropertyValueMystery2()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype == PropertyValueMystery3:
         value = PropertyValueMystery3()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype == PropertyValueInteresting:
         value = PropertyValueInteresting()
+        valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     else:
         raise ParseError('Coding error: propertytype of property %s has invalid value: %s' % (propertyname, propertytype), bits)
 
-    return value, bits
+    return bits
 
 
 class PropertyValueStruct():
@@ -741,8 +765,9 @@ class PropertyValueStruct():
             propertyname = member.get('name', None)
             propertytype = member.get('type', None)
             propertysize = member.get('size', None)
-            value, bits = parse_basic_property(propertyname, propertytype, bits, propertysize, debug = debug)
-            self.values.append(value)
+            def valueappender(v):
+                self.values.append(v)
+            bits = parse_basic_property(valueappender, propertyname, propertytype, bits, propertysize, debug = debug)
 
         return bits
 
@@ -778,10 +803,11 @@ class PropertyValueParams():
             present, bits = getnbits(1, bits)
             self.presence.append(present[0])
             if present[0] == 1:
-                value, bits = parse_basic_property(propertyname, propertytype, bits, propertysize, debug = debug)
+                def valueappender(v):
+                    self.values.append(v)
+                bits = parse_basic_property(valueappender, propertyname, propertytype, bits, propertysize, debug = debug)
             else:
-                value = None
-            self.values.append(value)
+                self.values.append(None)
 
         return bits
 
@@ -846,11 +872,9 @@ class ObjectProperty():
                 self.value = PropertyValueUdkArray(propertysubtype, propertysize)
                 bits = self.value.frombitarray(bits, debug=debug)
             else:
-                try:
-                    self.value, bits = parse_basic_property(propertyname, propertytype, bits, propertysize, debug = debug)
-                except:
-                    self.value = PropertyValueBitarray()
-                    raise
+                def valuesetter(v):
+                    self.value = v
+                bits = parse_basic_property(valuesetter, propertyname, propertytype, bits, propertysize, debug = debug)
         else:
             raise ParseError('Unknown property %s for class %s' %
                                  (propertykey, class_['name']),
@@ -1034,7 +1058,6 @@ class PayloadData():
             if channel not in state.channels:
                 newinstance = True
                 self.object_class = ObjectClass()
-                print(f'length of bits before parsing object: {len(payloadbits)}')
                 payloadbits = self.object_class.frombitarray(payloadbits, state, debug = debug)
                 if len(payloadbits) > 11:
                     self.flags, payloadbits = getnbits(11, payloadbits)
