@@ -100,7 +100,8 @@ def getstring(bits):
         else:
             break
 
-    return ''.join(result), bits[(len(result) + 1) * 8:]
+    resultbits = bits[:(len(result) + 1) * 8]
+    return ''.join(result), resultbits, bits[(len(result) + 1) * 8:]
 
 def debugbits(func):
     def wrapper(*args, **kwargs):
@@ -167,12 +168,16 @@ class PropertyValueString():
         self.size = toint(stringsizebits)
 
         if self.size > 0:
-            self.value, bits = getstring(bits)
+            self.value, valuebits, bits = getstring(bits)
 
-            if len(self.value) + 1 != self.size:
+            size_from_count = self.size
+            size_from_string = len(self.value) + 1
+            if size_from_count != size_from_string:
+                self.size = None
+                self.value = None
+                bits = stringsizebits + valuebits + bits
                 raise ParseError('ERROR: string size (%d) was not equal to expected size (%d)' %
-                                     (len(self.value) + 1,
-                                      self.size),
+                                     (size_from_string, size_from_count),
                                  bits)
         else:
             self.value = ''
