@@ -84,9 +84,10 @@ def main():
                         'struct FName':     "'type': str",
                     }
                     try:
-                        if cpp_type == 'class UClass*':
+                        if cpp_type in ('class UClass*',
+                                        'class ATgMissionObjective*'):
                             typestring = "'type': bitarray, 'size': 32"
-                            comment = '\t# exception for pointer to UClass'
+                            comment = f'\t# exception for {cpp_type}'
                         elif cpp_type.endswith('*'):
                             typestring = "'type': bitarray, 'size': 11"
                             comment = ''
