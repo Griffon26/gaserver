@@ -1,1 +1,4 @@
-/props.py
+*.bindump
+*.bindump_parsed.txt
+*.carrays
+*.pcapng
