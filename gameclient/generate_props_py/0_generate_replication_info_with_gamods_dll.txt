@@ -1,0 +1,6 @@
+* start up Global Agenda
+* inject the gamods dll
+* press HOME until you see the blue crosshair
+* press numpad 0
+* copy the generated replication_info.txt file from the Binaries folder of GA to this directory
+
