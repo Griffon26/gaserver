@@ -52,6 +52,14 @@ def main():
                 'TgPlayerController': 8,
                 'TgRepInfo_Game': 6,
                 'TgRepInfo_GameOpenWorld': 6,
+                'TgDevice': 5,
+                'TgDevice_Grenade': 5,
+                'TgDevice_HitPulse': 5,
+                'TgDevice_NewMelee': 5,
+                'TgDevice_MeleeDualWield': 5,
+                'TgDevice_Morale': 5,
+                'TgDevice_NewRange': 5,
+                'TgPawn_NPC': 7,
             }
             if classdata['name'] in exceptions:
                 bits_for_field = exceptions[classdata['name']]
@@ -87,10 +95,19 @@ def main():
                         if cpp_type in ('class UClass*',
                                         'class ATgMissionObjective*'):
                             typestring = "'type': bitarray, 'size': 32"
-                            comment = f'\t# exception for {cpp_type}'
+                            comment = f'\t# {cpp_type} confirmed to be 32 bits'
+                        elif cpp_type in ('class ATgRepInfo_TaskForce*',
+                                          'class APlayerReplicationInfo*',
+                                          'class APawn*',
+                                          'class AActor*',
+                                          'class AInventory*',
+                                          'class AInventoryManager*',
+                                          'class AController*'):
+                            typestring = "'type': bitarray, 'size': 11"
+                            comment = f'\t# {cpp_type} confirmed to be 11 bits'
                         elif cpp_type.endswith('*'):
                             typestring = "'type': bitarray, 'size': 11"
-                            comment = ''
+                            comment = f'\t# {cpp_type} defaulting to 11 bits'
                         elif cpp_type.endswith('[]'):
                             typestring, comment = get_typestring(cpp_type[:-2])
                             typestring = typestring.replace("'type'", "'type': 'array', 'subtype'", 1)
