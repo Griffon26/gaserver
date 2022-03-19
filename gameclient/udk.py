@@ -386,6 +386,83 @@ class PropertyValueFVector():
         return text
 
 
+class PropertyValueFRotator():
+    def __init__(self):
+        self.pitch = None
+        self.yaw = None
+        self.roll = None
+
+    def rotbitstoint16(self, somebits):
+        val = toint(somebits) * 256
+        if val >= 32768:
+            val -= 65536
+        return val
+
+    def int16torotbits(self, val):
+        if val < 0:
+            val += 65536
+        val = int(val / 256)
+        return int2bitarray(val, 8)
+
+    @debugbits
+    def frombitarray(self, bits, debug = False):
+
+        self.pitchpresent, bits = getnbits(1, bits)
+        if self.pitchpresent[0]:
+            pitchbits, bits = getnbits(8, bits)
+            self.pitch = self.rotbitstoint16(pitchbits)
+
+        self.yawpresent, bits = getnbits(1, bits)
+        if self.yawpresent[0]:
+            yawbits, bits = getnbits(8, bits)
+            self.yaw = self.rotbitstoint16(yawbits)
+
+        self.rollpresent, bits = getnbits(1, bits)
+        if self.rollpresent[0]:
+            rollbits, bits = getnbits(8, bits)
+            self.roll = self.rotbitstoint16(rollbits)
+
+        return bits
+
+    def tobitarray(self):
+
+        bits = bitarray()
+
+        if self.pitch is None:
+            bits += bitarray('0')
+        else:
+            bits += bitarray('1') + self.int16torotbits(self.pitch)
+
+        if self.yaw is None:
+            bits += bitarray('0')
+        else:
+            bits += bitarray('1') + self.int16torotbits(self.yaw)
+
+        if self.roll is None:
+            bits += bitarray('0')
+        else:
+            bits += bitarray('1') + self.int16torotbits(self.roll)
+
+        return bits
+
+    def tostring(self, indent = 0):
+        indent_prefix = ' ' * indent
+        text = ''
+        if self.pitch is None:
+            text += '%s0 (no pitch)\n' % indent_prefix
+        else:
+            text += '%s1 %s (pitch = %d)\n' % (indent_prefix, self.int16torotbits(self.pitch).to01(), self.pitch)
+        if self.yaw is None:
+            text += '%s0 (no yaw)\n' % indent_prefix
+        else:
+            text += '%s1 %s (yaw = %d)\n' % (indent_prefix, self.int16torotbits(self.yaw).to01(), self.yaw)
+        if self.roll is None:
+            text += '%s0 (no roll)\n' % indent_prefix
+        else:
+            text += '%s1 %s (roll = %d)\n' % (indent_prefix, self.int16torotbits(self.roll).to01(), self.roll)
+        return text
+
+
 class PropertyValueMystery1():
     def __init__(self):
         self.int1 = PropertyValueInt()
@@ -729,6 +806,10 @@ def parse_basic_property(valuesetter, propertyname, propertytype, bits, size=Non
         bits = value.frombitarray(bits, size, debug=debug)
     elif propertytype == 'fvector':
         value = PropertyValueFVector()
+        valuesetter(value)
+        bits = value.frombitarray(bits, debug=debug)
+    elif propertytype == 'frotator':
+        value = PropertyValueFRotator()
         valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
     elif propertytype == PropertyValueMystery1:

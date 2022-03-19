@@ -88,7 +88,7 @@ def main():
                         'int':              "'type': int",
                         'unsigned char':    "'type': bitarray, 'size': 8",
                         'struct FString':   "'type': str",
-                        'struct FRotator':  "'type': bitarray, 'size': 3 * 8",
+                        'struct FRotator':  "'type': 'frotator'",
                         'struct FVector':   "'type': 'fvector'",
                         'struct FName':     "'type': str",
                     }

@@ -1,7 +1,7 @@
 from bitarray import bitarray
 
 ActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -20,12 +20,12 @@ ActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 InfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -44,12 +44,12 @@ InfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 AccessControlProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -68,12 +68,12 @@ AccessControlProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 ControllerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -92,7 +92,7 @@ ControllerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -100,11 +100,11 @@ ControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -121,7 +121,7 @@ ControllerProps = {
 }
 
 PlayerControllerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -140,7 +140,7 @@ PlayerControllerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101000': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -148,11 +148,11 @@ PlayerControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011000': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -167,12 +167,12 @@ PlayerControllerProps = {
          'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     ]},
     '00111000': {'name': 'TargetEyeHeight', 'type': float},
-    '10111000': {'name': 'TargetViewRotation', 'type': bitarray, 'size': 3 * 8},
+    '10111000': {'name': 'TargetViewRotation', 'type': 'frotator'},
     '01111000': {'name': 'RPC ClientDrawCoordinateSystem', 'type': [
         {'name': 'AxisLoc',
          'type': 'fvector'},
         {'name': 'AxisRot',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'Scale',
          'type': float},
         {'name': 'bPersistentLines',
@@ -823,7 +823,7 @@ PlayerControllerProps = {
 }
 
 AdminProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -842,7 +842,7 @@ AdminProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101000': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -850,11 +850,11 @@ AdminProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011000': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -869,12 +869,12 @@ AdminProps = {
          'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     ]},
     '00111000': {'name': 'TargetEyeHeight', 'type': float},
-    '10111000': {'name': 'TargetViewRotation', 'type': bitarray, 'size': 3 * 8},
+    '10111000': {'name': 'TargetViewRotation', 'type': 'frotator'},
     '01111000': {'name': 'RPC ClientDrawCoordinateSystem', 'type': [
         {'name': 'AxisLoc',
          'type': 'fvector'},
         {'name': 'AxisRot',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'Scale',
          'type': float},
         {'name': 'bPersistentLines',
@@ -1543,7 +1543,7 @@ AdminProps = {
 }
 
 AIControllerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1562,7 +1562,7 @@ AIControllerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1570,11 +1570,11 @@ AIControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -1591,7 +1591,7 @@ AIControllerProps = {
 }
 
 KeypointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1610,12 +1610,12 @@ KeypointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 AmbientSoundProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1634,12 +1634,12 @@ AmbientSoundProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 AmbientSoundMovableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1658,12 +1658,12 @@ AmbientSoundMovableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 AmbientSoundSimpleProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1682,12 +1682,12 @@ AmbientSoundSimpleProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 AmbientSoundNonLoopProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1706,12 +1706,12 @@ AmbientSoundNonLoopProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 AmbientSoundSimpleToggleableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1730,13 +1730,13 @@ AmbientSoundSimpleToggleableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyPlaying', 'type': bool},
 }
 
 CameraProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1755,12 +1755,12 @@ CameraProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 AnimatedCameraProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1779,12 +1779,12 @@ AnimatedCameraProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 NavigationPointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1803,12 +1803,12 @@ NavigationPointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 LadderProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1827,12 +1827,12 @@ LadderProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 AutoLadderProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1851,12 +1851,12 @@ AutoLadderProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 BrushProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1875,12 +1875,12 @@ BrushProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 VolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1899,12 +1899,12 @@ VolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 BlockingVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1923,12 +1923,12 @@ BlockingVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 BroadcastHandlerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1947,12 +1947,12 @@ BroadcastHandlerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CameraActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1971,14 +1971,14 @@ CameraActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'FOVAngle', 'type': float},
     '01101': {'name': 'AspectRatio', 'type': float},
 }
 
 ClipMarkerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -1997,12 +1997,12 @@ ClipMarkerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 ColorScaleVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2021,12 +2021,12 @@ ColorScaleVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CoverGroupProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2045,12 +2045,12 @@ CoverGroupProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CoverLinkProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2069,12 +2069,12 @@ CoverLinkProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 ReplicationInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2093,12 +2093,12 @@ ReplicationInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CoverReplicatorProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2117,7 +2117,7 @@ CoverReplicatorProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'RPC ClientSetOwner', 'type': [
         {'name': 'PC',
@@ -2232,7 +2232,7 @@ CoverReplicatorProps = {
 }
 
 CoverSlotMarkerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2251,12 +2251,12 @@ CoverSlotMarkerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CrowdAgentProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2275,12 +2275,12 @@ CrowdAgentProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CrowdAttractorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2299,13 +2299,13 @@ CrowdAttractorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bAttractorEnabled', 'type': bool},
 }
 
 CrowdReplicationActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2324,7 +2324,7 @@ CrowdReplicationActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'DestroyAllCount', 'type': int},
     '01101': {'name': 'bSpawningActive', 'type': bool},
@@ -2332,7 +2332,7 @@ CrowdReplicationActorProps = {
 }
 
 CullDistanceVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2351,12 +2351,12 @@ CullDistanceVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DebugCameraControllerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2375,7 +2375,7 @@ DebugCameraControllerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101000': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -2383,11 +2383,11 @@ DebugCameraControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011000': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -2402,12 +2402,12 @@ DebugCameraControllerProps = {
          'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     ]},
     '00111000': {'name': 'TargetEyeHeight', 'type': float},
-    '10111000': {'name': 'TargetViewRotation', 'type': bitarray, 'size': 3 * 8},
+    '10111000': {'name': 'TargetViewRotation', 'type': 'frotator'},
     '01111000': {'name': 'RPC ClientDrawCoordinateSystem', 'type': [
         {'name': 'AxisLoc',
          'type': 'fvector'},
         {'name': 'AxisRot',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'Scale',
          'type': float},
         {'name': 'bPersistentLines',
@@ -3058,7 +3058,7 @@ DebugCameraControllerProps = {
 }
 
 HUDProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3077,12 +3077,12 @@ HUDProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DebugCameraHUDProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3101,12 +3101,12 @@ DebugCameraHUDProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DecalActorBaseProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3125,12 +3125,12 @@ DecalActorBaseProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DecalActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3149,12 +3149,12 @@ DecalActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DecalActorMovableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3173,12 +3173,12 @@ DecalActorMovableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DecalManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3197,12 +3197,12 @@ DecalManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PhysicsVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3221,12 +3221,12 @@ PhysicsVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DefaultPhysicsVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3245,12 +3245,12 @@ DefaultPhysicsVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 LightProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3269,13 +3269,13 @@ LightProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 DirectionalLightProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3294,13 +3294,13 @@ DirectionalLightProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 DirectionalLightToggleableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3319,13 +3319,13 @@ DirectionalLightToggleableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 DoorMarkerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3344,12 +3344,12 @@ DoorMarkerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DroppedPickupProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3368,14 +3368,14 @@ DroppedPickupProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bFadeOut', 'type': bool},
     '01101': {'name': 'InventoryClass', 'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
 }
 
 DynamicAnchorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3394,12 +3394,12 @@ DynamicAnchorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DynamicBlockingVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3418,12 +3418,12 @@ DynamicBlockingVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DynamicCameraActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3442,14 +3442,14 @@ DynamicCameraActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'FOVAngle', 'type': float},
     '01101': {'name': 'AspectRatio', 'type': float},
 }
 
 DynamicPhysicsVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3468,12 +3468,12 @@ DynamicPhysicsVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DynamicSMActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3492,10 +3492,10 @@ DynamicSMActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -3503,7 +3503,7 @@ DynamicSMActorProps = {
 }
 
 DynamicSMActor_SpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3522,10 +3522,10 @@ DynamicSMActor_SpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -3533,7 +3533,7 @@ DynamicSMActor_SpawnableProps = {
 }
 
 TriggerVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3552,12 +3552,12 @@ TriggerVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 DynamicTriggerVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3576,12 +3576,12 @@ DynamicTriggerVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 EmitterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3600,13 +3600,13 @@ EmitterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyActive', 'type': bool},
 }
 
 EmitterCameraLensEffectBaseProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3625,13 +3625,13 @@ EmitterCameraLensEffectBaseProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyActive', 'type': bool},
 }
 
 EmitterPoolProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3650,12 +3650,12 @@ EmitterPoolProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 EmitterSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3674,14 +3674,14 @@ EmitterSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyActive', 'type': bool},
     '01101': {'name': 'ParticleTemplate', 'type': bitarray, 'size': 11},	# class UParticleSystem* defaulting to 11 bits
 }
 
 FileWriterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3700,12 +3700,12 @@ FileWriterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 FileLogProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3724,12 +3724,12 @@ FileLogProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 FluidInfluenceActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3748,14 +3748,14 @@ FluidInfluenceActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bToggled', 'type': bool},
     '01101': {'name': 'bActive', 'type': bool},
 }
 
 FluidSurfaceActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3774,12 +3774,12 @@ FluidSurfaceActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 FluidSurfaceActorMovableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3798,12 +3798,12 @@ FluidSurfaceActorMovableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 FogVolumeDensityInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3822,13 +3822,13 @@ FogVolumeDensityInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 FogVolumeConeDensityInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3847,13 +3847,13 @@ FogVolumeConeDensityInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 FogVolumeConstantDensityInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3872,13 +3872,13 @@ FogVolumeConstantDensityInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 FogVolumeLinearHalfspaceDensityInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3897,13 +3897,13 @@ FogVolumeLinearHalfspaceDensityInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 FogVolumeSphericalDensityInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3922,13 +3922,13 @@ FogVolumeSphericalDensityInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 FoliageFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3947,12 +3947,12 @@ FoliageFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 FracturedStaticMeshActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3971,12 +3971,12 @@ FracturedStaticMeshActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 FracturedStaticMeshPartProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -3995,12 +3995,12 @@ FracturedStaticMeshPartProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 FractureManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4019,12 +4019,12 @@ FractureManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 GameInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4043,12 +4043,12 @@ GameInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 GameReplicationInfoProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4067,7 +4067,7 @@ GameReplicationInfoProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'MatchID', 'type': int},
     '011010': {'name': 'Winner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
@@ -4092,7 +4092,7 @@ GameReplicationInfoProps = {
 }
 
 GravityVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4111,12 +4111,12 @@ GravityVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 HeightFogProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4135,13 +4135,13 @@ HeightFogProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 InternetInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4160,12 +4160,12 @@ InternetInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 InterpActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4184,10 +4184,10 @@ InterpActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -4195,7 +4195,7 @@ InterpActorProps = {
 }
 
 InventoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4214,7 +4214,7 @@ InventoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -4227,7 +4227,7 @@ InventoryProps = {
 }
 
 InventoryManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4246,13 +4246,13 @@ InventoryManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InventoryChain', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
 }
 
 KActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4271,10 +4271,10 @@ KActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -4296,7 +4296,7 @@ KActorProps = {
 }
 
 KActorSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4315,10 +4315,10 @@ KActorSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -4340,7 +4340,7 @@ KActorSpawnableProps = {
 }
 
 KAssetProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4359,14 +4359,14 @@ KAssetProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedPhysAsset', 'type': bitarray, 'size': 11},	# class UPhysicsAsset* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 KAssetSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4385,14 +4385,14 @@ KAssetSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedPhysAsset', 'type': bitarray, 'size': 11},	# class UPhysicsAsset* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 LadderVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4411,12 +4411,12 @@ LadderVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 LensFlareSourceProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4435,13 +4435,13 @@ LensFlareSourceProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyActive', 'type': bool},
 }
 
 LevelStreamingVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4460,12 +4460,12 @@ LevelStreamingVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 LiftCenterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4484,12 +4484,12 @@ LiftCenterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 LiftExitProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4508,12 +4508,12 @@ LiftExitProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 LightVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4532,12 +4532,12 @@ LightVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 MantleMarkerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4556,12 +4556,12 @@ MantleMarkerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 MaterialInstanceActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4580,12 +4580,12 @@ MaterialInstanceActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 MatineeActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4604,7 +4604,7 @@ MatineeActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'Position', 'type': float},
     '01101': {'name': 'PlayRate', 'type': float},
@@ -4615,7 +4615,7 @@ MatineeActorProps = {
 }
 
 MutatorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4634,12 +4634,12 @@ MutatorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 NoteProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4658,12 +4658,12 @@ NoteProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 NxForceFieldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4682,13 +4682,13 @@ NxForceFieldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxCylindricalForceFieldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4707,13 +4707,13 @@ NxCylindricalForceFieldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxCylindricalForceFieldCapsuleProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4732,13 +4732,13 @@ NxCylindricalForceFieldCapsuleProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxForceFieldGenericProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4757,13 +4757,13 @@ NxForceFieldGenericProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxForceFieldRadialProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4782,13 +4782,13 @@ NxForceFieldRadialProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxForceFieldTornadoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4807,13 +4807,13 @@ NxForceFieldTornadoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxGenericForceFieldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4832,13 +4832,13 @@ NxGenericForceFieldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxGenericForceFieldBoxProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4857,13 +4857,13 @@ NxGenericForceFieldBoxProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxGenericForceFieldBrushProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4882,12 +4882,12 @@ NxGenericForceFieldBrushProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 NxGenericForceFieldCapsuleProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4906,13 +4906,13 @@ NxGenericForceFieldCapsuleProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxRadialForceFieldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4931,13 +4931,13 @@ NxRadialForceFieldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxRadialCustomForceFieldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4956,13 +4956,13 @@ NxRadialCustomForceFieldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxTornadoAngularForceFieldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -4981,13 +4981,13 @@ NxTornadoAngularForceFieldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxTornadoAngularForceFieldCapsuleProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5006,13 +5006,13 @@ NxTornadoAngularForceFieldCapsuleProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxTornadoForceFieldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5031,13 +5031,13 @@ NxTornadoForceFieldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 NxTornadoForceFieldCapsuleProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5056,13 +5056,13 @@ NxTornadoForceFieldCapsuleProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 ObjectiveProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5081,12 +5081,12 @@ ObjectiveProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PathBlockingVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5105,12 +5105,12 @@ PathBlockingVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PathNodeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5129,12 +5129,12 @@ PathNodeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PathNode_DynamicProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5153,12 +5153,12 @@ PathNode_DynamicProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PawnProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5177,7 +5177,7 @@ PawnProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'FlashLocation', 'type': 'fvector'},
     '011010': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -5203,7 +5203,7 @@ PawnProps = {
 }
 
 PhysXDestructibleActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5222,12 +5222,12 @@ PhysXDestructibleActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PhysXDestructiblePartProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5246,12 +5246,12 @@ PhysXDestructiblePartProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PhysXEmitterSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5270,14 +5270,14 @@ PhysXEmitterSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyActive', 'type': bool},
     '01101': {'name': 'ParticleTemplate', 'type': bitarray, 'size': 11},	# class UParticleSystem* defaulting to 11 bits
 }
 
 PickupFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5296,14 +5296,14 @@ PickupFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InventoryType', 'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     '01101': {'name': 'bPickupHidden', 'type': bool},
 }
 
 PlayerReplicationInfoProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5322,7 +5322,7 @@ PlayerReplicationInfoProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'PlayerSkill', 'type': int},
     '011010': {'name': 'UniqueId', 'type': (
@@ -5359,7 +5359,7 @@ PlayerReplicationInfoProps = {
 }
 
 PlayerStartProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5378,12 +5378,12 @@ PlayerStartProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PointLightProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5402,13 +5402,13 @@ PointLightProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 PointLightMovableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5427,13 +5427,13 @@ PointLightMovableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 PointLightToggleableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5452,13 +5452,13 @@ PointLightToggleableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 PolyMarkerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5477,12 +5477,12 @@ PolyMarkerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PortalMarkerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5501,12 +5501,12 @@ PortalMarkerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 SceneCaptureActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5525,12 +5525,12 @@ SceneCaptureActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 SceneCaptureReflectActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5549,12 +5549,12 @@ SceneCaptureReflectActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 SceneCapturePortalActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5573,12 +5573,12 @@ SceneCapturePortalActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PortalTeleporterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5597,12 +5597,12 @@ PortalTeleporterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PortalVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5621,12 +5621,12 @@ PortalVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PostProcessVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5645,13 +5645,13 @@ PostProcessVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 PotentialClimbWatcherProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5670,12 +5670,12 @@ PotentialClimbWatcherProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 PrefabInstanceProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5694,12 +5694,12 @@ PrefabInstanceProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 ProjectileProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5718,14 +5718,14 @@ ProjectileProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
 }
 
 RB_ConstraintActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5744,12 +5744,12 @@ RB_ConstraintActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 RB_BSJointActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5768,12 +5768,12 @@ RB_BSJointActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 RB_ConstraintActorSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5792,12 +5792,12 @@ RB_ConstraintActorSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 RB_CylindricalForceActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5816,13 +5816,13 @@ RB_CylindricalForceActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 RB_ForceFieldExcludeVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5841,12 +5841,12 @@ RB_ForceFieldExcludeVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 RB_HingeActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5865,12 +5865,12 @@ RB_HingeActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 RB_LineImpulseActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5889,13 +5889,13 @@ RB_LineImpulseActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ImpulseCount', 'type': bitarray, 'size': 8},
 }
 
 RB_PrismaticActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5914,12 +5914,12 @@ RB_PrismaticActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 RB_PulleyJointActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5938,12 +5938,12 @@ RB_PulleyJointActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 RB_RadialForceActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5962,13 +5962,13 @@ RB_RadialForceActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bForceActive', 'type': bool},
 }
 
 RB_RadialImpulseActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -5987,13 +5987,13 @@ RB_RadialImpulseActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ImpulseCount', 'type': bitarray, 'size': 8},
 }
 
 RB_ThrusterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6012,12 +6012,12 @@ RB_ThrusterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 ReverbVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6036,12 +6036,12 @@ ReverbVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 RouteProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6060,12 +6060,12 @@ RouteProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 SceneCapture2DActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6084,12 +6084,12 @@ SceneCapture2DActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 SceneCaptureCubeMapActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6108,12 +6108,12 @@ SceneCaptureCubeMapActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 ScoreBoardProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6132,12 +6132,12 @@ ScoreBoardProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 ScoutProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6156,7 +6156,7 @@ ScoutProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'FlashLocation', 'type': 'fvector'},
     '011010': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -6182,7 +6182,7 @@ ScoutProps = {
 }
 
 SkeletalMeshActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6201,14 +6201,14 @@ SkeletalMeshActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 SkeletalMeshActorBasedOnExtremeContentProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6227,14 +6227,14 @@ SkeletalMeshActorBasedOnExtremeContentProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 SkeletalMeshActorMATProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6253,14 +6253,14 @@ SkeletalMeshActorMATProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 SkeletalMeshActorMATSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6279,14 +6279,14 @@ SkeletalMeshActorMATSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 SkeletalMeshActorSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6305,14 +6305,14 @@ SkeletalMeshActorSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 SkyLightProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6331,13 +6331,13 @@ SkyLightProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 SkyLightToggleableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6356,13 +6356,13 @@ SkyLightToggleableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 SpeedTreeActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6381,12 +6381,12 @@ SpeedTreeActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 SpotLightProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6405,13 +6405,13 @@ SpotLightProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 SpotLightMovableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6430,13 +6430,13 @@ SpotLightMovableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 SpotLightToggleableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6455,13 +6455,13 @@ SpotLightToggleableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 StaticLightCollectionActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6480,13 +6480,13 @@ StaticLightCollectionActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 StaticMeshActorBaseProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6505,12 +6505,12 @@ StaticMeshActorBaseProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 StaticMeshActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6529,12 +6529,12 @@ StaticMeshActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 StaticMeshActorBasedOnExtremeContentProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6553,12 +6553,12 @@ StaticMeshActorBasedOnExtremeContentProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 StaticMeshCollectionActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6577,12 +6577,12 @@ StaticMeshCollectionActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 VehicleProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6601,7 +6601,7 @@ VehicleProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'FlashLocation', 'type': 'fvector'},
     '011010': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -6629,7 +6629,7 @@ VehicleProps = {
 }
 
 SVehicleProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6648,7 +6648,7 @@ SVehicleProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'FlashLocation', 'type': 'fvector'},
     '011010': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -6697,7 +6697,7 @@ SVehicleProps = {
 }
 
 TargetPointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6716,12 +6716,12 @@ TargetPointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TeamInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6740,7 +6740,7 @@ TeamInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'TeamIndex', 'type': int},
     '01101': {'name': 'Score', 'type': float},
@@ -6748,7 +6748,7 @@ TeamInfoProps = {
 }
 
 TeleporterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6767,7 +6767,7 @@ TeleporterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'TargetVelocity', 'type': 'fvector'},
     '01101': {'name': 'bEnabled', 'type': bool},
@@ -6780,7 +6780,7 @@ TeleporterProps = {
 }
 
 TerrainProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6799,12 +6799,12 @@ TerrainProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TriggerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6823,12 +6823,12 @@ TriggerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 Trigger_DynamicProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6847,12 +6847,12 @@ Trigger_DynamicProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 Trigger_LOSProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6871,12 +6871,12 @@ Trigger_LOSProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TriggeredPathProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6895,12 +6895,12 @@ TriggeredPathProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TriggerStreamingLevelProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6919,12 +6919,12 @@ TriggerStreamingLevelProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 VolumePathNodeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6943,12 +6943,12 @@ VolumePathNodeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 VolumeTimerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6967,12 +6967,12 @@ VolumeTimerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 WaterVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -6991,12 +6991,12 @@ WaterVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 WeaponProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7015,7 +7015,7 @@ WeaponProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -7030,7 +7030,7 @@ WeaponProps = {
 }
 
 WindDirectionalSourceProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7049,12 +7049,12 @@ WindDirectionalSourceProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 ZoneInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7073,12 +7073,12 @@ ZoneInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 WorldInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7097,7 +7097,7 @@ WorldInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMusicTrack', 'type': (
                         {'name': 'TheSoundCue', 'type': bitarray, 'size': 11},	# class USoundCue* defaulting to 11 bits
@@ -7115,7 +7115,7 @@ WorldInfoProps = {
 }
 
 GameAIControllerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7134,7 +7134,7 @@ GameAIControllerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7142,11 +7142,11 @@ GameAIControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -7163,7 +7163,7 @@ GameAIControllerProps = {
 }
 
 GameExplosionActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7182,12 +7182,12 @@ GameExplosionActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 GameHUDProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7206,12 +7206,12 @@ GameHUDProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 GamePawnProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7230,7 +7230,7 @@ GamePawnProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'FlashLocation', 'type': 'fvector'},
     '011010': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -7274,7 +7274,7 @@ GamePawnProps = {
 }
 
 GamePlayerControllerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7293,7 +7293,7 @@ GamePlayerControllerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101000': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7301,11 +7301,11 @@ GamePlayerControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011000': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -7320,12 +7320,12 @@ GamePlayerControllerProps = {
          'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     ]},
     '00111000': {'name': 'TargetEyeHeight', 'type': float},
-    '10111000': {'name': 'TargetViewRotation', 'type': bitarray, 'size': 3 * 8},
+    '10111000': {'name': 'TargetViewRotation', 'type': 'frotator'},
     '01111000': {'name': 'RPC ClientDrawCoordinateSystem', 'type': [
         {'name': 'AxisLoc',
          'type': 'fvector'},
         {'name': 'AxisRot',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'Scale',
          'type': float},
         {'name': 'bPersistentLines',
@@ -7976,7 +7976,7 @@ GamePlayerControllerProps = {
 }
 
 GameProjectileProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -7995,14 +7995,14 @@ GameProjectileProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
 }
 
 GameVehicleProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8021,7 +8021,7 @@ GameVehicleProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'FlashLocation', 'type': 'fvector'},
     '011010': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -8070,7 +8070,7 @@ GameVehicleProps = {
 }
 
 GameWeaponProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8089,7 +8089,7 @@ GameWeaponProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -8104,7 +8104,7 @@ GameWeaponProps = {
 }
 
 ComponentTestActorBaseProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8123,12 +8123,12 @@ ComponentTestActorBaseProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CTComplexNestRootProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8147,12 +8147,12 @@ CTComplexNestRootProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CTInheritTestRootProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8171,12 +8171,12 @@ CTInheritTestRootProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CTNoNestRootProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8195,12 +8195,12 @@ CTNoNestRootProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 CTSimpleNestRootProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8219,12 +8219,12 @@ CTSimpleNestRootProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 SubobjectTestActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8243,12 +8243,12 @@ SubobjectTestActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 Test0023_MetaDataProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8267,12 +8267,12 @@ Test0023_MetaDataProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TestPlaceableActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8291,12 +8291,12 @@ TestPlaceableActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TestDerivedActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8315,12 +8315,12 @@ TestDerivedActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TestPropertyWindowActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8339,12 +8339,12 @@ TestPropertyWindowActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgNavigationPointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8363,12 +8363,12 @@ TgNavigationPointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgActionPointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8387,12 +8387,12 @@ TgActionPointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgActorFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8411,12 +8411,12 @@ TgActorFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgAIControllerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8435,7 +8435,7 @@ TgAIControllerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8443,11 +8443,11 @@ TgAIControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -8466,7 +8466,7 @@ TgAIControllerProps = {
 }
 
 TgAlarmPointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8485,12 +8485,12 @@ TgAlarmPointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgAnnouncerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8509,12 +8509,12 @@ TgAnnouncerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgMeshAssemblyProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8533,12 +8533,12 @@ TgMeshAssemblyProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgMissionObjectiveProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8557,7 +8557,7 @@ TgMissionObjectiveProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_fLastCompletedTime', 'type': float},
     '011010': {'name': 'r_fCurrCaptureTime', 'type': float},
@@ -8577,7 +8577,7 @@ TgMissionObjectiveProps = {
 }
 
 TgMissionObjective_BotProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8596,7 +8596,7 @@ TgMissionObjective_BotProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_fLastCompletedTime', 'type': float},
     '011010': {'name': 'r_fCurrCaptureTime', 'type': float},
@@ -8618,7 +8618,7 @@ TgMissionObjective_BotProps = {
 }
 
 TgBaseObjective_CTFBotProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8637,7 +8637,7 @@ TgBaseObjective_CTFBotProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_fLastCompletedTime', 'type': float},
     '011010': {'name': 'r_fCurrCaptureTime', 'type': float},
@@ -8659,7 +8659,7 @@ TgBaseObjective_CTFBotProps = {
 }
 
 TgMissionObjective_ProximityProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8678,7 +8678,7 @@ TgMissionObjective_ProximityProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_fLastCompletedTime', 'type': float},
     '011010': {'name': 'r_fCurrCaptureTime', 'type': float},
@@ -8699,7 +8699,7 @@ TgMissionObjective_ProximityProps = {
 }
 
 TgBaseObjective_KOTHProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8718,7 +8718,7 @@ TgBaseObjective_KOTHProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_fLastCompletedTime', 'type': float},
     '011010': {'name': 'r_fCurrCaptureTime', 'type': float},
@@ -8739,7 +8739,7 @@ TgBaseObjective_KOTHProps = {
 }
 
 TgBeaconFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8758,12 +8758,12 @@ TgBeaconFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgBotEncounterVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8782,12 +8782,12 @@ TgBotEncounterVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgBotFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8806,12 +8806,12 @@ TgBotFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgBotFactorySpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8830,12 +8830,12 @@ TgBotFactorySpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgBotStartProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8854,12 +8854,12 @@ TgBotStartProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgCharacterBuilderLightProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8878,13 +8878,13 @@ TgCharacterBuilderLightProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 TgChestActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8903,13 +8903,13 @@ TgChestActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_eChestState', 'type': bitarray, 'size': 8},
 }
 
 TgCollisionProxyProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8928,12 +8928,12 @@ TgCollisionProxyProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgCollisionProxy_VortexProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8952,12 +8952,12 @@ TgCollisionProxy_VortexProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgCoverPointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -8976,12 +8976,12 @@ TgCoverPointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDebugCameraControllerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9000,7 +9000,7 @@ TgDebugCameraControllerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101000': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9008,11 +9008,11 @@ TgDebugCameraControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011000': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -9027,12 +9027,12 @@ TgDebugCameraControllerProps = {
          'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     ]},
     '00111000': {'name': 'TargetEyeHeight', 'type': float},
-    '10111000': {'name': 'TargetViewRotation', 'type': bitarray, 'size': 3 * 8},
+    '10111000': {'name': 'TargetViewRotation', 'type': 'frotator'},
     '01111000': {'name': 'RPC ClientDrawCoordinateSystem', 'type': [
         {'name': 'AxisLoc',
          'type': 'fvector'},
         {'name': 'AxisRot',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'Scale',
          'type': float},
         {'name': 'bPersistentLines',
@@ -9683,7 +9683,7 @@ TgDebugCameraControllerProps = {
 }
 
 TgDecalActor_LogoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9702,12 +9702,12 @@ TgDecalActor_LogoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDefensePointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9726,12 +9726,12 @@ TgDefensePointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDeployableProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9750,7 +9750,7 @@ TgDeployableProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_DRI', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Deployable* defaulting to 11 bits
     '011010': {'name': 'r_nOwnerFireMode', 'type': int},
@@ -9775,7 +9775,7 @@ TgDeployableProps = {
 }
 
 TgDeploy_ArtilleryProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9794,7 +9794,7 @@ TgDeploy_ArtilleryProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_DRI', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Deployable* defaulting to 11 bits
     '011010': {'name': 'r_nOwnerFireMode', 'type': int},
@@ -9819,7 +9819,7 @@ TgDeploy_ArtilleryProps = {
 }
 
 TgDeploy_BeaconProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9838,7 +9838,7 @@ TgDeploy_BeaconProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_DRI', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Deployable* defaulting to 11 bits
     '011010': {'name': 'r_nOwnerFireMode', 'type': int},
@@ -9863,7 +9863,7 @@ TgDeploy_BeaconProps = {
 }
 
 TgDeploy_BeaconEntranceProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9882,7 +9882,7 @@ TgDeploy_BeaconEntranceProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_DRI', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Deployable* defaulting to 11 bits
     '011010': {'name': 'r_nOwnerFireMode', 'type': int},
@@ -9908,7 +9908,7 @@ TgDeploy_BeaconEntranceProps = {
 }
 
 TgDeploy_DestructibleCoverProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9927,7 +9927,7 @@ TgDeploy_DestructibleCoverProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_DRI', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Deployable* defaulting to 11 bits
     '011010': {'name': 'r_nOwnerFireMode', 'type': int},
@@ -9953,7 +9953,7 @@ TgDeploy_DestructibleCoverProps = {
 }
 
 TgDeploy_ForceFieldProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -9972,7 +9972,7 @@ TgDeploy_ForceFieldProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_DRI', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Deployable* defaulting to 11 bits
     '011010': {'name': 'r_nOwnerFireMode', 'type': int},
@@ -9997,7 +9997,7 @@ TgDeploy_ForceFieldProps = {
 }
 
 TgDeploy_SensorProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10016,7 +10016,7 @@ TgDeploy_SensorProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_DRI', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Deployable* defaulting to 11 bits
     '011010': {'name': 'r_nOwnerFireMode', 'type': int},
@@ -10043,7 +10043,7 @@ TgDeploy_SensorProps = {
 }
 
 TgDeploy_SweepSensorProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10062,7 +10062,7 @@ TgDeploy_SweepSensorProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_DRI', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Deployable* defaulting to 11 bits
     '011010': {'name': 'r_nOwnerFireMode', 'type': int},
@@ -10087,7 +10087,7 @@ TgDeploy_SweepSensorProps = {
 }
 
 TgDeployableFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10106,12 +10106,12 @@ TgDeployableFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDestructibleFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10130,12 +10130,12 @@ TgDestructibleFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDeviceProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10154,7 +10154,7 @@ TgDeviceProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -10201,7 +10201,7 @@ TgDeviceProps = {
 }
 
 TgDevice_GrenadeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10220,7 +10220,7 @@ TgDevice_GrenadeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -10267,7 +10267,7 @@ TgDevice_GrenadeProps = {
 }
 
 TgDevice_HitPulseProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10286,7 +10286,7 @@ TgDevice_HitPulseProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -10333,7 +10333,7 @@ TgDevice_HitPulseProps = {
 }
 
 TgDevice_NewMeleeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10352,7 +10352,7 @@ TgDevice_NewMeleeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -10399,7 +10399,7 @@ TgDevice_NewMeleeProps = {
 }
 
 TgDevice_MeleeDualWieldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10418,7 +10418,7 @@ TgDevice_MeleeDualWieldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -10465,7 +10465,7 @@ TgDevice_MeleeDualWieldProps = {
 }
 
 TgDevice_MoraleProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10484,7 +10484,7 @@ TgDevice_MoraleProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -10532,7 +10532,7 @@ TgDevice_MoraleProps = {
 }
 
 TgDevice_NewRangeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10551,7 +10551,7 @@ TgDevice_NewRangeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
     '01101': {'name': 'Inventory', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
@@ -10598,7 +10598,7 @@ TgDevice_NewRangeProps = {
 }
 
 TgDeviceVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10617,12 +10617,12 @@ TgDeviceVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDeviceVolumeInfoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10641,12 +10641,12 @@ TgDeviceVolumeInfoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDoorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10665,10 +10665,10 @@ TgDoorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -10677,7 +10677,7 @@ TgDoorProps = {
 }
 
 TgTeamBlockerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10696,12 +10696,12 @@ TgTeamBlockerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDoorMarkerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10720,13 +10720,13 @@ TgDoorMarkerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_eStatus', 'type': bitarray, 'size': 8},
 }
 
 TgDroppedItemProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10745,13 +10745,13 @@ TgDroppedItemProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_nItemId', 'type': int},
 }
 
 TgDummyActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10770,12 +10770,12 @@ TgDummyActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgDynamicSMActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10794,10 +10794,10 @@ TgDynamicSMActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -10808,7 +10808,7 @@ TgDynamicSMActorProps = {
 }
 
 TgDynamicDestructibleProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10827,10 +10827,10 @@ TgDynamicDestructibleProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -10843,7 +10843,7 @@ TgDynamicDestructibleProps = {
 }
 
 TgEffectManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10862,7 +10862,7 @@ TgEffectManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_nInvulnerableCount', 'type': int},
     '01101': {'name': 'r_Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
@@ -10881,7 +10881,7 @@ TgEffectManagerProps = {
 }
 
 TgElevatingVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10900,12 +10900,12 @@ TgElevatingVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgEmitterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10924,14 +10924,14 @@ TgEmitterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyActive', 'type': bool},
     '01101': {'name': 'BoneName', 'type': str},
 }
 
 TgEmitterSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10950,13 +10950,13 @@ TgEmitterSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyActive', 'type': bool},
 }
 
 TgEmitterCrashlandingProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -10975,13 +10975,13 @@ TgEmitterCrashlandingProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bCurrentlyActive', 'type': bool},
 }
 
 TgFlagCaptureVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11000,14 +11000,14 @@ TgFlagCaptureVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_eCoalition', 'type': bitarray, 'size': 8},
     '01101': {'name': 'r_nTaskForce', 'type': bitarray, 'size': 8},
 }
 
 TgFracturedStaticMeshActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11026,7 +11026,7 @@ TgFracturedStaticMeshActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_DamageRadius', 'type': float},
     '01101': {'name': 'r_HitInfo', 'type': (
@@ -11045,7 +11045,7 @@ TgFracturedStaticMeshActorProps = {
 }
 
 TgGameProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11064,12 +11064,12 @@ TgGameProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_MissionProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11088,12 +11088,12 @@ TgGame_MissionProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_ArenaProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11112,12 +11112,12 @@ TgGame_ArenaProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_CityProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11136,12 +11136,12 @@ TgGame_CityProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_ControlProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11160,12 +11160,12 @@ TgGame_ControlProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_CTFProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11184,12 +11184,12 @@ TgGame_CTFProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_DefenseProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11208,12 +11208,12 @@ TgGame_DefenseProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_TicketProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11232,12 +11232,12 @@ TgGame_TicketProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_DualCTFProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11256,12 +11256,12 @@ TgGame_DualCTFProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_EscortProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11280,12 +11280,12 @@ TgGame_EscortProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_OpenWorldProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11304,12 +11304,12 @@ TgGame_OpenWorldProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_OpenWorldPVEProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11328,12 +11328,12 @@ TgGame_OpenWorldPVEProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_OpenWorldPVPProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11352,12 +11352,12 @@ TgGame_OpenWorldPVPProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgGame_PointRotationProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11376,12 +11376,12 @@ TgGame_PointRotationProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgHeightFogProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11400,12 +11400,12 @@ TgHeightFogProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgHelpAlertVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11424,12 +11424,12 @@ TgHelpAlertVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgHexItemFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11448,12 +11448,12 @@ TgHexItemFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgHexLandMarkActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11472,13 +11472,13 @@ TgHexLandMarkActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_nMeshAsmId', 'type': int},
 }
 
 TgHitDisplayActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11497,12 +11497,12 @@ TgHitDisplayActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgHoldSpotProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11521,12 +11521,12 @@ TgHoldSpotProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgHUDProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11545,12 +11545,12 @@ TgHUDProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgInterpActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11569,10 +11569,10 @@ TgInterpActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -11581,7 +11581,7 @@ TgInterpActorProps = {
 }
 
 TgInterpolatingCameraActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11600,14 +11600,14 @@ TgInterpolatingCameraActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'FOVAngle', 'type': float},
     '01101': {'name': 'AspectRatio', 'type': float},
 }
 
 TgInventoryManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11626,7 +11626,7 @@ TgInventoryManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InventoryChain', 'type': bitarray, 'size': 11},	# class AInventory* confirmed to be 11 bits
     '01101': {'name': 'r_ItemCount', 'type': int},
@@ -11647,7 +11647,7 @@ TgInventoryManagerProps = {
 }
 
 TgKActorSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11666,10 +11666,10 @@ TgKActorSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -11691,7 +11691,7 @@ TgKActorSpawnableProps = {
 }
 
 TgKAsset_ClientSideSimProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11710,14 +11710,14 @@ TgKAsset_ClientSideSimProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedPhysAsset', 'type': bitarray, 'size': 11},	# class UPhysicsAsset* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgKAssetSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11736,14 +11736,14 @@ TgKAssetSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedPhysAsset', 'type': bitarray, 'size': 11},	# class UPhysicsAsset* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgKismetTestActorProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11762,10 +11762,10 @@ TgKismetTestActorProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '011010': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '011010': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '111010': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '000110': {'name': 'bForceStaticDecals', 'type': bool},
     '100110': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -11799,7 +11799,7 @@ TgKismetTestActorProps = {
 }
 
 TgLevelCameraProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11818,7 +11818,7 @@ TgLevelCameraProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'FOVAngle', 'type': float},
     '01101': {'name': 'AspectRatio', 'type': float},
@@ -11826,7 +11826,7 @@ TgLevelCameraProps = {
 }
 
 TgMiniMapActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11845,12 +11845,12 @@ TgMiniMapActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgMissionListVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11869,12 +11869,12 @@ TgMissionListVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgMissionObjective_EscortProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11893,7 +11893,7 @@ TgMissionObjective_EscortProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_fLastCompletedTime', 'type': float},
     '011010': {'name': 'r_fCurrCaptureTime', 'type': float},
@@ -11915,7 +11915,7 @@ TgMissionObjective_EscortProps = {
 }
 
 TgMissionObjective_KismetProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11934,7 +11934,7 @@ TgMissionObjective_KismetProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'r_fLastCompletedTime', 'type': float},
     '011010': {'name': 'r_fCurrCaptureTime', 'type': float},
@@ -11954,7 +11954,7 @@ TgMissionObjective_KismetProps = {
 }
 
 TgModifyPawnPropertiesVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11973,12 +11973,12 @@ TgModifyPawnPropertiesVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgMorphFXProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -11997,12 +11997,12 @@ TgMorphFXProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgNavigationPointSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12021,12 +12021,12 @@ TgNavigationPointSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgSkeletalMeshActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12045,14 +12045,14 @@ TgSkeletalMeshActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkeletalMeshActorSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12071,14 +12071,14 @@ TgSkeletalMeshActorSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgNavRouteIndicatorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12097,14 +12097,14 @@ TgNavRouteIndicatorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgNewsStandProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12123,12 +12123,12 @@ TgNewsStandProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgObjectiveAssignmentProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12147,7 +12147,7 @@ TgObjectiveAssignmentProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_eState', 'type': bitarray, 'size': 8},
     '01101': {'name': 'r_Bots', 'type': bitarray, 'size': 11},	# class ATgRepInfo_TaskForce* confirmed to be 11 bits
@@ -12161,7 +12161,7 @@ TgObjectiveAssignmentProps = {
 }
 
 TgObjectiveAttachActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12180,10 +12180,10 @@ TgObjectiveAttachActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMeshScale3D', 'type': 'fvector'},
-    '01101': {'name': 'ReplicatedMeshRotation', 'type': bitarray, 'size': 3 * 8},
+    '01101': {'name': 'ReplicatedMeshRotation', 'type': 'frotator'},
     '11101': {'name': 'ReplicatedMeshTranslation', 'type': 'fvector'},
     '00011': {'name': 'bForceStaticDecals', 'type': bool},
     '10011': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
@@ -12194,7 +12194,7 @@ TgObjectiveAttachActorProps = {
 }
 
 TgOmegaVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12213,12 +12213,12 @@ TgOmegaVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgPawnProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12237,7 +12237,7 @@ TgPawnProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -12273,7 +12273,7 @@ TgPawnProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -12549,7 +12549,7 @@ TgPawnProps = {
 }
 
 TgPawn_RobotProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12568,7 +12568,7 @@ TgPawn_RobotProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -12604,7 +12604,7 @@ TgPawn_RobotProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -12880,7 +12880,7 @@ TgPawn_RobotProps = {
 }
 
 TgPawn_AmbushProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -12899,7 +12899,7 @@ TgPawn_AmbushProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -12935,7 +12935,7 @@ TgPawn_AmbushProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -13212,7 +13212,7 @@ TgPawn_AmbushProps = {
 }
 
 TgPawn_CharacterProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -13231,7 +13231,7 @@ TgPawn_CharacterProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -13267,7 +13267,7 @@ TgPawn_CharacterProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -13590,7 +13590,7 @@ TgPawn_CharacterProps = {
 }
 
 TgPawn_AndroidMinionProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -13609,7 +13609,7 @@ TgPawn_AndroidMinionProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -13645,7 +13645,7 @@ TgPawn_AndroidMinionProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -13968,7 +13968,7 @@ TgPawn_AndroidMinionProps = {
 }
 
 TgPawn_AttackTransportProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -13987,7 +13987,7 @@ TgPawn_AttackTransportProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -14023,7 +14023,7 @@ TgPawn_AttackTransportProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -14300,7 +14300,7 @@ TgPawn_AttackTransportProps = {
 }
 
 TgPawn_AVCompositeWalkerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -14319,7 +14319,7 @@ TgPawn_AVCompositeWalkerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -14355,7 +14355,7 @@ TgPawn_AVCompositeWalkerProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -14631,7 +14631,7 @@ TgPawn_AVCompositeWalkerProps = {
 }
 
 TgPawn_BossProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -14650,7 +14650,7 @@ TgPawn_BossProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -14686,7 +14686,7 @@ TgPawn_BossProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -15009,7 +15009,7 @@ TgPawn_BossProps = {
 }
 
 TgPawn_RaptorProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -15028,7 +15028,7 @@ TgPawn_RaptorProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -15064,7 +15064,7 @@ TgPawn_RaptorProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -15387,7 +15387,7 @@ TgPawn_RaptorProps = {
 }
 
 TgPawn_Boss_DestroyerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -15406,7 +15406,7 @@ TgPawn_Boss_DestroyerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -15442,7 +15442,7 @@ TgPawn_Boss_DestroyerProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -15765,7 +15765,7 @@ TgPawn_Boss_DestroyerProps = {
 }
 
 TgPawn_BrawlerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -15784,7 +15784,7 @@ TgPawn_BrawlerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -15820,7 +15820,7 @@ TgPawn_BrawlerProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -16143,7 +16143,7 @@ TgPawn_BrawlerProps = {
 }
 
 TgPawn_ColonyEyeProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -16162,7 +16162,7 @@ TgPawn_ColonyEyeProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -16198,7 +16198,7 @@ TgPawn_ColonyEyeProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -16521,7 +16521,7 @@ TgPawn_ColonyEyeProps = {
 }
 
 TgPawn_CTRProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -16540,7 +16540,7 @@ TgPawn_CTRProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -16576,7 +16576,7 @@ TgPawn_CTRProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -16873,7 +16873,7 @@ TgPawn_CTRProps = {
 }
 
 TgPawn_DestructibleProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -16892,7 +16892,7 @@ TgPawn_DestructibleProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -16928,7 +16928,7 @@ TgPawn_DestructibleProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -17204,7 +17204,7 @@ TgPawn_DestructibleProps = {
 }
 
 TgPawn_DetonatorProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -17223,7 +17223,7 @@ TgPawn_DetonatorProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -17259,7 +17259,7 @@ TgPawn_DetonatorProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -17535,7 +17535,7 @@ TgPawn_DetonatorProps = {
 }
 
 TgPawn_DismantlerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -17554,7 +17554,7 @@ TgPawn_DismantlerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -17590,7 +17590,7 @@ TgPawn_DismantlerProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -17913,7 +17913,7 @@ TgPawn_DismantlerProps = {
 }
 
 TgPawn_DuneCommanderProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -17932,7 +17932,7 @@ TgPawn_DuneCommanderProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -17968,7 +17968,7 @@ TgPawn_DuneCommanderProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -18292,7 +18292,7 @@ TgPawn_DuneCommanderProps = {
 }
 
 TgPawn_Elite_AlchemistProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -18311,7 +18311,7 @@ TgPawn_Elite_AlchemistProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -18347,7 +18347,7 @@ TgPawn_Elite_AlchemistProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -18670,7 +18670,7 @@ TgPawn_Elite_AlchemistProps = {
 }
 
 TgPawn_Elite_AssassinProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -18689,7 +18689,7 @@ TgPawn_Elite_AssassinProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -18725,7 +18725,7 @@ TgPawn_Elite_AssassinProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -19048,7 +19048,7 @@ TgPawn_Elite_AssassinProps = {
 }
 
 TgPawn_EscortRobotProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -19067,7 +19067,7 @@ TgPawn_EscortRobotProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -19103,7 +19103,7 @@ TgPawn_EscortRobotProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -19379,7 +19379,7 @@ TgPawn_EscortRobotProps = {
 }
 
 TgPawn_FlyingBossProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -19398,7 +19398,7 @@ TgPawn_FlyingBossProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -19434,7 +19434,7 @@ TgPawn_FlyingBossProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -19757,7 +19757,7 @@ TgPawn_FlyingBossProps = {
 }
 
 TgPawn_TreadRobotProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -19776,7 +19776,7 @@ TgPawn_TreadRobotProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -19812,7 +19812,7 @@ TgPawn_TreadRobotProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -20088,7 +20088,7 @@ TgPawn_TreadRobotProps = {
 }
 
 TgPawn_GroundPetAProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -20107,7 +20107,7 @@ TgPawn_GroundPetAProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -20143,7 +20143,7 @@ TgPawn_GroundPetAProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -20419,7 +20419,7 @@ TgPawn_GroundPetAProps = {
 }
 
 TgPawn_GuardianProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -20438,7 +20438,7 @@ TgPawn_GuardianProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -20474,7 +20474,7 @@ TgPawn_GuardianProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -20797,7 +20797,7 @@ TgPawn_GuardianProps = {
 }
 
 TgPawn_HoverProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -20816,7 +20816,7 @@ TgPawn_HoverProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -20852,7 +20852,7 @@ TgPawn_HoverProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -21128,7 +21128,7 @@ TgPawn_HoverProps = {
 }
 
 TgPawn_HoverShieldSphereProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -21147,7 +21147,7 @@ TgPawn_HoverShieldSphereProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -21183,7 +21183,7 @@ TgPawn_HoverShieldSphereProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -21459,7 +21459,7 @@ TgPawn_HoverShieldSphereProps = {
 }
 
 TgPawn_HunterProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -21478,7 +21478,7 @@ TgPawn_HunterProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -21514,7 +21514,7 @@ TgPawn_HunterProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -21837,7 +21837,7 @@ TgPawn_HunterProps = {
 }
 
 TgPawn_NPCProps = {
-    '0000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '0000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '1000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '0100000': {'name': 'Velocity', 'type': 'fvector'},
     '1100000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -21856,7 +21856,7 @@ TgPawn_NPCProps = {
     '0000100': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '1000100': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '0100100': {'name': 'DrawScale', 'type': float},
-    '1100100': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '1100100': {'name': 'Rotation', 'type': 'frotator'},
     '0010100': {'name': 'Location', 'type': 'fvector'},
     '1010100': {'name': 'FlashLocation', 'type': 'fvector'},
     '0110100': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -21892,7 +21892,7 @@ TgPawn_NPCProps = {
     '0010110': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '1010110': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '0110110': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '1110110': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '1110110': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '0001110': {'name': 'r_nSensorAlertLevel', 'type': int},
     '1001110': {'name': 'r_nSilentMode', 'type': int},
     '0101110': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -22215,7 +22215,7 @@ TgPawn_NPCProps = {
 }
 
 TgPawn_InquisitorProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -22234,7 +22234,7 @@ TgPawn_InquisitorProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -22270,7 +22270,7 @@ TgPawn_InquisitorProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -22593,7 +22593,7 @@ TgPawn_InquisitorProps = {
 }
 
 TgPawn_Interact_NPCProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -22612,7 +22612,7 @@ TgPawn_Interact_NPCProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -22648,7 +22648,7 @@ TgPawn_Interact_NPCProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -22971,7 +22971,7 @@ TgPawn_Interact_NPCProps = {
 }
 
 TgPawn_ScannerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -22990,7 +22990,7 @@ TgPawn_ScannerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -23026,7 +23026,7 @@ TgPawn_ScannerProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -23302,7 +23302,7 @@ TgPawn_ScannerProps = {
 }
 
 TgPawn_IrisProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -23321,7 +23321,7 @@ TgPawn_IrisProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -23357,7 +23357,7 @@ TgPawn_IrisProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -23634,7 +23634,7 @@ TgPawn_IrisProps = {
 }
 
 TgPawn_JuggernautProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -23653,7 +23653,7 @@ TgPawn_JuggernautProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -23689,7 +23689,7 @@ TgPawn_JuggernautProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -24012,7 +24012,7 @@ TgPawn_JuggernautProps = {
 }
 
 TgPawn_MarauderProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -24031,7 +24031,7 @@ TgPawn_MarauderProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -24067,7 +24067,7 @@ TgPawn_MarauderProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -24390,7 +24390,7 @@ TgPawn_MarauderProps = {
 }
 
 TgPawn_NewWaspProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -24409,7 +24409,7 @@ TgPawn_NewWaspProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -24445,7 +24445,7 @@ TgPawn_NewWaspProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -24721,7 +24721,7 @@ TgPawn_NewWaspProps = {
 }
 
 TgPawn_ReaperProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -24740,7 +24740,7 @@ TgPawn_ReaperProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -24776,7 +24776,7 @@ TgPawn_ReaperProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -25100,7 +25100,7 @@ TgPawn_ReaperProps = {
 }
 
 TgPawn_RecursiveSpawnerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -25119,7 +25119,7 @@ TgPawn_RecursiveSpawnerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -25155,7 +25155,7 @@ TgPawn_RecursiveSpawnerProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -25478,7 +25478,7 @@ TgPawn_RecursiveSpawnerProps = {
 }
 
 TgPawn_RemoteProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -25497,7 +25497,7 @@ TgPawn_RemoteProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -25533,7 +25533,7 @@ TgPawn_RemoteProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -25809,7 +25809,7 @@ TgPawn_RemoteProps = {
 }
 
 TgPawn_ScannerRecursiveProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -25828,7 +25828,7 @@ TgPawn_ScannerRecursiveProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -25864,7 +25864,7 @@ TgPawn_ScannerRecursiveProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -26140,7 +26140,7 @@ TgPawn_ScannerRecursiveProps = {
 }
 
 TgPawn_SiegeProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -26159,7 +26159,7 @@ TgPawn_SiegeProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -26195,7 +26195,7 @@ TgPawn_SiegeProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -26472,7 +26472,7 @@ TgPawn_SiegeProps = {
 }
 
 TgPawn_SiegeBarrageProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -26491,7 +26491,7 @@ TgPawn_SiegeBarrageProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -26527,7 +26527,7 @@ TgPawn_SiegeBarrageProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -26804,7 +26804,7 @@ TgPawn_SiegeBarrageProps = {
 }
 
 TgPawn_SiegeHoverProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -26823,7 +26823,7 @@ TgPawn_SiegeHoverProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -26859,7 +26859,7 @@ TgPawn_SiegeHoverProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -27136,7 +27136,7 @@ TgPawn_SiegeHoverProps = {
 }
 
 TgPawn_SiegeRapidFireProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -27155,7 +27155,7 @@ TgPawn_SiegeRapidFireProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -27191,7 +27191,7 @@ TgPawn_SiegeRapidFireProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -27468,7 +27468,7 @@ TgPawn_SiegeRapidFireProps = {
 }
 
 TgPawn_SniperProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -27487,7 +27487,7 @@ TgPawn_SniperProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -27523,7 +27523,7 @@ TgPawn_SniperProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -27846,7 +27846,7 @@ TgPawn_SniperProps = {
 }
 
 TgPawn_SonoranCommanderProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -27865,7 +27865,7 @@ TgPawn_SonoranCommanderProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -27901,7 +27901,7 @@ TgPawn_SonoranCommanderProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -28224,7 +28224,7 @@ TgPawn_SonoranCommanderProps = {
 }
 
 TgPawn_SupportForemanProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -28243,7 +28243,7 @@ TgPawn_SupportForemanProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -28279,7 +28279,7 @@ TgPawn_SupportForemanProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -28555,7 +28555,7 @@ TgPawn_SupportForemanProps = {
 }
 
 TgPawn_SwitchbladeProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -28574,7 +28574,7 @@ TgPawn_SwitchbladeProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -28610,7 +28610,7 @@ TgPawn_SwitchbladeProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -28933,7 +28933,7 @@ TgPawn_SwitchbladeProps = {
 }
 
 TgPawn_TentacleProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -28952,7 +28952,7 @@ TgPawn_TentacleProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -28988,7 +28988,7 @@ TgPawn_TentacleProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -29265,7 +29265,7 @@ TgPawn_TentacleProps = {
 }
 
 TgPawn_ThinkTankProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -29284,7 +29284,7 @@ TgPawn_ThinkTankProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -29320,7 +29320,7 @@ TgPawn_ThinkTankProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -29643,7 +29643,7 @@ TgPawn_ThinkTankProps = {
 }
 
 TgPawn_TurretProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -29662,7 +29662,7 @@ TgPawn_TurretProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -29698,7 +29698,7 @@ TgPawn_TurretProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -30026,7 +30026,7 @@ TgPawn_TurretProps = {
 }
 
 TgPawn_TurretAVAFlakProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -30045,7 +30045,7 @@ TgPawn_TurretAVAFlakProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -30081,7 +30081,7 @@ TgPawn_TurretAVAFlakProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -30409,7 +30409,7 @@ TgPawn_TurretAVAFlakProps = {
 }
 
 TgPawn_TurretAVARocketProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -30428,7 +30428,7 @@ TgPawn_TurretAVARocketProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -30464,7 +30464,7 @@ TgPawn_TurretAVARocketProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -30792,7 +30792,7 @@ TgPawn_TurretAVARocketProps = {
 }
 
 TgPawn_TurretFlakProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -30811,7 +30811,7 @@ TgPawn_TurretFlakProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -30847,7 +30847,7 @@ TgPawn_TurretFlakProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -31175,7 +31175,7 @@ TgPawn_TurretFlakProps = {
 }
 
 TgPawn_TurretFlameProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -31194,7 +31194,7 @@ TgPawn_TurretFlameProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -31230,7 +31230,7 @@ TgPawn_TurretFlameProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -31558,7 +31558,7 @@ TgPawn_TurretFlameProps = {
 }
 
 TgPawn_TurretPlasmaProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -31577,7 +31577,7 @@ TgPawn_TurretPlasmaProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -31613,7 +31613,7 @@ TgPawn_TurretPlasmaProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -31941,7 +31941,7 @@ TgPawn_TurretPlasmaProps = {
 }
 
 TgPawn_UberWalkerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -31960,7 +31960,7 @@ TgPawn_UberWalkerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -31996,7 +31996,7 @@ TgPawn_UberWalkerProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -32319,7 +32319,7 @@ TgPawn_UberWalkerProps = {
 }
 
 TgPawn_VanguardProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -32338,7 +32338,7 @@ TgPawn_VanguardProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -32374,7 +32374,7 @@ TgPawn_VanguardProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -32697,7 +32697,7 @@ TgPawn_VanguardProps = {
 }
 
 TgPawn_VanityPetProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -32716,7 +32716,7 @@ TgPawn_VanityPetProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -32752,7 +32752,7 @@ TgPawn_VanityPetProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -33029,7 +33029,7 @@ TgPawn_VanityPetProps = {
 }
 
 TgPawn_VulcanProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -33048,7 +33048,7 @@ TgPawn_VulcanProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -33084,7 +33084,7 @@ TgPawn_VulcanProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -33407,7 +33407,7 @@ TgPawn_VulcanProps = {
 }
 
 TgPawn_WarlordProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -33426,7 +33426,7 @@ TgPawn_WarlordProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -33462,7 +33462,7 @@ TgPawn_WarlordProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -33785,7 +33785,7 @@ TgPawn_WarlordProps = {
 }
 
 TgPawn_WaspSpawnerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -33804,7 +33804,7 @@ TgPawn_WaspSpawnerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -33840,7 +33840,7 @@ TgPawn_WaspSpawnerProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -34116,7 +34116,7 @@ TgPawn_WaspSpawnerProps = {
 }
 
 TgPawn_WidowProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -34135,7 +34135,7 @@ TgPawn_WidowProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'FlashLocation', 'type': 'fvector'},
     '01101000': {'name': 'InvManager', 'type': bitarray, 'size': 11},	# class AInventoryManager* confirmed to be 11 bits
@@ -34171,7 +34171,7 @@ TgPawn_WidowProps = {
     '00101100': {'name': 'r_fCurrentServerMoralePoints', 'type': float},
     '10101100': {'name': 'r_fRequiredMoralePoints', 'type': float},
     '01101100': {'name': 'r_fRappelGravityModifier', 'type': float},
-    '11101100': {'name': 'r_HangingRotation', 'type': bitarray, 'size': 3 * 8},
+    '11101100': {'name': 'r_HangingRotation', 'type': 'frotator'},
     '00011100': {'name': 'r_nSensorAlertLevel', 'type': int},
     '10011100': {'name': 'r_nSilentMode', 'type': int},
     '01011100': {'name': 'r_UITextBox2MessageID', 'type': int},
@@ -34447,7 +34447,7 @@ TgPawn_WidowProps = {
 }
 
 TgPhysAnimTestActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -34466,12 +34466,12 @@ TgPhysAnimTestActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgPickupFactoryProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -34490,14 +34490,14 @@ TgPickupFactoryProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InventoryType', 'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     '01101': {'name': 'bPickupHidden', 'type': bool},
 }
 
 TgPickupFactory_ItemProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -34516,14 +34516,14 @@ TgPickupFactory_ItemProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'InventoryType', 'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     '01101': {'name': 'bPickupHidden', 'type': bool},
 }
 
 TgPlayerControllerProps = {
-    '00000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000000': {'name': 'Velocity', 'type': 'fvector'},
     '11000000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -34542,7 +34542,7 @@ TgPlayerControllerProps = {
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001000': {'name': 'DrawScale', 'type': float},
-    '11001000': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001000': {'name': 'Rotation', 'type': 'frotator'},
     '00101000': {'name': 'Location', 'type': 'fvector'},
     '10101000': {'name': 'PlayerReplicationInfo', 'type': bitarray, 'size': 11},	# class APlayerReplicationInfo* confirmed to be 11 bits
     '01101000': {'name': 'Pawn', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -34550,11 +34550,11 @@ TgPlayerControllerProps = {
         {'name': 'NewLocation',
          'type': 'fvector'},
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
     ]},
     '00011000': {'name': 'RPC ClientSetRotation', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -34569,12 +34569,12 @@ TgPlayerControllerProps = {
          'type': bitarray, 'size': 32},	# class UClass* confirmed to be 32 bits
     ]},
     '00111000': {'name': 'TargetEyeHeight', 'type': float},
-    '10111000': {'name': 'TargetViewRotation', 'type': bitarray, 'size': 3 * 8},
+    '10111000': {'name': 'TargetViewRotation', 'type': 'frotator'},
     '01111000': {'name': 'RPC ClientDrawCoordinateSystem', 'type': [
         {'name': 'AxisLoc',
          'type': 'fvector'},
         {'name': 'AxisRot',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'Scale',
          'type': float},
         {'name': 'bPersistentLines',
@@ -35417,7 +35417,7 @@ TgPlayerControllerProps = {
     ]},
     '11001101': {'name': 'RPC ClientSetRotationAndDesired', 'type': [
         {'name': 'NewRotation',
-         'type': bitarray, 'size': 3 * 8},
+         'type': 'frotator'},
         {'name': 'bResetCamera',
          'type': bool},
     ]},
@@ -35771,7 +35771,7 @@ TgPlayerControllerProps = {
 }
 
 TgPlayerCountVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -35790,12 +35790,12 @@ TgPlayerCountVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgPointOfInterestProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -35814,12 +35814,12 @@ TgPointOfInterestProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgPostProcessVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -35838,13 +35838,13 @@ TgPostProcessVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'bEnabled', 'type': bool},
 }
 
 TgProjectileProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -35863,7 +35863,7 @@ TgProjectileProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -35877,7 +35877,7 @@ TgProjectileProps = {
 }
 
 TgProj_FreeGrenadeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -35896,7 +35896,7 @@ TgProj_FreeGrenadeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -35910,7 +35910,7 @@ TgProj_FreeGrenadeProps = {
 }
 
 TgProj_BotProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -35929,7 +35929,7 @@ TgProj_BotProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -35943,7 +35943,7 @@ TgProj_BotProps = {
 }
 
 TgProj_BounceProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -35962,7 +35962,7 @@ TgProj_BounceProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -35976,7 +35976,7 @@ TgProj_BounceProps = {
 }
 
 TgProj_DeployableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -35995,7 +35995,7 @@ TgProj_DeployableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36009,7 +36009,7 @@ TgProj_DeployableProps = {
 }
 
 TgProj_GrappleProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36028,7 +36028,7 @@ TgProj_GrappleProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36043,7 +36043,7 @@ TgProj_GrappleProps = {
 }
 
 TgProj_GrenadeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36062,7 +36062,7 @@ TgProj_GrenadeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36076,7 +36076,7 @@ TgProj_GrenadeProps = {
 }
 
 TgProj_MissileProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36095,7 +36095,7 @@ TgProj_MissileProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36112,7 +36112,7 @@ TgProj_MissileProps = {
 }
 
 TgProj_MortarProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36131,7 +36131,7 @@ TgProj_MortarProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36145,7 +36145,7 @@ TgProj_MortarProps = {
 }
 
 TgProj_NetProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36164,7 +36164,7 @@ TgProj_NetProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36178,7 +36178,7 @@ TgProj_NetProps = {
 }
 
 TgProj_RocketProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36197,7 +36197,7 @@ TgProj_RocketProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36213,7 +36213,7 @@ TgProj_RocketProps = {
 }
 
 TgProj_TeleporterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36232,7 +36232,7 @@ TgProj_TeleporterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36246,7 +36246,7 @@ TgProj_TeleporterProps = {
 }
 
 TgProj_StraightTeleporterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36265,7 +36265,7 @@ TgProj_StraightTeleporterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'MaxSpeed', 'type': float},
     '01101': {'name': 'Speed', 'type': float},
@@ -36279,7 +36279,7 @@ TgProj_StraightTeleporterProps = {
 }
 
 TgQueuedAnnouncementProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36298,12 +36298,12 @@ TgQueuedAnnouncementProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgRandomSMActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36322,12 +36322,12 @@ TgRandomSMActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgRandomSMManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36346,12 +36346,12 @@ TgRandomSMManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgReferenceArrayProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36370,12 +36370,12 @@ TgReferenceArrayProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgRepInfo_DeployableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36394,7 +36394,7 @@ TgRepInfo_DeployableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_bOwnedByTaskforce', 'type': bool},
     '01101': {'name': 'r_TaskforceInfo', 'type': bitarray, 'size': 11},	# class ATgRepInfo_TaskForce* confirmed to be 11 bits
@@ -36408,7 +36408,7 @@ TgRepInfo_DeployableProps = {
 }
 
 TgRepInfo_BeaconProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36427,7 +36427,7 @@ TgRepInfo_BeaconProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_bOwnedByTaskforce', 'type': bool},
     '01101': {'name': 'r_TaskforceInfo', 'type': bitarray, 'size': 11},	# class ATgRepInfo_TaskForce* confirmed to be 11 bits
@@ -36444,7 +36444,7 @@ TgRepInfo_BeaconProps = {
 }
 
 TgRepInfo_GameProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36463,7 +36463,7 @@ TgRepInfo_GameProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'MatchID', 'type': int},
     '011010': {'name': 'Winner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
@@ -36531,7 +36531,7 @@ TgRepInfo_GameProps = {
 }
 
 TgRepInfo_GameOpenWorldProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36550,7 +36550,7 @@ TgRepInfo_GameOpenWorldProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'MatchID', 'type': int},
     '011010': {'name': 'Winner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
@@ -36619,7 +36619,7 @@ TgRepInfo_GameOpenWorldProps = {
 }
 
 TgRepInfo_PlayerProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36638,7 +36638,7 @@ TgRepInfo_PlayerProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'PlayerSkill', 'type': int},
     '011010': {'name': 'UniqueId', 'type': (
@@ -36717,7 +36717,7 @@ TgRepInfo_PlayerProps = {
 }
 
 TgRepInfo_TaskForceProps = {
-    '000000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '000000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '100000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '010000': {'name': 'Velocity', 'type': 'fvector'},
     '110000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36736,7 +36736,7 @@ TgRepInfo_TaskForceProps = {
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '010010': {'name': 'DrawScale', 'type': float},
-    '110010': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '110010': {'name': 'Rotation', 'type': 'frotator'},
     '001010': {'name': 'Location', 'type': 'fvector'},
     '101010': {'name': 'TeamIndex', 'type': int},
     '011010': {'name': 'Score', 'type': float},
@@ -36755,7 +36755,7 @@ TgRepInfo_TaskForceProps = {
 }
 
 TgScoreboardProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36774,12 +36774,12 @@ TgScoreboardProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgSkeletalMeshActor_CharacterBuilderProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36798,14 +36798,14 @@ TgSkeletalMeshActor_CharacterBuilderProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkeletalMeshActor_CharacterBuilderSpawnableProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36824,14 +36824,14 @@ TgSkeletalMeshActor_CharacterBuilderSpawnableProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkeletalMeshActor_CompositeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36850,14 +36850,14 @@ TgSkeletalMeshActor_CompositeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkeletalMeshActor_EquipScreenProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36876,14 +36876,14 @@ TgSkeletalMeshActor_EquipScreenProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkeletalMeshActor_MeleePreVisProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36902,14 +36902,14 @@ TgSkeletalMeshActor_MeleePreVisProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkeletalMeshActorGenericUIPreviewProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36928,14 +36928,14 @@ TgSkeletalMeshActorGenericUIPreviewProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkeletalMeshActorNPCProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36954,14 +36954,14 @@ TgSkeletalMeshActorNPCProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkeletalMeshActorNPCVendorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -36980,14 +36980,14 @@ TgSkeletalMeshActorNPCVendorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'ReplicatedMaterial', 'type': bitarray, 'size': 11},	# class UMaterialInterface* defaulting to 11 bits
     '01101': {'name': 'ReplicatedMesh', 'type': bitarray, 'size': 11},	# class USkeletalMesh* defaulting to 11 bits
 }
 
 TgSkydiveTargetProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37006,13 +37006,13 @@ TgSkydiveTargetProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'm_LandRadius', 'type': float},
 }
 
 TgSkydivingVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37031,7 +37031,7 @@ TgSkydivingVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_SkydiveTarget', 'type': bitarray, 'size': 11},	# class ATgSkydiveTarget* defaulting to 11 bits
     '01101': {'name': 'r_PawnLaunchForce', 'type': float},
@@ -37040,7 +37040,7 @@ TgSkydivingVolumeProps = {
 }
 
 TgSoundInsulationVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37059,12 +37059,12 @@ TgSoundInsulationVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgStartPointProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37083,12 +37083,12 @@ TgStartPointProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgStartpointPortalNetworkProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37107,12 +37107,12 @@ TgStartpointPortalNetworkProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgStaticMeshActorProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37131,12 +37131,12 @@ TgStaticMeshActorProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgStaticMeshActor_LogoProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37155,12 +37155,12 @@ TgStaticMeshActor_LogoProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgTeamBeaconManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37179,7 +37179,7 @@ TgTeamBeaconManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_BeaconInfo', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Beacon* defaulting to 11 bits
     '01101': {'name': 'r_BeaconHolder', 'type': bitarray, 'size': 11},	# class ATgRepInfo_Player* defaulting to 11 bits
@@ -37190,7 +37190,7 @@ TgTeamBeaconManagerProps = {
 }
 
 TgTeamMarkerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37209,12 +37209,12 @@ TgTeamMarkerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgTeamPlayerStartProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37233,12 +37233,12 @@ TgTeamPlayerStartProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgTeamScoreboardProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37257,12 +37257,12 @@ TgTeamScoreboardProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgTeleporterProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37281,7 +37281,7 @@ TgTeleporterProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'TargetVelocity', 'type': 'fvector'},
     '01101': {'name': 'bEnabled', 'type': bool},
@@ -37294,7 +37294,7 @@ TgTeleporterProps = {
 }
 
 TgTeleportPlayerVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37313,12 +37313,12 @@ TgTeleportPlayerVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgTimerManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37337,7 +37337,7 @@ TgTimerManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
     '10101': {'name': 'r_fRemaining', 'type': 'array', 'subtype': float},
     '01101': {'name': 'r_fStartTime', 'type': 'array', 'subtype': float},
@@ -37346,7 +37346,7 @@ TgTimerManagerProps = {
 }
 
 TgTrigger_InstanceProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37365,12 +37365,12 @@ TgTrigger_InstanceProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgTrigger_UseProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37389,12 +37389,12 @@ TgTrigger_UseProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgVolumePathNodeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37413,12 +37413,12 @@ TgVolumePathNodeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgWaterVolumeProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37437,12 +37437,12 @@ TgWaterVolumeProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
 TgWindManagerProps = {
-    '00000': {'name': 'RelativeRotation', 'type': bitarray, 'size': 3 * 8},
+    '00000': {'name': 'RelativeRotation', 'type': 'frotator'},
     '10000': {'name': 'RelativeLocation', 'type': 'fvector'},
     '01000': {'name': 'Velocity', 'type': 'fvector'},
     '11000': {'name': 'Instigator', 'type': bitarray, 'size': 11},	# class APawn* confirmed to be 11 bits
@@ -37461,7 +37461,7 @@ TgWindManagerProps = {
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},
     '01001': {'name': 'DrawScale', 'type': float},
-    '11001': {'name': 'Rotation', 'type': bitarray, 'size': 3 * 8},
+    '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
 }
 
