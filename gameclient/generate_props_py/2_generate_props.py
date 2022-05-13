@@ -40,6 +40,7 @@ def main():
 
     with open(Path('../props.py'), 'w') as f:
         def reverse_string(s):
+            s = (s + '0' * 100)[:100]
             return s[::-1]
 
         f.write('from bitarray import bitarray\n\n')
@@ -49,44 +50,39 @@ def main():
             f.write(f'{classdata["name"]}Props = {{\n')
             max_field_id = max(classdata['props'].keys())
 
-            exceptions = {
-                'TgPlayerController': 8,
-                'TgRepInfo_Game': 6,
-                'TgRepInfo_GameOpenWorld': 6,
-                'TgDevice': 5,
-                'TgDevice_Grenade': 5,
-                'TgDevice_HitPulse': 5,
-                'TgDevice_NewMelee': 5,
-                'TgDevice_MeleeDualWield': 5,
-                'TgDevice_Morale': 5,
-                'TgDevice_NewRange': 5,
-                'TgPawn_NPC': 7,
-            }
-            if classdata['name'] in exceptions:
-                bits_for_field = exceptions[classdata['name']]
-            else:
-                bits_for_field = int(math.ceil(math.log(max_field_id, 2)))
+            def get_msb(value):
+                nr_of_bits = 0
+                while value > 0:
+                    value >>= 1
+                    nr_of_bits += 1
 
-            def memberid_to_bits(memberid, nbits):
-                try:
-                    bits = int2bitarray(memberid, nbits).to01()
-                except ValueError:
-                    bits = int2bitarray(memberid, nbits + 1).to01() + '_invalid'
-                return bits
+                msb = 1 << (nr_of_bits - 1)
+                return msb, nr_of_bits
 
-            classdata['props'] = {memberid_to_bits(memberid, bits_for_field): member_data for memberid, member_data in classdata['props'].items()}
+            def memberid_to_bits(memberid, max_field_id):
+                msb, nbits = get_msb(max_field_id)
+                memberidbits = int2bitarray(memberid, nbits)
+                if (memberid | msb) > max_field_id:
+                    memberidbits = memberidbits[:-1]
+
+                return memberidbits.to01()
+
+            classdata['props'] = {memberid_to_bits(memberid, max_field_id): member_data for memberid, member_data in classdata['props'].items()}
 
             for memberid in sorted(classdata['props'].keys(), key=reverse_string):
                 member_data = classdata['props'][memberid]
 
-                def get_typestring(cpp_type):
+                def get_typestring(name, cpp_type):
+                    unsigned_char_sizes = {
+                        'r_GameType': 4
+                    }
+
                     type_to_typestring = {
                         'bool':             "'type': bool",
                         'unsigned long: 1': "'type': bool",
                         'unsigned long':    "'type': bool",
                         'float':            "'type': float",
                         'int':              "'type': int",
-                        'unsigned char':    "'type': bitarray, 'size': 8",
                         'struct FString':   "'type': str",
                         'struct FRotator':  "'type': 'frotator'",
                         'struct FVector':   "'type': 'fvector'",
@@ -110,8 +106,15 @@ def main():
                             typestring = "'type': bitarray, 'size': 11"
                             comment = f'\t# {cpp_type} defaulting to 11 bits'
                         elif cpp_type.endswith('[]'):
-                            typestring, comment = get_typestring(cpp_type[:-2])
+                            typestring, comment = get_typestring(name, cpp_type[:-2])
                             typestring = typestring.replace("'type'", "'type': 'array', 'subtype'", 1)
+                        elif cpp_type == 'unsigned char':
+                            if name in unsigned_char_sizes:
+                                typestring = f"'type': bitarray, 'size': {unsigned_char_sizes[name]}"
+                                comment = f'\t# unsigned char encoded in {unsigned_char_sizes[name]} bits for {name}'
+                            else:
+                                typestring = f"'type': bitarray, 'size': 8"
+                                comment = f'\t# unsigned char, assuming 8 bits'
                         else:
                             if cpp_type in type_to_typestring:
                                 typestring = type_to_typestring[cpp_type]
@@ -123,7 +126,7 @@ def main():
                                 indentation = 24 * ' '
                                 for structmemberdata in struct_data:
                                     typestring += indentation + f"{{'name': '{structmemberdata['name']}',"
-                                    membertypestring, membercomment = get_typestring(structmemberdata['type'])
+                                    membertypestring, membercomment = get_typestring(structmemberdata['name'], structmemberdata['type'])
                                     typestring += f" {membertypestring}}},{membercomment}\n"
                                 typestring += indentation + ')'
                                 comment = ''
@@ -140,7 +143,7 @@ def main():
                 sdkmethods = {meth[5:] if meth.startswith('event') else meth: data for meth, data in classes_from_sdk['classes'][member_data['class']]['methods'].items()}
                 if member_data['name'] in sdkfields:
                     cpp_type = sdkfields[member_data['name']]
-                    typestring, comment = get_typestring(cpp_type)
+                    typestring, comment = get_typestring(member_data['name'], cpp_type)
                     f.write(f"    '{memberid}': {{'name': '{member_data['name']}', {typestring}}},{comment}\n")
 
                 elif member_data['name'] in sdkmethods:
@@ -148,7 +151,7 @@ def main():
                     f.write(f"    '{memberid}': {{'name': 'RPC {member_data['name']}', 'type': [\n")
                     for param in rpc_data['params']:
                         f.write(f"        {{'name': '{param['name']}',\n")
-                        typestring, comment = get_typestring(param['type'])
+                        typestring, comment = get_typestring(param['name'], param['type'])
                         f.write(f"         {typestring}}},{comment}\n")
                     f.write(f"    ]}},\n")
                 else:

@@ -53,6 +53,11 @@ class ParserState():
         self.class_dict = generated_class_dict
         self.class_dict[None] = {'name': 'FirstServerObject', 'props': FirstServerObjectProps}
 
+        # Do we still need this now that variable ID sizes have been implemented?
+        #for classdata in generated_class_dict.values():
+        #    if classdata['name'] in ('TgDevice', 'TgDevice_Morale', 'TgDevice_NewRange', 'TgDevice_NewMelee'):
+        #        classdata['props']['101101'] = {'name': 'weird10bit', 'type': bitarray, 'size': 10}
+
         def reverse_keys(d):
             return {key[::-1] if key is not None else None: value for key, value in d.items()}
 
@@ -926,7 +931,18 @@ class ObjectProperty():
 
     @debugbits
     def frombitarray(self, bits, class_, debug = False):
+        self.propertyid_size -= 1
         propertyidbits, bits = getnbits(self.propertyid_size, bits)
+
+        if propertyidbits.to01() not in class_['props']:
+            origbits = propertyidbits.copy()
+            additional_bit, bits = getnbits(1, bits)
+            propertyidbits += additional_bit
+            self.propertyid_size += 1
+            if class_['name'] == 'TgRepInfo_GameOpenWorld':
+                print(class_['props'].keys())
+                print(f'propbits = {propertyidbits.to01()}, additional = {additional_bit.to01()}, origbits = {origbits.to01()}')
+
         self.propertyid = toint(propertyidbits)
         
         propertykey = propertyidbits.to01()
@@ -1112,6 +1128,7 @@ class PayloadData():
         self.size = None
         self.object_class = None
         self.flags = None
+        self.flags2 = None
         self.object_deleted = False
         self.instancename = None
         self.instance = None
@@ -1142,10 +1159,9 @@ class PayloadData():
                 payloadbits = self.object_class.frombitarray(payloadbits, state, debug = debug)
                 if len(payloadbits) > 11:
                     self.flags, payloadbits = getnbits(11, payloadbits)
-                    #if self.flags != bitarray('00000010101', endian='little'):
-                    #    print('blabla')
-                    #    payloadbits = self.flags + payloadbits
-                    #    self.flags = None
+
+                    if self.flags[0]:
+                        self.flags2, payloadbits = getnbits(44, payloadbits)
 
 
                 class_ = state.class_dict[self.object_class.getclasskey() if channel != 0 else None]
@@ -1194,6 +1210,8 @@ class PayloadData():
             bits.extend(self.object_class.tobitarray())
             if self.flags:
                 bits.extend(self.flags)
+            if self.flags2:
+                bits.extend(self.flags2)
         if self.instance is not None:
             bits.extend(self.instance.tobitarray())
         if self.bitsleft is not None:
@@ -1223,6 +1241,8 @@ class PayloadData():
             indent += 32
             text += '%s%s (flags)\n' % (' ' * indent,
                                         self.flags.to01() if self.flags else None)
+            text += '%s%s (flags2)\n' % (' ' * indent,
+                                         self.flags2.to01() if self.flags2 else None)
         elif self.object_deleted:
             text += '%sx (destroyed object = %s)\n' % (' ' * indent,
                                                        self.instancename)
