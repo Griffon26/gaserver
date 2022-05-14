@@ -16,7 +16,7 @@ ActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -40,7 +40,7 @@ InfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -64,7 +64,7 @@ AccessControlProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -88,7 +88,7 @@ ControllerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -136,7 +136,7 @@ PlayerControllerProps = {
     '0011000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '0000100': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '1000100': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '0100100': {'name': 'DrawScale', 'type': float},
@@ -838,7 +838,7 @@ AdminProps = {
     '0011000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '0000100': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '1000100': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '0100100': {'name': 'DrawScale', 'type': float},
@@ -1558,7 +1558,7 @@ AIControllerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1606,7 +1606,7 @@ KeypointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1630,7 +1630,7 @@ AmbientSoundProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1654,7 +1654,7 @@ AmbientSoundMovableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1678,7 +1678,7 @@ AmbientSoundSimpleProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1702,7 +1702,7 @@ AmbientSoundNonLoopProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1726,7 +1726,7 @@ AmbientSoundSimpleToggleableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1751,7 +1751,7 @@ CameraProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1775,7 +1775,7 @@ AnimatedCameraProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1799,7 +1799,7 @@ NavigationPointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1823,7 +1823,7 @@ LadderProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1847,7 +1847,7 @@ AutoLadderProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1871,7 +1871,7 @@ BrushProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1895,7 +1895,7 @@ VolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1919,7 +1919,7 @@ BlockingVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1943,7 +1943,7 @@ BroadcastHandlerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1967,7 +1967,7 @@ CameraActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -1993,7 +1993,7 @@ ClipMarkerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2017,7 +2017,7 @@ ColorScaleVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2041,7 +2041,7 @@ CoverGroupProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2065,7 +2065,7 @@ CoverLinkProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2089,7 +2089,7 @@ ReplicationInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2113,7 +2113,7 @@ CoverReplicatorProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2247,7 +2247,7 @@ CoverSlotMarkerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2271,7 +2271,7 @@ CrowdAgentProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2295,7 +2295,7 @@ CrowdAttractorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2320,7 +2320,7 @@ CrowdReplicationActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2347,7 +2347,7 @@ CullDistanceVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -2371,7 +2371,7 @@ DebugCameraControllerProps = {
     '0011000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '0000100': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '1000100': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '0100100': {'name': 'DrawScale', 'type': float},
@@ -3073,7 +3073,7 @@ HUDProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3097,7 +3097,7 @@ DebugCameraHUDProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3121,7 +3121,7 @@ DecalActorBaseProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3145,7 +3145,7 @@ DecalActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3169,7 +3169,7 @@ DecalActorMovableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3193,7 +3193,7 @@ DecalManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3217,7 +3217,7 @@ PhysicsVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3241,7 +3241,7 @@ DefaultPhysicsVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3265,7 +3265,7 @@ LightProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3290,7 +3290,7 @@ DirectionalLightProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3315,7 +3315,7 @@ DirectionalLightToggleableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3340,7 +3340,7 @@ DoorMarkerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3364,7 +3364,7 @@ DroppedPickupProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3390,7 +3390,7 @@ DynamicAnchorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3414,7 +3414,7 @@ DynamicBlockingVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3438,7 +3438,7 @@ DynamicCameraActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3464,7 +3464,7 @@ DynamicPhysicsVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3488,7 +3488,7 @@ DynamicSMActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3518,7 +3518,7 @@ DynamicSMActor_SpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3548,7 +3548,7 @@ TriggerVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3572,7 +3572,7 @@ DynamicTriggerVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3596,7 +3596,7 @@ EmitterProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3621,7 +3621,7 @@ EmitterCameraLensEffectBaseProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3646,7 +3646,7 @@ EmitterPoolProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3670,7 +3670,7 @@ EmitterSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3696,7 +3696,7 @@ FileWriterProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3720,7 +3720,7 @@ FileLogProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3744,7 +3744,7 @@ FluidInfluenceActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3770,7 +3770,7 @@ FluidSurfaceActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3794,7 +3794,7 @@ FluidSurfaceActorMovableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3818,7 +3818,7 @@ FogVolumeDensityInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3843,7 +3843,7 @@ FogVolumeConeDensityInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3868,7 +3868,7 @@ FogVolumeConstantDensityInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3893,7 +3893,7 @@ FogVolumeLinearHalfspaceDensityInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3918,7 +3918,7 @@ FogVolumeSphericalDensityInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3943,7 +3943,7 @@ FoliageFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3967,7 +3967,7 @@ FracturedStaticMeshActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -3991,7 +3991,7 @@ FracturedStaticMeshPartProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4015,7 +4015,7 @@ FractureManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4039,7 +4039,7 @@ GameInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4063,7 +4063,7 @@ GameReplicationInfoProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4107,7 +4107,7 @@ GravityVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4131,7 +4131,7 @@ HeightFogProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4156,7 +4156,7 @@ InternetInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4180,7 +4180,7 @@ InterpActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4210,7 +4210,7 @@ InventoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4242,7 +4242,7 @@ InventoryManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4267,7 +4267,7 @@ KActorProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4311,7 +4311,7 @@ KActorSpawnableProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4355,7 +4355,7 @@ KAssetProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4381,7 +4381,7 @@ KAssetSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4407,7 +4407,7 @@ LadderVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4431,7 +4431,7 @@ LensFlareSourceProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4456,7 +4456,7 @@ LevelStreamingVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4480,7 +4480,7 @@ LiftCenterProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4504,7 +4504,7 @@ LiftExitProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4528,7 +4528,7 @@ LightVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4552,7 +4552,7 @@ MantleMarkerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4576,7 +4576,7 @@ MaterialInstanceActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4600,7 +4600,7 @@ MatineeActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4630,7 +4630,7 @@ MutatorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4654,7 +4654,7 @@ NoteProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4678,7 +4678,7 @@ NxForceFieldProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4703,7 +4703,7 @@ NxCylindricalForceFieldProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4728,7 +4728,7 @@ NxCylindricalForceFieldCapsuleProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4753,7 +4753,7 @@ NxForceFieldGenericProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4778,7 +4778,7 @@ NxForceFieldRadialProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4803,7 +4803,7 @@ NxForceFieldTornadoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4828,7 +4828,7 @@ NxGenericForceFieldProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4853,7 +4853,7 @@ NxGenericForceFieldBoxProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4878,7 +4878,7 @@ NxGenericForceFieldBrushProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4902,7 +4902,7 @@ NxGenericForceFieldCapsuleProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4927,7 +4927,7 @@ NxRadialForceFieldProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4952,7 +4952,7 @@ NxRadialCustomForceFieldProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -4977,7 +4977,7 @@ NxTornadoAngularForceFieldProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5002,7 +5002,7 @@ NxTornadoAngularForceFieldCapsuleProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5027,7 +5027,7 @@ NxTornadoForceFieldProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5052,7 +5052,7 @@ NxTornadoForceFieldCapsuleProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5077,7 +5077,7 @@ ObjectiveProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5101,7 +5101,7 @@ PathBlockingVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5125,7 +5125,7 @@ PathNodeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5149,7 +5149,7 @@ PathNode_DynamicProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5173,7 +5173,7 @@ PawnProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5218,7 +5218,7 @@ PhysXDestructibleActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5242,7 +5242,7 @@ PhysXDestructiblePartProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5266,7 +5266,7 @@ PhysXEmitterSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5292,7 +5292,7 @@ PickupFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5318,7 +5318,7 @@ PlayerReplicationInfoProps = {
     '001100': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5374,7 +5374,7 @@ PlayerStartProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5398,7 +5398,7 @@ PointLightProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5423,7 +5423,7 @@ PointLightMovableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5448,7 +5448,7 @@ PointLightToggleableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5473,7 +5473,7 @@ PolyMarkerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5497,7 +5497,7 @@ PortalMarkerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5521,7 +5521,7 @@ SceneCaptureActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5545,7 +5545,7 @@ SceneCaptureReflectActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5569,7 +5569,7 @@ SceneCapturePortalActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5593,7 +5593,7 @@ PortalTeleporterProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5617,7 +5617,7 @@ PortalVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5641,7 +5641,7 @@ PostProcessVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5666,7 +5666,7 @@ PotentialClimbWatcherProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5690,7 +5690,7 @@ PrefabInstanceProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5714,7 +5714,7 @@ ProjectileProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5740,7 +5740,7 @@ RB_ConstraintActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5764,7 +5764,7 @@ RB_BSJointActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5788,7 +5788,7 @@ RB_ConstraintActorSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5812,7 +5812,7 @@ RB_CylindricalForceActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5837,7 +5837,7 @@ RB_ForceFieldExcludeVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5861,7 +5861,7 @@ RB_HingeActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5885,7 +5885,7 @@ RB_LineImpulseActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5910,7 +5910,7 @@ RB_PrismaticActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5934,7 +5934,7 @@ RB_PulleyJointActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5958,7 +5958,7 @@ RB_RadialForceActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -5983,7 +5983,7 @@ RB_RadialImpulseActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6008,7 +6008,7 @@ RB_ThrusterProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6032,7 +6032,7 @@ ReverbVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6056,7 +6056,7 @@ RouteProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6080,7 +6080,7 @@ SceneCapture2DActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6104,7 +6104,7 @@ SceneCaptureCubeMapActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6128,7 +6128,7 @@ ScoreBoardProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6152,7 +6152,7 @@ ScoutProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6197,7 +6197,7 @@ SkeletalMeshActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6223,7 +6223,7 @@ SkeletalMeshActorBasedOnExtremeContentProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6249,7 +6249,7 @@ SkeletalMeshActorMATProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6275,7 +6275,7 @@ SkeletalMeshActorMATSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6301,7 +6301,7 @@ SkeletalMeshActorSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6327,7 +6327,7 @@ SkyLightProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6352,7 +6352,7 @@ SkyLightToggleableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6377,7 +6377,7 @@ SpeedTreeActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6401,7 +6401,7 @@ SpotLightProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6426,7 +6426,7 @@ SpotLightMovableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6451,7 +6451,7 @@ SpotLightToggleableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6476,7 +6476,7 @@ StaticLightCollectionActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6501,7 +6501,7 @@ StaticMeshActorBaseProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6525,7 +6525,7 @@ StaticMeshActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6549,7 +6549,7 @@ StaticMeshActorBasedOnExtremeContentProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6573,7 +6573,7 @@ StaticMeshCollectionActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6597,7 +6597,7 @@ VehicleProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6644,7 +6644,7 @@ SVehicleProps = {
     '001100': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '101100': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6712,7 +6712,7 @@ TargetPointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6736,7 +6736,7 @@ TeamInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6763,7 +6763,7 @@ TeleporterProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6795,7 +6795,7 @@ TerrainProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6819,7 +6819,7 @@ TriggerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6843,7 +6843,7 @@ Trigger_DynamicProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6867,7 +6867,7 @@ Trigger_LOSProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6891,7 +6891,7 @@ TriggeredPathProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6915,7 +6915,7 @@ TriggerStreamingLevelProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6939,7 +6939,7 @@ VolumePathNodeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6963,7 +6963,7 @@ VolumeTimerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -6987,7 +6987,7 @@ WaterVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7011,7 +7011,7 @@ WeaponProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7045,7 +7045,7 @@ WindDirectionalSourceProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7069,7 +7069,7 @@ ZoneInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7093,7 +7093,7 @@ WorldInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7130,7 +7130,7 @@ GameAIControllerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7178,7 +7178,7 @@ GameExplosionActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7202,7 +7202,7 @@ GameHUDProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7226,7 +7226,7 @@ GamePawnProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -7289,7 +7289,7 @@ GamePlayerControllerProps = {
     '0011000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '0000100': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '1000100': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '0100100': {'name': 'DrawScale', 'type': float},
@@ -7991,7 +7991,7 @@ GameProjectileProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8017,7 +8017,7 @@ GameVehicleProps = {
     '001100': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '101100': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8085,7 +8085,7 @@ GameWeaponProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8119,7 +8119,7 @@ ComponentTestActorBaseProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8143,7 +8143,7 @@ CTComplexNestRootProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8167,7 +8167,7 @@ CTInheritTestRootProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8191,7 +8191,7 @@ CTNoNestRootProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8215,7 +8215,7 @@ CTSimpleNestRootProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8239,7 +8239,7 @@ SubobjectTestActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8263,7 +8263,7 @@ Test0023_MetaDataProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8287,7 +8287,7 @@ TestPlaceableActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8311,7 +8311,7 @@ TestDerivedActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8335,7 +8335,7 @@ TestPropertyWindowActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8359,7 +8359,7 @@ TgNavigationPointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8383,7 +8383,7 @@ TgActionPointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8407,7 +8407,7 @@ TgActorFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8431,7 +8431,7 @@ TgAIControllerProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8481,7 +8481,7 @@ TgAlarmPointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8505,7 +8505,7 @@ TgAnnouncerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8529,7 +8529,7 @@ TgMeshAssemblyProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8553,7 +8553,7 @@ TgMissionObjectiveProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8592,7 +8592,7 @@ TgMissionObjective_BotProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8633,7 +8633,7 @@ TgBaseObjective_CTFBotProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8674,7 +8674,7 @@ TgMissionObjective_ProximityProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8714,7 +8714,7 @@ TgBaseObjective_KOTHProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8754,7 +8754,7 @@ TgBeaconFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8778,7 +8778,7 @@ TgBotEncounterVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8802,7 +8802,7 @@ TgBotFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8826,7 +8826,7 @@ TgBotFactorySpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8850,7 +8850,7 @@ TgBotStartProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8874,7 +8874,7 @@ TgCharacterBuilderLightProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8899,7 +8899,7 @@ TgChestActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8924,7 +8924,7 @@ TgCollisionProxyProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8948,7 +8948,7 @@ TgCollisionProxy_VortexProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8972,7 +8972,7 @@ TgCoverPointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -8996,7 +8996,7 @@ TgDebugCameraControllerProps = {
     '0011000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '0000100': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '1000100': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '0100100': {'name': 'DrawScale', 'type': float},
@@ -9698,7 +9698,7 @@ TgDecalActor_LogoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -9722,7 +9722,7 @@ TgDefensePointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -9746,7 +9746,7 @@ TgDeployableProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -9790,7 +9790,7 @@ TgDeploy_ArtilleryProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -9834,7 +9834,7 @@ TgDeploy_BeaconProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -9878,7 +9878,7 @@ TgDeploy_BeaconEntranceProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -9923,7 +9923,7 @@ TgDeploy_DestructibleCoverProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -9968,7 +9968,7 @@ TgDeploy_ForceFieldProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10012,7 +10012,7 @@ TgDeploy_SensorProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10058,7 +10058,7 @@ TgDeploy_SweepSensorProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10102,7 +10102,7 @@ TgDeployableFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10126,7 +10126,7 @@ TgDestructibleFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10150,7 +10150,7 @@ TgDeviceProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10172,7 +10172,7 @@ TgDeviceProps = {
     '00111': {'name': 'r_bConsumedOnUse', 'type': bool},
     '10111': {'name': 'r_bIsStealthDevice', 'type': bool},
     '01111': {'name': 'CurrentFireMode', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 5},	# unsigned char encoded in 5 bits for r_eEquippedAt
     '000001': {'name': 'r_nQualityValueId', 'type': int},
     '100001': {'name': 'r_nDeviceInstanceId', 'type': int},
     '010001': {'name': 'r_nDeviceId', 'type': int},
@@ -10216,7 +10216,7 @@ TgDevice_GrenadeProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10238,7 +10238,7 @@ TgDevice_GrenadeProps = {
     '00111': {'name': 'r_bConsumedOnUse', 'type': bool},
     '10111': {'name': 'r_bIsStealthDevice', 'type': bool},
     '01111': {'name': 'CurrentFireMode', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 5},	# unsigned char encoded in 5 bits for r_eEquippedAt
     '000001': {'name': 'r_nQualityValueId', 'type': int},
     '100001': {'name': 'r_nDeviceInstanceId', 'type': int},
     '010001': {'name': 'r_nDeviceId', 'type': int},
@@ -10282,7 +10282,7 @@ TgDevice_HitPulseProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10304,7 +10304,7 @@ TgDevice_HitPulseProps = {
     '00111': {'name': 'r_bConsumedOnUse', 'type': bool},
     '10111': {'name': 'r_bIsStealthDevice', 'type': bool},
     '01111': {'name': 'CurrentFireMode', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 5},	# unsigned char encoded in 5 bits for r_eEquippedAt
     '000001': {'name': 'r_nQualityValueId', 'type': int},
     '100001': {'name': 'r_nDeviceInstanceId', 'type': int},
     '010001': {'name': 'r_nDeviceId', 'type': int},
@@ -10348,7 +10348,7 @@ TgDevice_NewMeleeProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10370,7 +10370,7 @@ TgDevice_NewMeleeProps = {
     '00111': {'name': 'r_bConsumedOnUse', 'type': bool},
     '10111': {'name': 'r_bIsStealthDevice', 'type': bool},
     '01111': {'name': 'CurrentFireMode', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 5},	# unsigned char encoded in 5 bits for r_eEquippedAt
     '000001': {'name': 'r_nQualityValueId', 'type': int},
     '100001': {'name': 'r_nDeviceInstanceId', 'type': int},
     '010001': {'name': 'r_nDeviceId', 'type': int},
@@ -10414,7 +10414,7 @@ TgDevice_MeleeDualWieldProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10436,7 +10436,7 @@ TgDevice_MeleeDualWieldProps = {
     '00111': {'name': 'r_bConsumedOnUse', 'type': bool},
     '10111': {'name': 'r_bIsStealthDevice', 'type': bool},
     '01111': {'name': 'CurrentFireMode', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 5},	# unsigned char encoded in 5 bits for r_eEquippedAt
     '000001': {'name': 'r_nQualityValueId', 'type': int},
     '100001': {'name': 'r_nDeviceInstanceId', 'type': int},
     '010001': {'name': 'r_nDeviceId', 'type': int},
@@ -10480,7 +10480,7 @@ TgDevice_MoraleProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10502,7 +10502,7 @@ TgDevice_MoraleProps = {
     '00111': {'name': 'r_bConsumedOnUse', 'type': bool},
     '10111': {'name': 'r_bIsStealthDevice', 'type': bool},
     '01111': {'name': 'CurrentFireMode', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 5},	# unsigned char encoded in 5 bits for r_eEquippedAt
     '000001': {'name': 'r_nQualityValueId', 'type': int},
     '100001': {'name': 'r_nDeviceInstanceId', 'type': int},
     '010001': {'name': 'r_nDeviceId', 'type': int},
@@ -10547,7 +10547,7 @@ TgDevice_NewRangeProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10569,7 +10569,7 @@ TgDevice_NewRangeProps = {
     '00111': {'name': 'r_bConsumedOnUse', 'type': bool},
     '10111': {'name': 'r_bIsStealthDevice', 'type': bool},
     '01111': {'name': 'CurrentFireMode', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11111': {'name': 'r_eEquippedAt', 'type': bitarray, 'size': 5},	# unsigned char encoded in 5 bits for r_eEquippedAt
     '000001': {'name': 'r_nQualityValueId', 'type': int},
     '100001': {'name': 'r_nDeviceInstanceId', 'type': int},
     '010001': {'name': 'r_nDeviceId', 'type': int},
@@ -10613,7 +10613,7 @@ TgDeviceVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10637,7 +10637,7 @@ TgDeviceVolumeInfoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10661,7 +10661,7 @@ TgDoorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10692,7 +10692,7 @@ TgTeamBlockerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10716,7 +10716,7 @@ TgDoorMarkerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10741,7 +10741,7 @@ TgDroppedItemProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10766,7 +10766,7 @@ TgDummyActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10790,7 +10790,7 @@ TgDynamicSMActorProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10823,7 +10823,7 @@ TgDynamicDestructibleProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10858,7 +10858,7 @@ TgEffectManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10896,7 +10896,7 @@ TgElevatingVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10920,7 +10920,7 @@ TgEmitterProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10946,7 +10946,7 @@ TgEmitterSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10971,7 +10971,7 @@ TgEmitterCrashlandingProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -10996,13 +10996,13 @@ TgFlagCaptureVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
     '11001': {'name': 'Rotation', 'type': 'frotator'},
     '00101': {'name': 'Location', 'type': 'fvector'},
-    '10101': {'name': 'r_eCoalition', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '10101': {'name': 'r_eCoalition', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for r_eCoalition
     '01101': {'name': 'r_nTaskForce', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
 }
 
@@ -11022,7 +11022,7 @@ TgFracturedStaticMeshActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11060,7 +11060,7 @@ TgGameProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11084,7 +11084,7 @@ TgGame_MissionProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11108,7 +11108,7 @@ TgGame_ArenaProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11132,7 +11132,7 @@ TgGame_CityProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11156,7 +11156,7 @@ TgGame_ControlProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11180,7 +11180,7 @@ TgGame_CTFProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11204,7 +11204,7 @@ TgGame_DefenseProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11228,7 +11228,7 @@ TgGame_TicketProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11252,7 +11252,7 @@ TgGame_DualCTFProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11276,7 +11276,7 @@ TgGame_EscortProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11300,7 +11300,7 @@ TgGame_OpenWorldProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11324,7 +11324,7 @@ TgGame_OpenWorldPVEProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11348,7 +11348,7 @@ TgGame_OpenWorldPVPProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11372,7 +11372,7 @@ TgGame_PointRotationProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11396,7 +11396,7 @@ TgHeightFogProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11420,7 +11420,7 @@ TgHelpAlertVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11444,7 +11444,7 @@ TgHexItemFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11468,7 +11468,7 @@ TgHexLandMarkActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11493,7 +11493,7 @@ TgHitDisplayActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11517,7 +11517,7 @@ TgHoldSpotProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11541,7 +11541,7 @@ TgHUDProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11565,7 +11565,7 @@ TgInterpActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11596,7 +11596,7 @@ TgInterpolatingCameraActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11622,7 +11622,7 @@ TgInventoryManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11662,7 +11662,7 @@ TgKActorSpawnableProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11706,7 +11706,7 @@ TgKAsset_ClientSideSimProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11732,7 +11732,7 @@ TgKAssetSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11758,7 +11758,7 @@ TgKismetTestActorProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11814,7 +11814,7 @@ TgLevelCameraProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11841,7 +11841,7 @@ TgMiniMapActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11865,7 +11865,7 @@ TgMissionListVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11889,7 +11889,7 @@ TgMissionObjective_EscortProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11930,7 +11930,7 @@ TgMissionObjective_KismetProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11969,7 +11969,7 @@ TgModifyPawnPropertiesVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -11993,7 +11993,7 @@ TgMorphFXProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12017,7 +12017,7 @@ TgNavigationPointSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12041,7 +12041,7 @@ TgSkeletalMeshActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12067,7 +12067,7 @@ TgSkeletalMeshActorSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12093,7 +12093,7 @@ TgNavRouteIndicatorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12119,7 +12119,7 @@ TgNewsStandProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12143,7 +12143,7 @@ TgObjectiveAssignmentProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12176,7 +12176,7 @@ TgObjectiveAttachActorProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12209,7 +12209,7 @@ TgOmegaVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -12233,7 +12233,7 @@ TgPawnProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -12293,17 +12293,17 @@ TgPawnProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -12564,7 +12564,7 @@ TgPawn_RobotProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -12624,17 +12624,17 @@ TgPawn_RobotProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -12895,7 +12895,7 @@ TgPawn_AmbushProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -12955,17 +12955,17 @@ TgPawn_AmbushProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -13227,7 +13227,7 @@ TgPawn_CharacterProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -13287,17 +13287,17 @@ TgPawn_CharacterProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -13562,7 +13562,7 @@ TgPawn_CharacterProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -13605,7 +13605,7 @@ TgPawn_AndroidMinionProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -13665,17 +13665,17 @@ TgPawn_AndroidMinionProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -13940,7 +13940,7 @@ TgPawn_AndroidMinionProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -13983,7 +13983,7 @@ TgPawn_AttackTransportProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -14043,17 +14043,17 @@ TgPawn_AttackTransportProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -14315,7 +14315,7 @@ TgPawn_AVCompositeWalkerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -14375,17 +14375,17 @@ TgPawn_AVCompositeWalkerProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -14646,7 +14646,7 @@ TgPawn_BossProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -14706,17 +14706,17 @@ TgPawn_BossProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -14981,7 +14981,7 @@ TgPawn_BossProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -15024,7 +15024,7 @@ TgPawn_RaptorProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -15084,17 +15084,17 @@ TgPawn_RaptorProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -15359,7 +15359,7 @@ TgPawn_RaptorProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -15402,7 +15402,7 @@ TgPawn_Boss_DestroyerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -15462,17 +15462,17 @@ TgPawn_Boss_DestroyerProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -15737,7 +15737,7 @@ TgPawn_Boss_DestroyerProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -15780,7 +15780,7 @@ TgPawn_BrawlerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -15840,17 +15840,17 @@ TgPawn_BrawlerProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -16115,7 +16115,7 @@ TgPawn_BrawlerProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -16158,7 +16158,7 @@ TgPawn_ColonyEyeProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -16218,17 +16218,17 @@ TgPawn_ColonyEyeProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -16493,7 +16493,7 @@ TgPawn_ColonyEyeProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -16536,7 +16536,7 @@ TgPawn_CTRProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -16596,17 +16596,17 @@ TgPawn_CTRProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -16867,7 +16867,7 @@ TgPawn_CTRProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01001011': {'name': 'r_PilotPawn', 'type': bitarray, 'size': 11},	# class ATgPawn_Character* defaulting to 11 bits
 }
@@ -16888,7 +16888,7 @@ TgPawn_DestructibleProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -16948,17 +16948,17 @@ TgPawn_DestructibleProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -17219,7 +17219,7 @@ TgPawn_DetonatorProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -17279,17 +17279,17 @@ TgPawn_DetonatorProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -17550,7 +17550,7 @@ TgPawn_DismantlerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -17610,17 +17610,17 @@ TgPawn_DismantlerProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -17885,7 +17885,7 @@ TgPawn_DismantlerProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -17928,7 +17928,7 @@ TgPawn_DuneCommanderProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -17988,17 +17988,17 @@ TgPawn_DuneCommanderProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -18263,7 +18263,7 @@ TgPawn_DuneCommanderProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -18307,7 +18307,7 @@ TgPawn_Elite_AlchemistProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -18367,17 +18367,17 @@ TgPawn_Elite_AlchemistProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -18642,7 +18642,7 @@ TgPawn_Elite_AlchemistProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -18685,7 +18685,7 @@ TgPawn_Elite_AssassinProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -18745,17 +18745,17 @@ TgPawn_Elite_AssassinProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -19020,7 +19020,7 @@ TgPawn_Elite_AssassinProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -19063,7 +19063,7 @@ TgPawn_EscortRobotProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -19123,17 +19123,17 @@ TgPawn_EscortRobotProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -19394,7 +19394,7 @@ TgPawn_FlyingBossProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -19454,17 +19454,17 @@ TgPawn_FlyingBossProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -19729,7 +19729,7 @@ TgPawn_FlyingBossProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -19772,7 +19772,7 @@ TgPawn_TreadRobotProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -19832,17 +19832,17 @@ TgPawn_TreadRobotProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -20103,7 +20103,7 @@ TgPawn_GroundPetAProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -20163,17 +20163,17 @@ TgPawn_GroundPetAProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -20434,7 +20434,7 @@ TgPawn_GuardianProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -20494,17 +20494,17 @@ TgPawn_GuardianProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -20769,7 +20769,7 @@ TgPawn_GuardianProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -20812,7 +20812,7 @@ TgPawn_HoverProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -20872,17 +20872,17 @@ TgPawn_HoverProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -21143,7 +21143,7 @@ TgPawn_HoverShieldSphereProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -21203,17 +21203,17 @@ TgPawn_HoverShieldSphereProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -21474,7 +21474,7 @@ TgPawn_HunterProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -21534,17 +21534,17 @@ TgPawn_HunterProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -21809,7 +21809,7 @@ TgPawn_HunterProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -21852,7 +21852,7 @@ TgPawn_NPCProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -21912,17 +21912,17 @@ TgPawn_NPCProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -22187,7 +22187,7 @@ TgPawn_NPCProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -22230,7 +22230,7 @@ TgPawn_InquisitorProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -22290,17 +22290,17 @@ TgPawn_InquisitorProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -22565,7 +22565,7 @@ TgPawn_InquisitorProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -22608,7 +22608,7 @@ TgPawn_Interact_NPCProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -22668,17 +22668,17 @@ TgPawn_Interact_NPCProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -22943,7 +22943,7 @@ TgPawn_Interact_NPCProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -22986,7 +22986,7 @@ TgPawn_ScannerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -23046,17 +23046,17 @@ TgPawn_ScannerProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -23317,7 +23317,7 @@ TgPawn_IrisProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -23377,17 +23377,17 @@ TgPawn_IrisProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -23649,7 +23649,7 @@ TgPawn_JuggernautProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -23709,17 +23709,17 @@ TgPawn_JuggernautProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -23984,7 +23984,7 @@ TgPawn_JuggernautProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -24027,7 +24027,7 @@ TgPawn_MarauderProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -24087,17 +24087,17 @@ TgPawn_MarauderProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -24362,7 +24362,7 @@ TgPawn_MarauderProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -24405,7 +24405,7 @@ TgPawn_NewWaspProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -24465,17 +24465,17 @@ TgPawn_NewWaspProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -24736,7 +24736,7 @@ TgPawn_ReaperProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -24796,17 +24796,17 @@ TgPawn_ReaperProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -25071,7 +25071,7 @@ TgPawn_ReaperProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -25115,7 +25115,7 @@ TgPawn_RecursiveSpawnerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -25175,17 +25175,17 @@ TgPawn_RecursiveSpawnerProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -25450,7 +25450,7 @@ TgPawn_RecursiveSpawnerProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -25493,7 +25493,7 @@ TgPawn_RemoteProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -25553,17 +25553,17 @@ TgPawn_RemoteProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -25824,7 +25824,7 @@ TgPawn_ScannerRecursiveProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -25884,17 +25884,17 @@ TgPawn_ScannerRecursiveProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -26155,7 +26155,7 @@ TgPawn_SiegeProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -26215,17 +26215,17 @@ TgPawn_SiegeProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -26487,7 +26487,7 @@ TgPawn_SiegeBarrageProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -26547,17 +26547,17 @@ TgPawn_SiegeBarrageProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -26819,7 +26819,7 @@ TgPawn_SiegeHoverProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -26879,17 +26879,17 @@ TgPawn_SiegeHoverProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -27151,7 +27151,7 @@ TgPawn_SiegeRapidFireProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -27211,17 +27211,17 @@ TgPawn_SiegeRapidFireProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -27483,7 +27483,7 @@ TgPawn_SniperProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -27543,17 +27543,17 @@ TgPawn_SniperProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -27818,7 +27818,7 @@ TgPawn_SniperProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -27861,7 +27861,7 @@ TgPawn_SonoranCommanderProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -27921,17 +27921,17 @@ TgPawn_SonoranCommanderProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -28196,7 +28196,7 @@ TgPawn_SonoranCommanderProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -28239,7 +28239,7 @@ TgPawn_SupportForemanProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -28299,17 +28299,17 @@ TgPawn_SupportForemanProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -28570,7 +28570,7 @@ TgPawn_SwitchbladeProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -28630,17 +28630,17 @@ TgPawn_SwitchbladeProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -28905,7 +28905,7 @@ TgPawn_SwitchbladeProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -28948,7 +28948,7 @@ TgPawn_TentacleProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -29008,17 +29008,17 @@ TgPawn_TentacleProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -29280,7 +29280,7 @@ TgPawn_ThinkTankProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -29340,17 +29340,17 @@ TgPawn_ThinkTankProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -29615,7 +29615,7 @@ TgPawn_ThinkTankProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -29658,7 +29658,7 @@ TgPawn_TurretProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -29718,17 +29718,17 @@ TgPawn_TurretProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -29993,7 +29993,7 @@ TgPawn_TurretProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -30041,7 +30041,7 @@ TgPawn_TurretAVAFlakProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -30101,17 +30101,17 @@ TgPawn_TurretAVAFlakProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -30376,7 +30376,7 @@ TgPawn_TurretAVAFlakProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -30424,7 +30424,7 @@ TgPawn_TurretAVARocketProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -30484,17 +30484,17 @@ TgPawn_TurretAVARocketProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -30759,7 +30759,7 @@ TgPawn_TurretAVARocketProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -30807,7 +30807,7 @@ TgPawn_TurretFlakProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -30867,17 +30867,17 @@ TgPawn_TurretFlakProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -31142,7 +31142,7 @@ TgPawn_TurretFlakProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -31190,7 +31190,7 @@ TgPawn_TurretFlameProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -31250,17 +31250,17 @@ TgPawn_TurretFlameProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -31525,7 +31525,7 @@ TgPawn_TurretFlameProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -31573,7 +31573,7 @@ TgPawn_TurretPlasmaProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -31633,17 +31633,17 @@ TgPawn_TurretPlasmaProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -31908,7 +31908,7 @@ TgPawn_TurretPlasmaProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -31956,7 +31956,7 @@ TgPawn_UberWalkerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -32016,17 +32016,17 @@ TgPawn_UberWalkerProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -32291,7 +32291,7 @@ TgPawn_UberWalkerProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -32334,7 +32334,7 @@ TgPawn_VanguardProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -32394,17 +32394,17 @@ TgPawn_VanguardProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -32669,7 +32669,7 @@ TgPawn_VanguardProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -32712,7 +32712,7 @@ TgPawn_VanityPetProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -32772,17 +32772,17 @@ TgPawn_VanityPetProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -33044,7 +33044,7 @@ TgPawn_VulcanProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -33104,17 +33104,17 @@ TgPawn_VulcanProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -33379,7 +33379,7 @@ TgPawn_VulcanProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -33422,7 +33422,7 @@ TgPawn_WarlordProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -33482,17 +33482,17 @@ TgPawn_WarlordProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '11110010': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '00001010': {'name': 'r_fMaxPowerPool', 'type': float},
     '10001010': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -33757,7 +33757,7 @@ TgPawn_WarlordProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '01101011': {'name': 'r_nBoostTimeRemaining', 'type': int},
     '11101011': {'name': 'r_bElfGogglesEquipped', 'type': bool},
@@ -33800,7 +33800,7 @@ TgPawn_WaspSpawnerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -33860,17 +33860,17 @@ TgPawn_WaspSpawnerProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -34131,7 +34131,7 @@ TgPawn_WidowProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -34191,17 +34191,17 @@ TgPawn_WidowProps = {
     '00010010': {'name': 'r_eEmoteUpdate', 'type': int},
     '10010010': {'name': 'r_nGenericAIEventIndex', 'type': int},
     '01010010': {'name': 'r_nPhase', 'type': int},
-    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
-    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 11},	# class ATgOmegaVolume* defaulting to 11 bits
+    '11010010': {'name': 'r_CurrentSubzoneBilboardVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '00110010': {'name': 'r_CurrentSubzoneVol', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
+    '10110010': {'name': 'r_CurrentOmegaVolume', 'type': bitarray, 'size': 32},	# class ATgOmegaVolume* confirmed to be 32 bits
     '01110010': {'name': 'r_fGravityZModifier', 'type': float},
     '1111001': {'name': 'r_ScannerSettings', 'type': 'array', 'subtype': (
                         {'name': 'EffectGroupId', 'type': int},
                         {'name': 'Scanner_Range', 'type': int},
                         {'name': 'Scanner_FOV', 'type': int},
                         {'name': 'Scanner_RequiresLOS', 'type': bool},
-                        {'name': 'Scanner_SeeFlag', 'type': None},	# original type was: "int[ 0x8 ]"
-                        {'name': 'Scanner_DisplayFlag', 'type': None},	# original type was: "int[ 0x7 ]"
+                        {'name': 'Scanner_SeeFlag', 'type': bitarray, 'size': 256},	# static array of 8 int's
+                        {'name': 'Scanner_DisplayFlag', 'type': bitarray, 'size': 224},	# static array of 7 int's
                         )},
     '0000101': {'name': 'r_fMaxPowerPool', 'type': float},
     '1000101': {'name': 'r_fCurrentPowerPool', 'type': float},
@@ -34462,7 +34462,7 @@ TgPhysAnimTestActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -34486,7 +34486,7 @@ TgPickupFactoryProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -34512,7 +34512,7 @@ TgPickupFactory_ItemProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -34538,7 +34538,7 @@ TgPlayerControllerProps = {
     '00110000': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110000': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110000': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110000': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110000': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001000': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001000': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001000': {'name': 'DrawScale', 'type': float},
@@ -35257,8 +35257,8 @@ TgPlayerControllerProps = {
          'type': int},
         {'name': 'DeviceArray',
          'type': (
-                        {'name': 'SlotIndices', 'type': None},	# original type was: "int[ 0x19 ]"
-                        {'name': 'MiscItems', 'type': None},	# original type was: "int[ 0x19 ]"
+                        {'name': 'SlotIndices', 'type': bitarray, 'size': 800},	# static array of 25 int's
+                        {'name': 'MiscItems', 'type': bitarray, 'size': 800},	# static array of 25 int's
                         )},
     ]},
     '10001001': {'name': 'RPC ServerSetPawnAlwaysRelevant', 'type': [
@@ -35786,7 +35786,7 @@ TgPlayerCountVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -35810,7 +35810,7 @@ TgPointOfInterestProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -35834,7 +35834,7 @@ TgPostProcessVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -35859,7 +35859,7 @@ TgProjectileProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -35892,7 +35892,7 @@ TgProj_FreeGrenadeProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -35925,7 +35925,7 @@ TgProj_BotProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -35958,7 +35958,7 @@ TgProj_BounceProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -35991,7 +35991,7 @@ TgProj_DeployableProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36024,7 +36024,7 @@ TgProj_GrappleProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36058,7 +36058,7 @@ TgProj_GrenadeProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36091,7 +36091,7 @@ TgProj_MissileProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36127,7 +36127,7 @@ TgProj_MortarProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36160,7 +36160,7 @@ TgProj_NetProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36193,7 +36193,7 @@ TgProj_RocketProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36228,7 +36228,7 @@ TgProj_TeleporterProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36261,7 +36261,7 @@ TgProj_StraightTeleporterProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36294,7 +36294,7 @@ TgQueuedAnnouncementProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36318,7 +36318,7 @@ TgRandomSMActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36342,7 +36342,7 @@ TgRandomSMManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36366,7 +36366,7 @@ TgReferenceArrayProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36390,7 +36390,7 @@ TgRepInfo_DeployableProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36423,7 +36423,7 @@ TgRepInfo_BeaconProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36459,7 +36459,7 @@ TgRepInfo_GameProps = {
     '001100': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '101100': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '011100': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '111100': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '111100': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '010010': {'name': 'DrawScale', 'type': float},
@@ -36546,7 +36546,7 @@ TgRepInfo_GameOpenWorldProps = {
     '001100': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '101100': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '011100': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '111100': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '111100': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '010010': {'name': 'DrawScale', 'type': float},
@@ -36634,7 +36634,7 @@ TgRepInfo_PlayerProps = {
     '001100': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '101100': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '011100': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '111100': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '111100': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '000010': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '100010': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '010010': {'name': 'DrawScale', 'type': float},
@@ -36681,7 +36681,7 @@ TgRepInfo_PlayerProps = {
     '110011': {'name': 'r_nLevel', 'type': int},
     '001011': {'name': 'r_bDropped', 'type': bool},
     '101011': {'name': 'r_DeviceStats', 'type': 'array', 'subtype': (
-                        {'name': 'Stats', 'type': None},	# original type was: "int[ 0xB ]"
+                        {'name': 'Stats', 'type': bitarray, 'size': 352},	# static array of 11 int's
                         )},
     '011011': {'name': 'r_Scores', 'type': 'array', 'subtype': int},
     '111011': {'name': 'r_eBonusType', 'type': int},
@@ -36701,7 +36701,7 @@ TgRepInfo_PlayerProps = {
                         {'name': 'HeadFlairId', 'type': int},
                         {'name': 'SuitFlairId', 'type': int},
                         {'name': 'JetpackTrailId', 'type': int},
-                        {'name': 'DyeList', 'type': None},	# original type was: "int[ 0x5 ]"
+                        {'name': 'DyeList', 'type': bitarray, 'size': 160},	# static array of 5 int's
                         )},
     '100111': {'name': 'r_EquipDeviceInfo', 'type': 'array', 'subtype': (
                         {'name': 'nDeviceId', 'type': int},
@@ -36732,7 +36732,7 @@ TgRepInfo_TaskForceProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '10110': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '01110': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '11110': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11110': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36748,7 +36748,7 @@ TgRepInfo_TaskForceProps = {
     '00111': {'name': 'r_nCurrentPointCount', 'type': int},
     '10111': {'name': 'r_CurrActiveObjective', 'type': bitarray, 'size': 32},	# class ATgMissionObjective* confirmed to be 32 bits
     '01111': {'name': 'r_bBotOwned', 'type': bool},
-    '11111': {'name': 'r_eCoalition', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '11111': {'name': 'r_eCoalition', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for r_eCoalition
     '000001': {'name': 'r_nTaskForce', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '100001': {'name': 'r_nLeaderCharId', 'type': int},
     '010001': {'name': 'r_nTeamId', 'type': int},
@@ -36770,7 +36770,7 @@ TgScoreboardProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36794,7 +36794,7 @@ TgSkeletalMeshActor_CharacterBuilderProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36820,7 +36820,7 @@ TgSkeletalMeshActor_CharacterBuilderSpawnableProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36846,7 +36846,7 @@ TgSkeletalMeshActor_CompositeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36872,7 +36872,7 @@ TgSkeletalMeshActor_EquipScreenProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36898,7 +36898,7 @@ TgSkeletalMeshActor_MeleePreVisProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36924,7 +36924,7 @@ TgSkeletalMeshActorGenericUIPreviewProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36950,7 +36950,7 @@ TgSkeletalMeshActorNPCProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -36976,7 +36976,7 @@ TgSkeletalMeshActorNPCVendorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37002,7 +37002,7 @@ TgSkydiveTargetProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37027,7 +37027,7 @@ TgSkydivingVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37055,7 +37055,7 @@ TgSoundInsulationVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37079,7 +37079,7 @@ TgStartPointProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37103,7 +37103,7 @@ TgStartpointPortalNetworkProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37127,7 +37127,7 @@ TgStaticMeshActorProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37151,7 +37151,7 @@ TgStaticMeshActor_LogoProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37175,7 +37175,7 @@ TgTeamBeaconManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37205,7 +37205,7 @@ TgTeamMarkerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37229,7 +37229,7 @@ TgTeamPlayerStartProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37253,7 +37253,7 @@ TgTeamScoreboardProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37277,7 +37277,7 @@ TgTeleporterProps = {
     '00110': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37309,7 +37309,7 @@ TgTeleportPlayerVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37333,7 +37333,7 @@ TgTimerManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37361,7 +37361,7 @@ TgTrigger_InstanceProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37385,7 +37385,7 @@ TgTrigger_UseProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37409,7 +37409,7 @@ TgVolumePathNodeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37433,7 +37433,7 @@ TgWaterVolumeProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},
@@ -37457,7 +37457,7 @@ TgWindManagerProps = {
     '0011': {'name': 'Base', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '1011': {'name': 'Owner', 'type': bitarray, 'size': 11},	# class AActor* confirmed to be 11 bits
     '0111': {'name': 'ReplicatedCollisionType', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
-    '1111': {'name': 'Role', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+    '1111': {'name': 'Role', 'type': bitarray, 'size': 2},	# unsigned char encoded in 2 bits for Role
     '00001': {'name': 'RemoteRole', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '10001': {'name': 'Physics', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
     '01001': {'name': 'DrawScale', 'type': float},

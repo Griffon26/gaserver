@@ -1,7 +1,7 @@
 from bitarray import bitarray
 import json
-import math
 from pathlib import Path
+import re
 import struct
 
 
@@ -74,7 +74,10 @@ def main():
 
                 def get_typestring(name, cpp_type):
                     unsigned_char_sizes = {
-                        'r_GameType': 4
+                        'r_GameType': 4,
+                        'Role': 2,
+                        'r_eEquippedAt': 5,
+                        'r_eCoalition': 2
                     }
 
                     type_to_typestring = {
@@ -90,7 +93,8 @@ def main():
                     }
                     try:
                         if cpp_type in ('class UClass*',
-                                        'class ATgMissionObjective*'):
+                                        'class ATgMissionObjective*',
+                                        'class ATgOmegaVolume*'):
                             typestring = "'type': bitarray, 'size': 32"
                             comment = f'\t# {cpp_type} confirmed to be 32 bits'
                         elif cpp_type in ('class ATgRepInfo_TaskForce*',
@@ -108,6 +112,14 @@ def main():
                         elif cpp_type.endswith('[]'):
                             typestring, comment = get_typestring(name, cpp_type[:-2])
                             typestring = typestring.replace("'type'", "'type': 'array', 'subtype'", 1)
+                        elif cpp_type.endswith(']'):
+                            m = re.match(r'(.*)\[ (.*) ]', cpp_type)
+                            elem_sizes = {'int': 32}
+                            elem_type = m.group(1)
+                            elem_size = elem_sizes[elem_type]
+                            elem_count = int(m.group(2), 16)
+                            typestring = f"'type': bitarray, 'size': {elem_size * elem_count}"
+                            comment = f"\t# static array of {elem_count} {elem_type}'s"
                         elif cpp_type == 'unsigned char':
                             if name in unsigned_char_sizes:
                                 typestring = f"'type': bitarray, 'size': {unsigned_char_sizes[name]}"

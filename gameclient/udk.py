@@ -96,6 +96,55 @@ def getnbits(n, bits):
     
     return bits[0:n], bits[n:]
 
+def getint(n, bits):
+    def get_msb(value):
+        nr_of_bits = 0
+        while value > 0:
+            value >>= 1
+            nr_of_bits += 1
+
+        msb = 1 << (nr_of_bits - 1)
+        return msb, nr_of_bits
+
+    def memberid_to_bits(memberid, max_field_id):
+        msb, nbits = get_msb(max_field_id)
+        memberidbits = int2bitarray(memberid, nbits)
+        if (memberid | msb) > max_field_id:
+            memberidbits = memberidbits[:-1]
+
+        return memberidbits.to01()
+
+
+def serialize_bits_to_int(valuemax, bits):
+    bits = bits.copy()
+    value = 0
+    mask = 1
+    while value + mask < valuemax and mask:
+        try:
+            bit = bits.pop(0)
+        except:
+            raise ParseError('Popped more bits than available.', bits)
+        if bit:
+            value += mask
+        mask *= 2
+    return value, bits
+
+
+def serialize_int_to_bits(value, valuemax):
+    bits = bitarray(endian='little')
+    new_value = 0
+    mask = 1
+    while new_value + mask < valuemax and mask:
+        if value & mask:
+            new_value += mask
+            bits.append(1)
+        else:
+            bits.append(0)
+        mask *= 2
+
+    return bits
+
+
 def getstring(bits):
     stringbytes = bits.tobytes()
     result = []
@@ -360,32 +409,56 @@ class PropertyValueBitarray():
 
 class PropertyValueFVector():
     def __init__(self):
-        self.lengthbits = None
-        self.vectorbits = None
+        self.nr_of_bits = None
+        self.x = None
+        self.y = None
+        self.z = None
 
     @debugbits
     def frombitarray(self, bits, debug = False):
-        self.lengthbits, bits = getnbits(4, bits)
-        length = toint(self.lengthbits) * 3 + 6
-        self.vectorbits, bits = getnbits(length, bits)
+        self.nr_of_bits, bits = serialize_bits_to_int(20, bits)
+
+        bias = 1 << (self.nr_of_bits + 1)
+        maxvalue = 1 << (self.nr_of_bits + 2)
+
+        self.x, bits = serialize_bits_to_int(maxvalue, bits)
+        self.y, bits = serialize_bits_to_int(maxvalue, bits)
+        self.z, bits = serialize_bits_to_int(maxvalue, bits)
+
+        self.x -= bias
+        self.y -= bias
+        self.z -= bias
+
         return bits
 
     def tobitarray(self):
-        bits = bitarray()
-        if self.lengthbits:
-            bits += self.lengthbits
-        if self.vectorbits:
-            length = int((len(self.vectorbits) - 6) / 3)
-            lengthbits = int2bitarray(length, 4)
-            assert lengthbits == self.lengthbits
-            bits += self.vectorbits
+        bits = bitarray(endian='little')
+        if self.nr_of_bits is not None:
+            bits += serialize_int_to_bits(self.nr_of_bits, 20)
+
+            bias = 1 << (self.nr_of_bits + 1)
+            maxvalue = 1 << (self.nr_of_bits + 2)
+
+            if self.x is not None:
+                bits += serialize_int_to_bits(self.x + bias, maxvalue)
+            if self.y is not None:
+                bits += serialize_int_to_bits(self.y + bias, maxvalue)
+            if self.z is not None:
+                bits += serialize_int_to_bits(self.z + bias, maxvalue)
+
         return bits
 
     def tostring(self, indent = 0):
         indent_prefix = ' ' * indent
-        vectorbits = self.vectorbits.to01() if self.vectorbits else 'empty'
-        if self.lengthbits is not None:
-            text = '%s%s %s (FVector)\n' % (indent_prefix, self.lengthbits.to01(), vectorbits)
+        bias = 1 << (self.nr_of_bits + 1)
+        maxvalue = 1 << (self.nr_of_bits + 2)
+
+        if self.nr_of_bits is not None:
+            text = '%s%s %s %s %s (FVector)\n' % (indent_prefix,
+                                                  serialize_int_to_bits(self.nr_of_bits, 20).to01(),
+                                                  serialize_int_to_bits(self.x + bias, maxvalue) if self.x is not None else 'None',
+                                                  serialize_int_to_bits(self.y + bias, maxvalue) if self.y is not None else 'None',
+                                                  serialize_int_to_bits(self.z + bias, maxvalue) if self.z is not None else 'None')
         else:
             text = '%sempty\n' % indent_prefix
         return text
@@ -1127,8 +1200,8 @@ class PayloadData():
         self.reliable = reliable
         self.size = None
         self.object_class = None
-        self.flags = None
-        self.flags2 = None
+        self.location = None
+        self.rotation = None
         self.object_deleted = False
         self.instancename = None
         self.instance = None
@@ -1157,15 +1230,16 @@ class PayloadData():
                 newinstance = True
                 self.object_class = ObjectClass()
                 payloadbits = self.object_class.frombitarray(payloadbits, state, debug = debug)
-                if len(payloadbits) > 11:
-                    self.flags, payloadbits = getnbits(11, payloadbits)
-
-                    if self.flags[0]:
-                        self.flags2, payloadbits = getnbits(44, payloadbits)
-
 
                 class_ = state.class_dict[self.object_class.getclasskey() if channel != 0 else None]
                 classname = class_['name']
+
+                self.location = PropertyValueFVector()
+                payloadbits = self.location.frombitarray(payloadbits, debug=debug)
+
+                if classname in ():
+                    self.rotation = PropertyValueFRotator()
+                    payloadbits = self.rotation.frombitarray(payloadbits, debug=debug)
 
                 prop_keys = list(class_['props'].keys())
                 class_['idsize'] = len(prop_keys[0]) if prop_keys else 6
@@ -1208,10 +1282,10 @@ class PayloadData():
             bits.extend(int2bitarray(self.size, self.nr_of_payload_bits))
         if self.object_class is not None:
             bits.extend(self.object_class.tobitarray())
-            if self.flags:
-                bits.extend(self.flags)
-            if self.flags2:
-                bits.extend(self.flags2)
+            if self.location:
+                bits.extend(self.location.tobitarray())
+            if self.rotation:
+                bits.extend(self.rotation.tobitarray())
         if self.instance is not None:
             bits.extend(self.instance.tobitarray())
         if self.bitsleft is not None:
@@ -1239,10 +1313,9 @@ class PayloadData():
                                                 self.object_class.tobitarray().to01(),
                                                 self.instancename)
             indent += 32
-            text += '%s%s (flags)\n' % (' ' * indent,
-                                        self.flags.to01() if self.flags else None)
-            text += '%s%s (flags2)\n' % (' ' * indent,
-                                         self.flags2.to01() if self.flags2 else None)
+            text += self.location.tostring(indent=indent)
+            if self.rotation:
+                text += self.rotation.tostring(indent=indent)
         elif self.object_deleted:
             text += '%sx (destroyed object = %s)\n' % (' ' * indent,
                                                        self.instancename)
