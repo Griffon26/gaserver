@@ -584,7 +584,7 @@ PlayerControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -606,7 +606,7 @@ PlayerControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -1286,7 +1286,7 @@ AdminProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -1308,7 +1308,7 @@ AdminProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -2819,7 +2819,7 @@ DebugCameraControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -2841,7 +2841,7 @@ DebugCameraControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -7737,7 +7737,7 @@ GamePlayerControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -7759,7 +7759,7 @@ GamePlayerControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -9444,7 +9444,7 @@ TgDebugCameraControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -9466,7 +9466,7 @@ TgDebugCameraControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -34986,7 +34986,7 @@ TgPlayerControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -35008,7 +35008,7 @@ TgPlayerControllerProps = {
         {'name': 'TransitionParams',
          'type': (
                         {'name': 'BlendTime', 'type': float},
-                        {'name': 'BlendFunction', 'type': bitarray, 'size': 8},	# unsigned char, assuming 8 bits
+                        {'name': 'BlendFunction', 'type': bitarray, 'size': 3},	# unsigned char encoded in 3 bits for BlendFunction
                         {'name': 'BlendExp', 'type': float},
                         )},
     ]},
@@ -37656,6 +37656,7 @@ generated_class_dict = {
     '00111010100101110000000000000000': {'name': 'WindDirectionalSource', 'props': WindDirectionalSourceProps},
     '00010110100101110000000000000000': {'name': 'ZoneInfo', 'props': ZoneInfoProps},
     '01011010010101110000000000000000': {'name': 'WorldInfo', 'props': WorldInfoProps},
+    '01111110110100010110000000000000': {'name': 'WorldInfomanuallyadded', 'props': WorldInfoProps},
     '01101011110000001000000000000000': {'name': 'GameAIController', 'props': GameAIControllerProps},
     '01010011001000001000000000000000': {'name': 'GameExplosionActor', 'props': GameExplosionActorProps},
     '00110111001000001000000000000000': {'name': 'GameHUD', 'props': GameHUDProps},

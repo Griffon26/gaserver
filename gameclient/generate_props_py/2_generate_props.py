@@ -77,7 +77,8 @@ def main():
                         'r_GameType': 4,
                         'Role': 2,
                         'r_eEquippedAt': 5,
-                        'r_eCoalition': 2
+                        'r_eCoalition': 2,
+                        'BlendFunction': 3
                     }
 
                     type_to_typestring = {

@@ -872,7 +872,7 @@ def parse_basic_property(valuesetter, propertyname, propertytype, bits, size=Non
         value = PropertyValueBool()
         valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
-    elif propertytype is 'flag':
+    elif propertytype == 'flag':
         value = PropertyValueFlag()
         valuesetter(value)
         bits = value.frombitarray(bits, debug=debug)
@@ -1012,9 +1012,6 @@ class ObjectProperty():
             additional_bit, bits = getnbits(1, bits)
             propertyidbits += additional_bit
             self.propertyid_size += 1
-            if class_['name'] == 'TgRepInfo_GameOpenWorld':
-                print(class_['props'].keys())
-                print(f'propbits = {propertyidbits.to01()}, additional = {additional_bit.to01()}, origbits = {origbits.to01()}')
 
         self.propertyid = toint(propertyidbits)
         
@@ -1031,7 +1028,7 @@ class ObjectProperty():
             self.value = PropertyValueMultipleChoice()
             bits = self.value.frombitarray(bits, propertysize, propertyvalues, debug = debug)
         
-        elif propertytype:
+        elif propertytype is not None:
             if isinstance(propertytype, list):
                 self.value = PropertyValueParams(propertytype)
                 bits = self.value.frombitarray(bits, debug=debug)
@@ -1088,7 +1085,7 @@ class FirstServerObjectInstance:
 
         self.bunches = []
 
-        if bits.length() == 4000:
+        if len(bits) == 4000:
             pass
         else:
             while bits:
@@ -1120,9 +1117,9 @@ class FirstServerObjectInstance:
         indent_prefix = ' ' * indent
         text = ''
         if self.bitsfromprevious:
-            text += f'{indent_prefix}({self.bitsfromprevious.length()} bits carried over from previous payload)\n'
+            text += f'{indent_prefix}({len(self.bitsfromprevious)} bits carried over from previous payload)\n'
 
-        if self.originalbits.length() == 4000:
+        if len(self.originalbits) == 4000:
             text += f'{indent_prefix}{self.originalbits.to01()}\n'
         else:
             for field1, field2, field3, string, field4 in self.bunches:
@@ -1134,7 +1131,7 @@ class FirstServerObjectInstance:
                     text += f'{indent_prefix}{field4.to01()}\n'
 
         if self.bitsfornext:
-            text += f'{indent_prefix}{self.bitsfornext.length()} bits remaining for next payload: {self.bitsfornext.to01()}\n'
+            text += f'{indent_prefix}{len(self.bitsfornext)} bits remaining for next payload: {self.bitsfornext.to01()}\n'
 
         return text
 
